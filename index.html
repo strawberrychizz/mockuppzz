@@ -45,6 +45,7 @@ tfoot td{font-weight:600;background:#eef2f5;position:sticky;bottom:0}
 .stack span{display:flex;align-items:center;justify-content:center;color:#fff;font-size:11px}
 .btn{background:var(--accent);color:#fff;border:0;border-radius:8px;padding:9px 16px;font:inherit;cursor:pointer}
 .btn.ghost{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+.chead{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:8px}.chead h3{margin:0}.btn.sm{padding:6px 12px;font-size:13px}
 .foot{color:var(--mute);font-size:12px;margin-top:6px}
 .top2{display:flex;gap:12px;align-items:end;flex-wrap:wrap}
 .hide{display:none}
@@ -91,14 +92,13 @@ tfoot td{font-weight:600;background:#eef2f5;position:sticky;bottom:0}
       <div class="foot">Menampilkan 12 dari 38 provinsi · gulir untuk sisanya</div>
     </div>
 
-    <div class="card"><h3>Temuan SPI per kategori · <span id="catScope">Seluruh provinsi</span></h3><div id="catBars"></div></div>
+    <div class="card"><div class="chead"><h3>Temuan SPI per kategori · <span id="catScope">Seluruh provinsi</span></h3><button class="btn sm" id="btnList" onclick="go('p2')"></button></div><div id="catBars"></div></div>
 
     <div class="card"><h3>Komposisi status PBP · <span id="compScope">Seluruh provinsi</span></h3>
       <div class="stack" id="stack"></div>
       <div class="foot" id="stackLeg"></div>
     </div>
   </div>
-  <p style="margin-top:12px"><button class="btn" id="btnList" onclick="go('p2')"></button></p>
 </section>
 
 <!-- HALAMAN 2 -->
@@ -107,12 +107,15 @@ tfoot td{font-weight:600;background:#eef2f5;position:sticky;bottom:0}
     <button class="btn ghost" onclick="go('p1')">← Ringkasan</button>
     <div><div class="sub">Kategori temuan</div><select id="fKat"><option value="">Semua</option></select></div>
     <div><div class="sub">Provinsi</div><select id="fProv"><option value="">Semua</option></select></div>
+    <div><div class="sub">Kota/Kabupaten</div><select id="fKota"><option value="">Semua</option></select></div>
+    <div><div class="sub">Kecamatan</div><select id="fKec"><option value="">Semua</option></select></div>
+    <div><div class="sub">Kelurahan/Desa</div><select id="fDesa"><option value="">Semua</option></select></div>
     <div><div class="sub">Cari No PBP</div><input type="search" id="fQ" placeholder="mis. PBP-0007"></div>
     <div class="card" style="padding:8px 16px;margin-left:auto"><div class="sub">Jumlah temuan</div><div class="big" id="cnt" style="font-size:26px">0</div></div>
   </div>
   <div class="card" style="margin-top:12px">
     <div class="scroll" style="max-height:520px"><table>
-      <thead><tr><th>#</th><th>Kategori temuan</th><th>No PBP</th><th>Nama (disamarkan)</th><th>Wilayah</th></tr></thead>
+      <thead><tr><th>#</th><th>Kategori temuan</th><th>No PBP</th><th>Nama (disamarkan)</th><th>Provinsi</th><th>Kota/Kabupaten</th><th>Kecamatan</th><th>Kelurahan/Desa</th></tr></thead>
       <tbody id="listBody"></tbody>
     </table></div>
     <div class="foot">Nama PBP disamarkan di sumber data. Seluruh angka pada mockup ini adalah data contoh yang dibangkitkan acak (tetap, bukan data riil).</div>
@@ -150,7 +153,7 @@ const sumArr=(f,L=P)=>{const o=f(L[0]).map(()=>0);L.forEach(p=>f(p).forEach((x,i
 const mask=["Ab","Si","Na","Wa","Ra","Ha","Ju","Su","Ma","Ni","Ta","Yo","Fa","Er","Di","Ko"],mask2=["Su","Ha","Pu","Ju","Wi","Ka","Ma","Ru","Li","Be","So","Da"];
 const rows=[];let no=1000;
 P.forEach(p=>cats.forEach(([c],ci)=>{for(let k=0;k<p.cc[ci];k++){no+=Math.round(rnd(3,29));
-  rows.push({c,w:p.n,no:"PBP-"+String(no).padStart(6,"0"),nm:mask[Math.floor(R()*mask.length)]+"*** "+mask2[Math.floor(R()*mask2.length)]+"***"})}}));
+  rows.push({c,w:p.n,k:"Kota "+(1+Math.floor(R()*3)),kc:"Kecamatan "+(1+Math.floor(R()*3)),d:"Desa "+(1+Math.floor(R()*4)),no:"PBP-"+String(no).padStart(6,"0"),nm:mask[Math.floor(R()*mask.length)]+"*** "+mask2[Math.floor(R()*mask2.length)]+"***"})}}));
 
 const $=s=>document.querySelector(s);
 const pct=(a,b)=>b?Math.round(a/b*100):0;
@@ -189,15 +192,27 @@ function render1(){
   $("#btnList").textContent=`Lihat daftar ${fmt(tem)} temuan SPI →`;
   document.querySelectorAll("#provBody tr").forEach(r=>{r.style.background=r.dataset.n===sel?"#dcebf6":"";r.style.fontWeight=r.dataset.n===sel?"600":""});
 }
+let fk="",fc="",fd="";
+function opts(id,vals,cur){const e=$(id),first=e.options[0].text;e.innerHTML="";e.add(new Option(first,""));vals.forEach(v=>e.add(new Option(v,v)));e.value=vals.includes(cur)?cur:""; return e.value}
+const uniq=a=>[...new Set(a)].sort((x,y)=>x.localeCompare(y,"id",{numeric:true}));
+function cascade(){
+  const r0=rows.filter(r=>!sel||r.w===sel);
+  fk=opts("#fKota",uniq(r0.map(r=>r.k)),fk);
+  const r1=r0.filter(r=>!fk||r.k===fk);
+  fc=opts("#fKec",uniq(r1.map(r=>r.kc)),fc);
+  const r2=r1.filter(r=>!fc||r.kc===fc);
+  fd=opts("#fDesa",uniq(r2.map(r=>r.d)),fd);
+}
 function render2(){
+  cascade();
   const k=$("#fKat").value,p=sel,q=$("#fQ").value.trim().toLowerCase();
-  const f=rows.filter(r=>(!k||r.c===k)&&(!p||r.w===p)&&(!q||r.no.toLowerCase().includes(q)));
-  $("#listBody").innerHTML=f.map((r,i)=>`<tr><td>${i+1}</td><td>${r.c}</td><td>${r.no}</td><td>${r.nm}</td><td>${r.w}</td></tr>`).join("")||`<tr><td colspan="5" class="sub">Tidak ada temuan untuk filter ini.</td></tr>`;
+  const f=rows.filter(r=>(!k||r.c===k)&&(!p||r.w===p)&&(!fk||r.k===fk)&&(!fc||r.kc===fc)&&(!fd||r.d===fd)&&(!q||r.no.toLowerCase().includes(q)));
+  $("#listBody").innerHTML=f.map((r,i)=>`<tr><td>${i+1}</td><td>${r.c}</td><td>${r.no}</td><td>${r.nm}</td><td>${r.w}</td><td>${r.k}</td><td>${r.kc}</td><td>${r.d}</td></tr>`).join("")||`<tr><td colspan="8" class="sub">Tidak ada temuan untuk filter ini.</td></tr>`;
   $("#cnt").textContent=fmt(f.length);
 }
-function setSel(v){sel=v;$("#sProv").value=v;$("#fProv").value=v;render1();render2()}
+function setSel(v){sel=v;fk=fc=fd="";$("#sProv").value=v;$("#fProv").value=v;render1();render2()}
 $("#sProv").onchange=e=>setSel(e.target.value);$("#fProv").onchange=e=>setSel(e.target.value);
-$("#fKat").onchange=render2;$("#fQ").oninput=render2;
+$("#fKat").onchange=render2;$("#fKota").onchange=e=>{fk=e.target.value;fc=fd="";render2()};$("#fKec").onchange=e=>{fc=e.target.value;fd="";render2()};$("#fDesa").onchange=e=>{fd=e.target.value;render2()};$("#fQ").oninput=render2;
 function go(id){["p1","p2"].forEach(x=>$("#"+x).classList.toggle("hide",x!==id));document.querySelectorAll(".tab").forEach(t=>t.classList.toggle("on",t.dataset.p===id))}
 document.querySelectorAll(".tab").forEach(t=>t.onclick=()=>go(t.dataset.p));
 render1();render2();
