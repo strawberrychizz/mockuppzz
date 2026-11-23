@@ -31,6 +31,10 @@ select,input[type=search]{border:1px solid var(--line);border-radius:6px;padding
 .leg div{display:flex;align-items:center;gap:6px;font-size:12px;margin:2px 0}
 .dot{width:10px;height:10px;border-radius:2px;display:inline-block}
 .grid2{display:grid;grid-template-columns:1fr;gap:12px;margin-top:12px}
+.bd{display:inline-block;border-radius:14px;padding:2px 10px;font-size:12px;border:1px solid;white-space:nowrap}
+.bd.g{background:#e3f6ec;color:#1f7a4d;border-color:#7fd3a6}.bd.y{background:#fff4d6;color:#8a5a00;border-color:#f0c85a}.bd.n{background:#eef0f4;color:#6b7785;border-color:#cfd5dc}.bd.r{background:#fde8e8;color:#a32727;border-color:#eba0a0}
+.oleh{display:block;font-size:11px;color:var(--mute);margin-top:3px;white-space:nowrap}
+#p2 th{white-space:nowrap}
 .scroll{max-height:380px;overflow:auto;border:1px solid var(--line);border-radius:8px}
 table{border-collapse:collapse;width:100%}
 th{position:sticky;top:0;background:#eef2f5;text-align:left;font-size:12px;padding:8px 10px;z-index:1}
@@ -114,8 +118,8 @@ tfoot td{font-weight:600;background:#eef2f5;position:sticky;bottom:0}
     <div class="card" style="padding:8px 16px;margin-left:auto"><div class="sub">Jumlah temuan</div><div class="big" id="cnt" style="font-size:26px">0</div></div>
   </div>
   <div class="card" style="margin-top:12px">
-    <div class="scroll" style="max-height:520px"><table>
-      <thead><tr><th>#</th><th>Kategori temuan</th><th>No PBP</th><th>Nama (disamarkan)</th><th>Provinsi</th><th>Kota/Kabupaten</th><th>Kecamatan</th><th>Kelurahan/Desa</th></tr></thead>
+    <div class="scroll" style="max-height:520px"><table style="min-width:1750px">
+      <thead><tr><th>#</th><th>Kategori temuan</th><th>No PBP</th><th>Nama (disamarkan)</th><th>Provinsi</th><th>Kota/Kabupaten</th><th>Kecamatan</th><th>Kelurahan/Desa</th><th>Status Serah</th><th>Verifikasi Serah</th><th>Hasil Review Data</th><th>Hasil Review Foto</th></tr></thead>
       <tbody id="listBody"></tbody>
     </table></div>
     <div class="foot">Nama PBP disamarkan di sumber data. Seluruh angka pada mockup ini adalah data contoh yang dibangkitkan acak (tetap, bukan data riil).</div>
@@ -157,6 +161,17 @@ const mask=["Ab","Si","Na","Wa","Ra","Ha","Ju","Su","Ma","Ni","Ta","Yo","Fa","Er
 const rows=[];let no=1000;
 P.forEach(p=>cats.forEach(([c],ci)=>{for(let k=0;k<p.cc[ci];k++){no+=Math.round(rnd(3,29));
   rows.push({c,w:p.n,k:"Kota "+(1+Math.floor(R()*3)),kc:"Kecamatan "+(1+Math.floor(R()*3)),d:"Desa "+(1+Math.floor(R()*4)),no:"PBP-"+String(no).padStart(6,"0"),nm:mask[Math.floor(R()*mask.length)]+"*** "+mask2[Math.floor(R()*mask2.length)]+"***"})}}));
+
+// Data detail tambahan (RNG terpisah agar data lain tidak berubah)
+const R3=rng(4242),pick3=(a,w)=>{let x=R3()*w.reduce((p,c)=>p+c,0);for(let i=0;i<a.length;i++){x-=w[i];if(x<0)return a[i]}return a[a.length-1]};
+const pet=["PET LAP Ab***","PET LAP Su***","PET LAP Ha***","PET LAP Ni***","PET LAP Ko***"],ver=["Ri*** Mu*** Mi***","Wi*** Ha***","De*** Pu***","An*** Sa***"];
+rows.forEach(r=>{
+  r.ss=pick3(["Diserahkan","Belum diserahkan"],[92,8]);r.os=r.ss==="Diserahkan"?pet[Math.floor(R3()*pet.length)]:"";
+  r.vs=pick3(["Verified","Unverified"],[75,25]);r.ov=r.vs==="Verified"?ver[Math.floor(R3()*ver.length)]:"";
+  r.rd=pick3(["Sudah Sesuai","Belum Sesuai"],[40,60]);
+  r.rf=pick3(["Belum Direviu","Sudah Sesuai","Belum Sesuai"],[70,18,12]);
+});
+const badge=(t,o)=>{const c={"Diserahkan":"g","Verified":"g","Sudah Sesuai":"g","Unverified":"y","Belum diserahkan":"y","Belum Sesuai":"r","Belum Direviu":"n"}[t]||"n";return `<span class="bd ${c}">${t}</span>${o?`<span class="oleh">Oleh: ${o}</span>`:""}`};
 
 const $=s=>document.querySelector(s);
 const pct=(a,b)=>b?Math.round(a/b*100):0;
@@ -214,7 +229,7 @@ function render2(){
   cascade();
   const k=$("#fKat").value,p=sel,q=$("#fQ").value.trim().toLowerCase();
   const f=rows.filter(r=>(!k||r.c===k)&&(!p||r.w===p)&&(!fk||r.k===fk)&&(!fc||r.kc===fc)&&(!fd||r.d===fd)&&(!q||r.no.toLowerCase().includes(q)));
-  $("#listBody").innerHTML=f.map((r,i)=>`<tr><td>${i+1}</td><td>${r.c}</td><td>${r.no}</td><td>${r.nm}</td><td>${r.w}</td><td>${r.k}</td><td>${r.kc}</td><td>${r.d}</td></tr>`).join("")||`<tr><td colspan="8" class="sub">Tidak ada temuan untuk filter ini.</td></tr>`;
+  $("#listBody").innerHTML=f.map((r,i)=>`<tr><td>${i+1}</td><td>${r.c}</td><td>${r.no}</td><td>${r.nm}</td><td>${r.w}</td><td>${r.k}</td><td>${r.kc}</td><td>${r.d}</td><td>${badge(r.ss)}</td><td>${badge(r.vs)}</td><td>${badge(r.rd)}</td><td>${badge(r.rf)}</td></tr>`).join("")||`<tr><td colspan="12" class="sub">Tidak ada temuan untuk filter ini.</td></tr>`;
   $("#cnt").textContent=fmt(f.length);
 }
 function setSel(v){sel=v;fk=fc=fd="";$("#sProv").value=v;$("#fProv").value=v;render1();render2()}
