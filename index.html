@@ -26,6 +26,7 @@ select,input[type=search]{border:1px solid var(--line);border-radius:6px;padding
 .sub{color:var(--mute);font-size:12px}
 .donutrow{display:flex;align-items:center;gap:14px}
 .donut{width:84px;height:84px;border-radius:50%;flex:none;position:relative}
+.donut.pie::after{display:none}
 .donut::after{content:"";position:absolute;inset:16px;background:#fff;border-radius:50%}
 .leg div{display:flex;align-items:center;gap:6px;font-size:12px;margin:2px 0}
 .dot{width:10px;height:10px;border-radius:2px;display:inline-block}
@@ -78,26 +79,25 @@ tfoot td{font-weight:600;background:#eef2f5;position:sticky;bottom:0}
     <div class="card"><h3>Status verifikasi</h3>
       <div class="donutrow"><div class="donut" id="dVer"></div>
       <div class="leg" id="lVer"></div></div></div>
-    <div class="card"><h3>Temuan SPI</h3><div class="big" id="kTemPct" style="color:var(--red)">–</div><div class="sub" id="kTemN">–</div></div>
+    <div class="card"><h3>Komposisi status PBP · <span id="compScope">Seluruh provinsi</span></h3>
+      <div class="donutrow"><div class="donut pie" id="dComp"></div><div class="leg" id="lComp"></div></div></div>
   </div>
 
   <div class="grid2">
     <div class="card">
       <h3>Breakdown provinsi · 38 provinsi <span class="sub">(klik baris untuk memilih provinsi, klik lagi untuk membatalkan)</span></h3>
       <div class="scroll"><table>
-        <thead><tr><th>Provinsi</th><th class="n">PBP</th><th>Temuan</th><th class="n">Rasio</th></tr></thead>
+        <thead><tr><th>Provinsi</th><th class="n">PBP</th><th class="n">Rasio Temuan Data</th><th class="n">Rasio Temuan Gambar</th></tr></thead>
         <tbody id="provBody"></tbody>
-        <tfoot><tr><td>Total</td><td class="n" id="tfP"></td><td id="tfT"></td><td class="n" id="tfR"></td></tr></tfoot>
+        <tfoot><tr><td>Total</td><td class="n" id="tfP"></td><td class="n" id="tfD"></td><td class="n" id="tfG"></td></tr></tfoot>
       </table></div>
       <div class="foot">Menampilkan 12 dari 38 provinsi · gulir untuk sisanya</div>
     </div>
 
-    <div class="card"><div class="chead"><h3>Temuan SPI per kategori · <span id="catScope">Seluruh provinsi</span></h3><button class="btn sm" id="btnList" onclick="go('p2')"></button></div><div id="catBars"></div></div>
+    <div class="card"><div class="chead"><h3>Analisa Anomali Data</h3><button class="btn sm" id="btnList" onclick="go('p2')"></button></div><div id="catBars"></div></div>
 
-    <div class="card"><h3>Komposisi status PBP · <span id="compScope">Seluruh provinsi</span></h3>
-      <div class="stack" id="stack"></div>
-      <div class="foot" id="stackLeg"></div>
-    </div>
+    <div class="card"><div class="chead"><h3>Analisa Anomali Gambar</h3></div><div id="rlBars"></div></div>
+
   </div>
 </section>
 
@@ -132,6 +132,8 @@ const rnd=(a,b)=>a+(b-a)*R();
 const names=["Aceh","Sumatera Utara","Sumatera Barat","Riau","Jambi","Sumatera Selatan","Bengkulu","Lampung","Kep. Bangka Belitung","Kepulauan Riau","DKI Jakarta","Jawa Barat","Jawa Tengah","DI Yogyakarta","Jawa Timur","Banten","Bali","Nusa Tenggara Barat","Nusa Tenggara Timur","Kalimantan Barat","Kalimantan Tengah","Kalimantan Selatan","Kalimantan Timur","Kalimantan Utara","Sulawesi Utara","Sulawesi Tengah","Sulawesi Selatan","Sulawesi Tenggara","Gorontalo","Sulawesi Barat","Maluku","Maluku Utara","Papua","Papua Barat","Papua Selatan","Papua Tengah","Papua Pegunungan","Papua Barat Daya"];
 const size={"Jawa Barat":520,"Jawa Tengah":480,"Jawa Timur":500,"Sulawesi Selatan":360,"Sumatera Utara":300,"Lampung":240,"Sumatera Selatan":230,"Banten":160,"DI Yogyakarta":120,"Nusa Tenggara Timur":170,"Aceh":170,"Kalimantan Barat":150,"Bali":90,"DKI Jakarta":90};
 const cats=[["Belum sesuai (umum)",.30],["→ Perwakilan 1 KK",.24],["Terima >1x Normal/Peng.",.15],["Normal → Perw. beda KK",.12],["Peng. → Peng. >1x",.08],["Peng. → Perw. beda KK",.06],["Normal → Peng. lok. lain",.05]];
+const rlCats=["Sama","Tidak Sama","Perlu Reviu","Ditolak"];
+const R2=rng(777); // RNG terpisah agar data lain tidak berubah
 const comp=["Normal","Perwakilan 1 KK","Perwakilan","Pengganti","Kolektif"];
 const compCol=["#0b5c8a","#3f8fbf","#7aaed0","#e0a100","#d64545"];
 function split(n,w){ // pembagian n menurut bobot w, metode sisa terbesar
@@ -145,7 +147,8 @@ const P=names.map(n=>{
   const w=rnd(.70,.88),t=rnd(.02,.08);const v=split(pbp,[w,1-w-t,t]);
   const cm=split(pbp,jit([.80,.08,.06,.04,.02],.3));
   const cc=split(tem,jit(cats.map(c=>c[1]),.7));
-  return{n,pbp,tem,ser,v,cm,cc}});
+  const rl=split(pbp,(()=>{const j=[.62,.18,.14,.06].map(x=>x*(1+(R2()-.5)*.4));const t=j.reduce((a,c)=>a+c,0);return j.map(x=>x/t)})());
+  return{n,pbp,tem,ser,v,cm,cc,rl}});
 const sum=(f,L=P)=>L.reduce((a,p)=>a+f(p),0);
 const sumArr=(f,L=P)=>{const o=f(L[0]).map(()=>0);L.forEach(p=>f(p).forEach((x,i)=>o[i]+=x));return o};
 
@@ -161,10 +164,12 @@ const colorOf=r=>r>=.1?"var(--red)":r>0?"var(--amber)":"var(--grey)";
 const fmt=n=>n.toLocaleString("id-ID");
 let sel="";
 
+const tg=p=>p.rl[1]; // Temuan Gambar (dummy) = kategori "Tidak Sama"
 const order=[...P].sort((a,b)=>(b.tem/b.pbp-a.tem/a.pbp)||b.tem-a.tem);
-const maxT=Math.max(...P.map(p=>p.tem));
-$("#provBody").innerHTML=order.map(p=>{const r=p.tem/p.pbp;return `<tr class="row" data-n="${p.n}" onclick="setSel(sel==='${p.n}'?'':'${p.n}')"><td>${p.n}</td><td class="n">${fmt(p.pbp)}</td><td><span class="bar" style="width:${p.tem/maxT*90}px"></span> ${p.tem}</td><td class="n"><span class="pill" style="background:${colorOf(r)}">${Math.round(r*100)}%</span></td></tr>`}).join("");
-$("#tfP").textContent=fmt(sum(p=>p.pbp));$("#tfT").textContent=fmt(sum(p=>p.tem));$("#tfR").textContent=pct(sum(p=>p.tem),sum(p=>p.pbp))+"%";
+const cell=(n,t)=>{const r=n/t;return `<span class="sub" style="margin-right:8px">${fmt(n)}</span><span class="pill" style="background:${colorOf(r)}">${Math.round(r*100)}%</span>`};
+$("#provBody").innerHTML=order.map(p=>`<tr class="row" data-n="${p.n}" onclick="setSel(sel==='${p.n}'?'':'${p.n}')"><td>${p.n}</td><td class="n">${fmt(p.pbp)}</td><td class="n">${cell(p.tem,p.pbp)}</td><td class="n">${cell(tg(p),p.pbp)}</td></tr>`).join("");
+$("#tfP").textContent=fmt(sum(p=>p.pbp));
+$("#tfD").innerHTML=cell(sum(p=>p.tem),sum(p=>p.pbp));$("#tfG").innerHTML=cell(sum(tg),sum(p=>p.pbp));
 
 ["Semua"].concat(["2026 – Periode 1","2026 – Periode 2","2025 – Periode 1","2025 – Periode 2"]).slice(1).forEach(x=>$("#sPer").add(new Option(x)));
 $("#sPer").title="Mockup: slicer periode belum menyaring angka (data contoh)";
@@ -183,12 +188,14 @@ function render1(){
   $("#dVer").style.background=`conic-gradient(var(--green) 0 ${a}%,var(--amber) ${a}% ${a+b}%,var(--red) ${a+b}% 100%)`;
   leg($("#lVer"),[["var(--green)",`Diverifikasi ${a}%`],["var(--amber)",`Belum diverifikasi ${b}%`],["var(--red)",`Ditolak ${c}%`]]);
   // v = [diverifikasi, belum diverifikasi, ditolak]
-  $("#kTemPct").textContent=pct(tem,tot)+"%";$("#kTemN").textContent=fmt(tem)+" PBP";
   const mx=Math.max(...cc,1);
-  $("#catScope").textContent=lbl;$("#compScope").textContent=lbl;
+  const rl=sumArr(p=>p.rl,L),mr=Math.max(...rl,1);
+  $("#rlBars").innerHTML=rlCats.map((n,i)=>`<div class="hbar"><span>${n}</span><span class="t"><i style="width:${rl[i]/mr*100}%"></i></span><b>${fmt(rl[i])}</b></div>`).join("");
+  $("#compScope").textContent=lbl;
   $("#catBars").innerHTML=cats.map(([n],i)=>[n,cc[i]]).sort((x,y)=>y[1]-x[1]).map(([n,x])=>`<div class="hbar"><span>${n}</span><span class="t"><i style="width:${x/mx*100}%"></i></span><b>${x}</b></div>`).join("");
-  $("#stack").innerHTML=cm.map((x,i)=>`<span style="width:${x/tot*100}%;background:${compCol[i]}">${x/tot>.07?comp[i]:""}</span>`).join("");
-  $("#stackLeg").textContent=comp.map((n,i)=>`${n} ${fmt(cm[i])}`).join(" · ");
+  let acc=0;const seg=cm.map((x,i)=>{const from=acc;acc+=x/tot*100;return `${compCol[i]} ${from}% ${i==cm.length-1?100:acc}%`});
+  $("#dComp").style.background=`conic-gradient(${seg.join(",")})`;
+  leg($("#lComp"),cm.map((x,i)=>[compCol[i],`${comp[i]} ${pct(x,tot)}%`]));
   $("#btnList").textContent=`Lihat daftar ${fmt(tem)} temuan SPI →`;
   document.querySelectorAll("#provBody tr").forEach(r=>{r.style.background=r.dataset.n===sel?"#dcebf6":"";r.style.fontWeight=r.dataset.n===sel?"600":""});
 }
