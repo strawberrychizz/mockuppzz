@@ -87,7 +87,7 @@ tfoot td{font-weight:600;background:#eef2f5;position:sticky;bottom:0}
     <div class="card">
       <h3>Breakdown provinsi · 38 provinsi <span class="sub">(klik baris untuk memilih provinsi, klik lagi untuk membatalkan)</span></h3>
       <div class="scroll"><table>
-        <thead><tr><th>Provinsi</th><th class="n">PBP</th><th class="n">Rasio Temuan Data</th><th class="n">Rasio Temuan Gambar</th></tr></thead>
+        <thead><tr><th>Provinsi</th><th class="n">PBP</th><th class="n">Rasio Temuan Data</th><th class="n">Rasio Temuan Foto</th></tr></thead>
         <tbody id="provBody"></tbody>
         <tfoot><tr><td>Total</td><td class="n" id="tfP"></td><td class="n" id="tfD"></td><td class="n" id="tfG"></td></tr></tfoot>
       </table></div>
@@ -96,7 +96,7 @@ tfoot td{font-weight:600;background:#eef2f5;position:sticky;bottom:0}
 
     <div class="card"><div class="chead"><h3>Analisa Anomali Data</h3><button class="btn sm" id="btnList" onclick="go('p2')"></button></div><div id="catBars"></div></div>
 
-    <div class="card"><div class="chead"><h3>Analisa Anomali Gambar</h3></div><div id="rlBars"></div></div>
+    <div class="card"><div class="chead"><h3>Analisa Anomali Foto</h3></div><div id="rlBars"></div></div>
 
   </div>
 </section>
@@ -164,7 +164,7 @@ const colorOf=r=>r>=.1?"var(--red)":r>0?"var(--amber)":"var(--grey)";
 const fmt=n=>n.toLocaleString("id-ID");
 let sel="";
 
-const tg=p=>p.rl[1]; // Temuan Gambar (dummy) = kategori "Tidak Sama"
+const tg=p=>p.rl[1]; // Temuan Foto (dummy) = kategori "Tidak Sama"
 const order=[...P].sort((a,b)=>(b.tem/b.pbp-a.tem/a.pbp)||b.tem-a.tem);
 const cell=(n,t)=>{const r=n/t;return `<span class="sub" style="margin-right:8px">${fmt(n)}</span><span class="pill" style="background:${colorOf(r)}">${Math.round(r*100)}%</span>`};
 $("#provBody").innerHTML=order.map(p=>`<tr class="row" data-n="${p.n}" onclick="setSel(sel==='${p.n}'?'':'${p.n}')"><td>${p.n}</td><td class="n">${fmt(p.pbp)}</td><td class="n">${cell(p.tem,p.pbp)}</td><td class="n">${cell(tg(p),p.pbp)}</td></tr>`).join("");
