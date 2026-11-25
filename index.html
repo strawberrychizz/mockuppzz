@@ -159,7 +159,7 @@ const comp=["Normal","Perwakilan 1 KK","Perwakilan","Pengganti","Kolektif"];
 const compCol=["#0b5c8a","#3f8fbf","#7aaed0","#e0a100","#d64545"];
 // Data contoh dibaca dari folder data/ (dibangkitkan oleh scripts/generate_data.py)
 const CUTOFFS=[{n:"Cutoff 1",d:"20 November 2026"},{n:"Cutoff 2",d:"30 Desember 2026"}];
-const STAGES=[{n:"Tahap 1",d:"20 November 2026"},{n:"Tahap 2",d:"29 November 2026"},{n:"Tahap 3",d:"5 Desember 2026"}];
+const STAGES=[{n:"Tahap 1",d:["20 November 2026","1 Januari 2027"]},{n:"Tahap 2",d:["29 November 2026","8 Januari 2027"]},{n:"Tahap 3",d:["5 Desember 2026","15 Januari 2027"]}]; // tanggal tahap berbeda per cutoff
 const cache={};
 async function loadData(co,t){
   const key=co+"-"+t;if(cache[key])return cache[key];
@@ -257,12 +257,12 @@ function setVer(v){
 function go(id){["p1","p2"].forEach(x=>$("#"+x).classList.toggle("hide",x!==id));document.querySelectorAll(".tab").forEach(t=>t.classList.toggle("on",t.dataset.p===id))}
 document.querySelectorAll(".tab").forEach(t=>t.onclick=()=>go(t.dataset.p));
 CUTOFFS.forEach((t,i)=>$("#sCo").add(new Option(t.n+" · "+t.d,i)));
-STAGES.forEach((t,i)=>$("#sCut").add(new Option(t.n+" · "+t.d,i)));
+function fillTahap(){const cur=$("#sCut").value||"2",co=+$("#sCo").value;$("#sCut").innerHTML="";STAGES.forEach((t,i)=>$("#sCut").add(new Option(t.n+" · "+t.d[co],i)));$("#sCut").value=cur}
 async function setStage(){
   try{const d=await loadData(+$("#sCo").value,+$("#sCut").value);$("#loadErr").classList.add("hide");P=d.P;rows=d.rows;fk=fc=fd="";buildProv();render1();render2()}
   catch(e){$("#loadErr").textContent="Data contoh gagal dimuat: "+e.message+". Buka halaman ini lewat server web (mis. hosting Vercel atau 'python3 -m http.server'), bukan dengan klik dua kali file HTML.";$("#loadErr").classList.remove("hide")}}
-$("#sCo").onchange=setStage;$("#sCut").onchange=setStage;
-$("#sCo").value=0;$("#sCut").value=2;setStage();
+$("#sCo").onchange=()=>{fillTahap();setStage()};$("#sCut").onchange=setStage;
+$("#sCo").value=0;fillTahap();$("#sCut").value=2;setStage();
 </script>
 </body>
 </html>

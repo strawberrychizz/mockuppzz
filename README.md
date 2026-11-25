@@ -21,7 +21,14 @@ Mockup dashboard SPI · Reviu TI. **Seluruh angka adalah data contoh (dummy), bu
 | 1 | 20 November 2026 |
 | 2 | 30 Desember 2026 |
 
-Setiap cutoff memuat Tahap 1–3. Total PBP suatu tahap sama di kedua cutoff; yang berbeda adalah progres reviu dan jumlah temuan (Cutoff 2 lebih maju).
+Setiap cutoff memuat Tahap 1–3 dengan tanggal berbeda:
+
+| Tahap | Cutoff 1 | Cutoff 2 |
+|---|---|---|
+| 1 | 20 November 2026 | 1 Januari 2027 |
+| 2 | 29 November 2026 | 8 Januari 2027 |
+| 3 | 5 Desember 2026 | 15 Januari 2027 |
+ Total PBP suatu tahap sama di kedua cutoff; yang berbeda adalah progres reviu dan jumlah temuan (Cutoff 2 lebih maju).
 
 ## Mengubah data
 Ubah `total`, `seed`, atau rentang rasio di `STAGES` pada `scripts/generate_data.py`, lalu jalankan `python3 scripts/generate_data.py`.

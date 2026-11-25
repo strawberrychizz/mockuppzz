@@ -12,11 +12,11 @@ Seluruh angka acak tetapi deterministik (seed tetap) dan BUKAN data riil.
 import csv, json, os, random
 
 CUTOFFS = {1: "20 November 2026", 2: "30 Desember 2026"}
-# reviu = rentang porsi Sudah Reviu, temuan = rentang porsi Belum Sesuai (terhadap PBP); indeks 0 = Cutoff 1, 1 = Cutoff 2
+# tanggal = (Cutoff 1, Cutoff 2); reviu = rentang porsi Sudah Reviu, temuan = rentang porsi Belum Sesuai (terhadap PBP); indeks 0 = Cutoff 1, 1 = Cutoff 2
 STAGES = [
-    dict(n=1, nama="Tahap 1", tanggal="20 November 2026", total=822_000,   seed=20261101, reviu=[(.44, .52), (.70, .80)],   temuan=[(.018, .10), (.03, .12)]),
-    dict(n=2, nama="Tahap 2", tanggal="29 November 2026", total=1_535_324, seed=20261111, reviu=[(.66, .77), (.86, .93)],   temuan=[(.026, .145), (.04, .15)]),
-    dict(n=3, nama="Tahap 3", tanggal="5 Desember 2026",  total=2_341_243, seed=20261120, reviu=[(.86, .97), (.97, .995)],  temuan=[(.03, .17), (.05, .19)]),
+    dict(n=1, nama="Tahap 1", tanggal=("20 November 2026", "1 Januari 2027"), total=822_000,   seed=20261101, reviu=[(.44, .52), (.70, .80)],   temuan=[(.018, .10), (.03, .12)]),
+    dict(n=2, nama="Tahap 2", tanggal=("29 November 2026", "8 Januari 2027"), total=1_535_324, seed=20261111, reviu=[(.66, .77), (.86, .93)],   temuan=[(.026, .145), (.04, .15)]),
+    dict(n=3, nama="Tahap 3", tanggal=("5 Desember 2026", "15 Januari 2027"), total=2_341_243, seed=20261120, reviu=[(.86, .97), (.97, .995)],  temuan=[(.03, .17), (.05, .19)]),
 ]
 SAMPLE_ROWS = 2000   # perkiraan jumlah baris contoh di CSV temuan per tahap
 
@@ -63,7 +63,7 @@ for st in STAGES:
                     "review_foto": {k: v for (k, _), v in zip(FOTO, rl)}})
     assert sum(o["pbp"] for o in out) == st["total"]
     with open(f"data/cutoff-{co}/tahap-{st['n']}.json", "w", encoding="utf-8") as f:
-        json.dump({"cutoff": f"Cutoff {co}", "tanggal_cutoff": co_tgl, "tahap": st["nama"], "tanggal": st["tanggal"], "total_pbp": st["total"], "provinsi": out}, f, ensure_ascii=False, indent=1)
+        json.dump({"cutoff": f"Cutoff {co}", "tanggal_cutoff": co_tgl, "tahap": st["nama"], "tanggal": st["tanggal"][co - 1], "total_pbp": st["total"], "provinsi": out}, f, ensure_ascii=False, indent=1)
 
     # contoh baris temuan: proporsional per (provinsi, kategori), minimal 1 baris bila ada temuan
     tot_tem = sum(o["belum_sesuai"] for o in out); frac = SAMPLE_ROWS / tot_tem
