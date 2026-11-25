@@ -53,15 +53,33 @@ tfoot td{font-weight:600;background:#eef2f5;position:sticky;bottom:0}
 .chead{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:8px}.chead h3{margin:0}.btn.sm{padding:6px 12px;font-size:13px}
 .foot{color:var(--mute);font-size:12px;margin-top:6px}
 .top2{display:flex;gap:12px;align-items:end;flex-wrap:wrap}
-.hide{display:none}
+.hide{display:none!important}
+.v1 .v2only{display:none!important}
+.land{min-height:80vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:18px}
+.land small{letter-spacing:.08em;color:var(--mute)}.land h1{margin:0;font-size:28px}
+.opts{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;margin-top:8px}
+.opt{width:290px;text-align:left;background:#fff;border:2px solid var(--line);border-radius:12px;padding:20px;cursor:pointer;font:inherit;color:var(--ink)}
+.opt:hover{border-color:var(--accent);box-shadow:0 2px 10px #0b5c8a22}.opt b{display:block;font-size:17px;margin-bottom:6px;color:var(--accent)}.opt span{color:var(--mute);font-size:13px}
+.switch{background:#ffffff26;color:#fff;border:1px solid #ffffff66;border-radius:20px;padding:3px 12px;font:inherit;font-size:12px;cursor:pointer;margin-left:8px}
 @media(max-width:800px){.kpis{grid-template-columns:1fr 1fr}.hbar{grid-template-columns:130px 1fr 28px}}
 </style>
 </head>
 <body>
 <div class="wrap">
 
+<section id="p0" class="land">
+  <small>SPI · REVIU TI</small>
+  <h1>Monitoring Anomali Data <span class="badge" style="background:#0b5c8a1f;color:var(--accent)">Data contoh</span></h1>
+  <div class="sub">Pilih versi tampilan dashboard</div>
+  <div class="opts">
+    <button class="opt" onclick="setVer(1)"><b>Versi 1</b>Reviu Data Saja<br><span>Tanpa analisis dan hasil review foto.</span></button>
+    <button class="opt" onclick="setVer(2)"><b>Versi 2</b>Reviu Data dan Foto<br><span>Termasuk Analisa Anomali Foto, rasio temuan foto, dan hasil review foto.</span></button>
+  </div>
+</section>
+
+<div id="app" class="hide">
 <div class="band">
-  <div><small>SPI · REVIU TI</small><h1>Monitoring Anomali Data <span class="badge">Data contoh</span></h1></div>
+  <div><small>SPI · REVIU TI</small><h1>Monitoring Anomali Data <span class="badge">Data contoh</span> <span class="badge" id="verBadge"></span><button class="switch" onclick="setVer(0)">Ganti versi</button></h1></div>
   <div class="slicers">
     <div><label>Tahun dan periode salur</label><select id="sPer"><option>Semua</option></select></div>
     <div><label>Provinsi</label><select id="sProv"><option value="">Semua</option></select></div>
@@ -91,16 +109,16 @@ tfoot td{font-weight:600;background:#eef2f5;position:sticky;bottom:0}
     <div class="card">
       <h3>Breakdown provinsi · 38 provinsi <span class="sub">(klik baris untuk memilih provinsi, klik lagi untuk membatalkan)</span></h3>
       <div class="scroll"><table>
-        <thead><tr><th>Provinsi</th><th class="n">PBP</th><th class="n">Rasio Temuan Data</th><th class="n">Rasio Temuan Foto</th></tr></thead>
+        <thead><tr><th>Provinsi</th><th class="n">PBP</th><th class="n">Rasio Temuan Data</th><th class="n v2only">Rasio Temuan Foto</th></tr></thead>
         <tbody id="provBody"></tbody>
-        <tfoot><tr><td>Total</td><td class="n" id="tfP"></td><td class="n" id="tfD"></td><td class="n" id="tfG"></td></tr></tfoot>
+        <tfoot><tr><td>Total</td><td class="n" id="tfP"></td><td class="n" id="tfD"></td><td class="n v2only" id="tfG"></td></tr></tfoot>
       </table></div>
       <div class="foot">Menampilkan 12 dari 38 provinsi · gulir untuk sisanya</div>
     </div>
 
     <div class="card"><div class="chead"><h3>Analisa Anomali Data</h3><button class="btn sm" id="btnList" onclick="go('p2')"></button></div><div id="catBars"></div></div>
 
-    <div class="card"><div class="chead"><h3>Analisa Anomali Foto</h3></div><div id="rlBars"></div></div>
+    <div class="card v2only"><div class="chead"><h3>Analisa Anomali Foto</h3></div><div id="rlBars"></div></div>
 
   </div>
 </section>
@@ -119,13 +137,14 @@ tfoot td{font-weight:600;background:#eef2f5;position:sticky;bottom:0}
   </div>
   <div class="card" style="margin-top:12px">
     <div class="scroll" style="max-height:520px"><table style="min-width:1750px">
-      <thead><tr><th>#</th><th>Kategori temuan</th><th>No PBP</th><th>Nama (disamarkan)</th><th>Provinsi</th><th>Kota/Kabupaten</th><th>Kecamatan</th><th>Kelurahan/Desa</th><th>Status Serah</th><th>Verifikasi Serah</th><th>Hasil Review Data</th><th>Hasil Review Foto</th></tr></thead>
+      <thead><tr><th>#</th><th>Kategori temuan</th><th>No PBP</th><th>Nama (disamarkan)</th><th>Provinsi</th><th>Kota/Kabupaten</th><th>Kecamatan</th><th>Kelurahan/Desa</th><th>Status Serah</th><th>Verifikasi Serah</th><th>Hasil Review Data</th><th class="v2only">Hasil Review Foto</th></tr></thead>
       <tbody id="listBody"></tbody>
     </table></div>
     <div class="foot">Nama PBP disamarkan di sumber data. Seluruh angka pada mockup ini adalah data contoh yang dibangkitkan acak (tetap, bukan data riil).</div>
   </div>
 </section>
 
+</div>
 </div>
 
 <script>
@@ -182,7 +201,7 @@ let sel="";
 const tg=p=>p.rl[1]; // Temuan Foto (dummy) = kategori "Tidak Sama"
 const order=[...P].sort((a,b)=>(b.tem/b.pbp-a.tem/a.pbp)||b.tem-a.tem);
 const cell=(n,t)=>{const r=n/t;return `<span class="sub" style="margin-right:8px">${fmt(n)}</span><span class="pill" style="background:${colorOf(r)}">${Math.round(r*100)}%</span>`};
-$("#provBody").innerHTML=order.map(p=>`<tr class="row" data-n="${p.n}" onclick="setSel(sel==='${p.n}'?'':'${p.n}')"><td>${p.n}</td><td class="n">${fmt(p.pbp)}</td><td class="n">${cell(p.tem,p.pbp)}</td><td class="n">${cell(tg(p),p.pbp)}</td></tr>`).join("");
+$("#provBody").innerHTML=order.map(p=>`<tr class="row" data-n="${p.n}" onclick="setSel(sel==='${p.n}'?'':'${p.n}')"><td>${p.n}</td><td class="n">${fmt(p.pbp)}</td><td class="n">${cell(p.tem,p.pbp)}</td><td class="n v2only">${cell(tg(p),p.pbp)}</td></tr>`).join("");
 $("#tfP").textContent=fmt(sum(p=>p.pbp));
 $("#tfD").innerHTML=cell(sum(p=>p.tem),sum(p=>p.pbp));$("#tfG").innerHTML=cell(sum(tg),sum(p=>p.pbp));
 
@@ -229,12 +248,17 @@ function render2(){
   cascade();
   const k=$("#fKat").value,p=sel,q=$("#fQ").value.trim().toLowerCase();
   const f=rows.filter(r=>(!k||r.c===k)&&(!p||r.w===p)&&(!fk||r.k===fk)&&(!fc||r.kc===fc)&&(!fd||r.d===fd)&&(!q||r.no.toLowerCase().includes(q)));
-  $("#listBody").innerHTML=f.map((r,i)=>`<tr><td>${i+1}</td><td>${r.c}</td><td>${r.no}</td><td>${r.nm}</td><td>${r.w}</td><td>${r.k}</td><td>${r.kc}</td><td>${r.d}</td><td>${badge(r.ss)}</td><td>${badge(r.vs)}</td><td>${badge(r.rd)}</td><td>${badge(r.rf)}</td></tr>`).join("")||`<tr><td colspan="12" class="sub">Tidak ada temuan untuk filter ini.</td></tr>`;
+  $("#listBody").innerHTML=f.map((r,i)=>`<tr><td>${i+1}</td><td>${r.c}</td><td>${r.no}</td><td>${r.nm}</td><td>${r.w}</td><td>${r.k}</td><td>${r.kc}</td><td>${r.d}</td><td>${badge(r.ss)}</td><td>${badge(r.vs)}</td><td>${badge(r.rd)}</td><td class="v2only">${badge(r.rf)}</td></tr>`).join("")||`<tr><td colspan="12" class="sub">Tidak ada temuan untuk filter ini.</td></tr>`;
   $("#cnt").textContent=fmt(f.length);
 }
 function setSel(v){sel=v;fk=fc=fd="";$("#sProv").value=v;$("#fProv").value=v;render1();render2()}
 $("#sProv").onchange=e=>setSel(e.target.value);$("#fProv").onchange=e=>setSel(e.target.value);
 $("#fKat").onchange=render2;$("#fKota").onchange=e=>{fk=e.target.value;fc=fd="";render2()};$("#fKec").onchange=e=>{fc=e.target.value;fd="";render2()};$("#fDesa").onchange=e=>{fd=e.target.value;render2()};$("#fQ").oninput=render2;
+function setVer(v){
+  document.body.classList.toggle("v1",v===1);
+  $("#p0").classList.toggle("hide",v!==0);$("#app").classList.toggle("hide",v===0);
+  if(v){$("#verBadge").textContent=v===1?"Versi 1 · Reviu Data Saja":"Versi 2 · Reviu Data dan Foto";go("p1")}
+}
 function go(id){["p1","p2"].forEach(x=>$("#"+x).classList.toggle("hide",x!==id));document.querySelectorAll(".tab").forEach(t=>t.classList.toggle("on",t.dataset.p===id))}
 document.querySelectorAll(".tab").forEach(t=>t.onclick=()=>go(t.dataset.p));
 render1();render2();
