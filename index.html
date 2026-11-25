@@ -13,6 +13,8 @@ body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.4 "Segoe UI",Ari
 .band small{opacity:.8;letter-spacing:.08em;font-size:11px}
 .band h1{margin:0;font-size:20px;font-weight:600}
 .badge{background:#ffffff30;border-radius:20px;padding:2px 10px;font-size:11px;margin-left:8px;vertical-align:middle}
+.bandr{display:flex;flex-direction:column;align-items:flex-end;gap:8px}
+.cutoff{font-size:12px;opacity:.9;background:#ffffff26;border-radius:20px;padding:3px 12px;white-space:nowrap}
 .slicers{display:flex;gap:10px;flex-wrap:wrap}
 .slicers label{font-size:11px;display:block;opacity:.85;margin-bottom:2px}
 select,input[type=search]{border:1px solid var(--line);border-radius:6px;padding:6px 8px;font:inherit;background:#fff;color:var(--ink);min-width:150px}
@@ -28,7 +30,7 @@ select,input[type=search]{border:1px solid var(--line);border-radius:6px;padding
 .donut{width:84px;height:84px;border-radius:50%;flex:none;position:relative}
 .donut.pie::after{display:none}
 .donut::after{content:"";position:absolute;inset:16px;background:#fff;border-radius:50%}
-.leg div{display:flex;align-items:center;gap:6px;font-size:12px;margin:2px 0}
+.leg div{display:flex;align-items:flex-start;gap:6px;font-size:12px;line-height:1.3;margin:3px 0}.leg .dot{margin-top:3px;flex:none}
 .dot{width:10px;height:10px;border-radius:2px;display:inline-block}
 .grid2{display:grid;grid-template-columns:1fr;gap:12px;margin-top:12px}
 .bd{display:inline-block;border-radius:14px;padding:2px 10px;font-size:12px;border:1px solid;white-space:nowrap}
@@ -80,10 +82,11 @@ tfoot td{font-weight:600;background:#eef2f5;position:sticky;bottom:0}
 <div id="app" class="hide">
 <div class="band">
   <div><small>SPI · REVIU TI</small><h1>Monitoring Anomali Data <span class="badge">Data contoh</span> <span class="badge" id="verBadge"></span><button class="switch" onclick="setVer(0)">Ganti versi</button></h1></div>
+  <div class="bandr"><div class="cutoff">Cutoff: 23 November 2026 23:23 WIB</div>
   <div class="slicers">
     <div><label>Tahun dan periode salur</label><select id="sPer"><option>Semua</option></select></div>
     <div><label>Provinsi</label><select id="sProv"><option value="">Semua</option></select></div>
-  </div>
+  </div></div>
 </div>
 
 <div class="tabs">
@@ -210,17 +213,17 @@ $("#sPer").title="Mockup: slicer periode belum menyaring angka (data contoh)";
 [...names].sort().forEach(n=>{$("#sProv").add(new Option(n,n));$("#fProv").add(new Option(n,n))});
 cats.forEach(([c])=>$("#fKat").add(new Option(c,c)));
 
-function leg(el,items){el.innerHTML=items.map(([c,t])=>`<div><span class="dot" style="background:${c}"></span>${t}</div>`).join("")}
+function leg(el,items){el.innerHTML=items.map(([c,t])=>`<div><span class="dot" style="background:${c}"></span><span>${t}</span></div>`).join("")}
 function render1(){
   const L=sel?P.filter(p=>p.n===sel):P, lbl=sel||"Seluruh provinsi";
   const tot=sum(p=>p.pbp,L),tem=sum(p=>p.tem,L),ser=sum(p=>p.ser,L),v=sumArr(p=>p.v,L),cc=sumArr(p=>p.cc,L),cm=sumArr(p=>p.cm,L);
   $("#kTot").textContent=fmt(tot);$("#kScope").textContent=lbl;
   const sp=pct(ser,tot);
   $("#dSerah").style.background=`conic-gradient(var(--accent) 0 ${sp}%,var(--grey) ${sp}% 100%)`;
-  leg($("#lSerah"),[["var(--accent)",`Diserahkan ${sp}%`],["var(--grey)",`Belum diserahkan ${100-sp}%`]]);
+  leg($("#lSerah"),[["var(--accent)",`Diserahkan<br><b>${fmt(ser)}</b> · ${sp}%`],["var(--grey)",`Belum diserahkan<br><b>${fmt(tot-ser)}</b> · ${100-sp}%`]]);
   const a=pct(v[0],tot),b=pct(v[1],tot),c=100-a-b;
   $("#dVer").style.background=`conic-gradient(var(--green) 0 ${a}%,var(--amber) ${a}% ${a+b}%,var(--red) ${a+b}% 100%)`;
-  leg($("#lVer"),[["var(--green)",`Diverifikasi ${a}%`],["var(--amber)",`Belum diverifikasi ${b}%`],["var(--red)",`Ditolak ${c}%`]]);
+  leg($("#lVer"),[["var(--green)",`Diverifikasi<br><b>${fmt(v[0])}</b> · ${a}%`],["var(--amber)",`Belum diverifikasi<br><b>${fmt(v[1])}</b> · ${b}%`],["var(--red)",`Ditolak<br><b>${fmt(v[2])}</b> · ${c}%`]]);
   // v = [diverifikasi, belum diverifikasi, ditolak]
   const mx=Math.max(...cc,1);
   const rl=sumArr(p=>p.rl,L),mr=Math.max(...rl,1);
@@ -229,7 +232,7 @@ function render1(){
   $("#catBars").innerHTML=cats.map(([n],i)=>[n,cc[i]]).sort((x,y)=>y[1]-x[1]).map(([n,x])=>`<div class="hbar"><span>${n}</span><span class="t"><i style="width:${x/mx*100}%"></i></span><b>${x}</b></div>`).join("");
   let acc=0;const seg=cm.map((x,i)=>{const from=acc;acc+=x/tot*100;return `${compCol[i]} ${from}% ${i==cm.length-1?100:acc}%`});
   $("#dComp").style.background=`conic-gradient(${seg.join(",")})`;
-  leg($("#lComp"),cm.map((x,i)=>[compCol[i],`${comp[i]} ${pct(x,tot)}%`]));
+  leg($("#lComp"),cm.map((x,i)=>[compCol[i],`${comp[i]}<br><b>${fmt(x)}</b> · ${pct(x,tot)}%`]));
   $("#btnList").textContent=`Lihat daftar ${fmt(tem)} temuan SPI →`;
   document.querySelectorAll("#provBody tr").forEach(r=>{r.style.background=r.dataset.n===sel?"#dcebf6":"";r.style.fontWeight=r.dataset.n===sel?"600":""});
 }
