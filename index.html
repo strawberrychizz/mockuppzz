@@ -28,7 +28,7 @@ select,input[type=search]{border:1px solid var(--line);border-radius:6px;padding
 .big{font-size:34px;font-weight:600;line-height:1.1}
 .sub{color:var(--mute);font-size:12px}
 .pieWrap svg{width:100%;height:auto;display:block}.pieWrap path{transition:opacity .15s}.pieWrap path:hover{opacity:.82}
-.pleg{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 12px;font-size:12px;margin-top:2px}.pleg span{display:inline-flex;align-items:center;gap:5px;white-space:nowrap}
+.pleg{display:grid;grid-template-columns:1fr 1fr;gap:6px 10px;font-size:12px;line-height:1.3;margin-top:8px;padding:0 6px}.pleg div{display:flex;align-items:flex-start;gap:6px}.pleg .dot{margin-top:3px;flex:none}
 .donutrow{display:flex;align-items:center;gap:14px}
 .donut{width:84px;height:84px;border-radius:50%;flex:none;position:relative}
 .donut.pie::after{display:none}
@@ -49,8 +49,8 @@ tbody tr.row{cursor:pointer}tbody tr.row:hover{background:#f1f7fb}
 .bar{height:14px;background:#cfe3f1;border-radius:3px;display:inline-block;vertical-align:middle}
 .pill{display:inline-block;min-width:48px;text-align:center;border-radius:4px;padding:1px 6px;color:#fff;font-size:12px}
 tfoot td{font-weight:600;background:#eef2f5;position:sticky;bottom:0}
-.hbar{display:grid;grid-template-columns:230px 1fr 34px;gap:8px;align-items:center;margin:5px 0;font-size:13px}
-.hbar .t{height:16px;background:#eef2f5;border-radius:3px}.hbar .t i{display:block;height:100%;background:var(--accent);border-radius:3px}
+.hbar{display:grid;grid-template-columns:230px minmax(0,1fr) 84px;gap:8px;align-items:center;margin:5px 0;font-size:13px}
+.hbar>b{text-align:right;font-variant-numeric:tabular-nums}.hbar .t{height:16px;background:#eef2f5;border-radius:3px}.hbar .t i{display:block;height:100%;background:var(--accent);border-radius:3px}
 .stack{display:flex;height:26px;border-radius:5px;overflow:hidden}
 .stack span{display:flex;align-items:center;justify-content:center;color:#fff;font-size:11px}
 .btn{background:var(--accent);color:#fff;border:0;border-radius:8px;padding:9px 16px;font:inherit;cursor:pointer}
@@ -66,7 +66,7 @@ tfoot td{font-weight:600;background:#eef2f5;position:sticky;bottom:0}
 .opt{width:290px;text-align:left;background:#fff;border:2px solid var(--line);border-radius:12px;padding:20px;cursor:pointer;font:inherit;color:var(--ink)}
 .opt:hover{border-color:var(--accent);box-shadow:0 2px 10px #0b5c8a22}.opt b{display:block;font-size:17px;margin-bottom:6px;color:var(--accent)}.opt span{color:var(--mute);font-size:13px}
 .switch{background:#ffffff26;color:#fff;border:1px solid #ffffff66;border-radius:20px;padding:3px 12px;font:inherit;font-size:12px;cursor:pointer;margin-left:8px}
-@media(max-width:800px){.kpis{grid-template-columns:1fr 1fr}.hbar{grid-template-columns:130px 1fr 28px}}
+@media(max-width:800px){.kpis{grid-template-columns:1fr 1fr}.hbar{grid-template-columns:130px minmax(0,1fr) 76px}}
 </style>
 </head>
 <body>
@@ -223,7 +223,7 @@ function pie(id,items,tot){
     if(fr>=.07){const am=(a0+a1)/2,[lx,ly]=P(am,r+3),[ex,ey]=P(am,r+15),right=Math.sin(am)>=0,tx=ex+(right?12:-12);
       labels+=`<polyline points="${lx},${ly} ${ex},${ey} ${tx+(right?-3:3)},${ey}" fill="none" stroke="#9aa5b1" stroke-width="1"/><text x="${tx}" y="${ey+4}" text-anchor="${right?"start":"end"}" font-size="11" fill="#4a5560">${fmt(n)} (${(fr*100).toFixed(2)}%)</text>`}
   });
-  $(id).innerHTML=`<svg viewBox="0 0 340 200" role="img">${paths}${labels}</svg><div class="pleg">${items.map(([c,l])=>`<span><i class="dot" style="background:${c}"></i>${l}</span>`).join("")}</div>`;
+  $(id).innerHTML=`<svg viewBox="0 0 340 200" role="img">${paths}${labels}</svg><div class="pleg">${items.map(([c,l,n])=>`<div><i class="dot" style="background:${c}"></i><span>${l}<br><b>${fmt(n)}</b> · ${pct(n,tot)}%</span></div>`).join("")}</div>`;
 }
 function render1(){
   const L=sel?P.filter(p=>p.n===sel):P, lbl=sel||"Seluruh provinsi";
