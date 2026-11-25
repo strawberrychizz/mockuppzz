@@ -1,0 +1,1035 @@
+{
+ "cutoff": "Cutoff 2",
+ "tanggal_cutoff": "30 Desember 2026",
+ "tahap": "Tahap 3",
+ "tanggal": "5 Desember 2026",
+ "total_pbp": 2341243,
+ "provinsi": [
+  {
+   "provinsi": "Aceh",
+   "pbp": 77449,
+   "sudah_reviu": 75842,
+   "belum_sesuai": 12704,
+   "komposisi": {
+    "Normal": 64285,
+    "Perwakilan 1 KK": 5272,
+    "Perwakilan": 4119,
+    "Pengganti": 2502,
+    "Kolektif": 1271
+   },
+   "kategori_belum_sesuai": {
+    "→ Perwakilan 1 KK": 3309,
+    "Terima >1x Normal/Peng.": 3388,
+    "Normal → Perw. beda KK": 1871,
+    "Peng. → Peng. >1x": 1380,
+    "Peng. → Perw. beda KK": 1648,
+    "Normal → Peng. lok. lain": 1108
+   },
+   "review_foto": {
+    "Sama": 47433,
+    "Tidak Sama": 11865,
+    "Perlu Reviu": 12997,
+    "Ditolak": 5154
+   }
+  },
+  {
+   "provinsi": "Sumatera Utara",
+   "pbp": 138768,
+   "sudah_reviu": 136063,
+   "belum_sesuai": 7490,
+   "komposisi": {
+    "Normal": 108775,
+    "Perwakilan 1 KK": 11087,
+    "Perwakilan": 9882,
+    "Pengganti": 6093,
+    "Kolektif": 2931
+   },
+   "kategori_belum_sesuai": {
+    "→ Perwakilan 1 KK": 3085,
+    "Terima >1x Normal/Peng.": 1542,
+    "Normal → Perw. beda KK": 849,
+    "Peng. → Peng. >1x": 926,
+    "Peng. → Perw. beda KK": 746,
+    "Normal → Peng. lok. lain": 342
+   },
+   "review_foto": {
+    "Sama": 82982,
+    "Tidak Sama": 27473,
+    "Perlu Reviu": 18359,
+    "Ditolak": 9954
+   }
+  },
+  {
+   "provinsi": "Sumatera Barat",
+   "pbp": 47381,
+   "sudah_reviu": 46102,
+   "belum_sesuai": 7222,
+   "komposisi": {
+    "Normal": 38095,
+    "Perwakilan 1 KK": 3655,
+    "Perwakilan": 2477,
+    "Pengganti": 2169,
+    "Kolektif": 985
+   },
+   "kategori_belum_sesuai": {
+    "→ Perwakilan 1 KK": 2337,
+    "Terima >1x Normal/Peng.": 1459,
+    "Normal → Perw. beda KK": 1343,
+    "Peng. → Peng. >1x": 946,
+    "Peng. → Perw. beda KK": 617,
+    "Normal → Peng. lok. lain": 520
+   },
+   "review_foto": {
+    "Sama": 29325,
+    "Tidak Sama": 8407,
+    "Perlu Reviu": 6651,
+    "Ditolak": 2998
+   }
+  },
+  {
+   "provinsi": "Riau",
+   "pbp": 27859,
+   "sudah_reviu": 27196,
+   "belum_sesuai": 1467,
+   "komposisi": {
+    "Normal": 22127,
+    "Perwakilan 1 KK": 2413,
+    "Perwakilan": 1732,
+    "Pengganti": 1047,
+    "Kolektif": 540
+   },
+   "kategori_belum_sesuai": {
+    "→ Perwakilan 1 KK": 585,
+    "Terima >1x Normal/Peng.": 253,
+    "Normal → Perw. beda KK": 283,
+    "Peng. → Peng. >1x": 113,
+    "Peng. → Perw. beda KK": 117,
+    "Normal → Peng. lok. lain": 116
+   },
+   "review_foto": {
+    "Sama": 17837,
+    "Tidak Sama": 4965,
+    "Perlu Reviu": 3158,
+    "Ditolak": 1899
+   }
+  },
+  {
+   "provinsi": "Jambi",
+   "pbp": 12234,
+   "sudah_reviu": 12062,
+   "belum_sesuai": 1839,
+   "komposisi": {
+    "Normal": 9616,
+    "Perwakilan 1 KK": 994,
+    "Perwakilan": 799,
+    "Pengganti": 549,
+    "Kolektif": 276
+   },
+   "kategori_belum_sesuai": {
+    "→ Perwakilan 1 KK": 689,
+    "Terima >1x Normal/Peng.": 338,
+    "Normal → Perw. beda KK": 291,
+    "Peng. → Peng. >1x": 245,
+    "Peng. → Perw. beda KK": 173,
+    "Normal → Peng. lok. lain": 103
+   },
+   "review_foto": {
+    "Sama": 7607,
+    "Tidak Sama": 2496,
+    "Perlu Reviu": 1384,
+    "Ditolak": 747
+   }
+  },
+  {
+   "provinsi": "Sumatera Selatan",
+   "pbp": 97635,
+   "sudah_reviu": 94911,
+   "belum_sesuai": 15200,
+   "komposisi": {
+    "Normal": 79039,
+    "Perwakilan 1 KK": 6990,
+    "Perwakilan": 5743,
+    "Pengganti": 3852,
+    "Kolektif": 2011
+   },
+   "kategori_belum_sesuai": {
+    "→ Perwakilan 1 KK": 5263,
+    "Terima >1x Normal/Peng.": 3802,
+    "Normal → Perw. beda KK": 2870,
+    "Peng. → Peng. >1x": 1573,
+    "Peng. → Perw. beda KK": 860,
+    "Normal → Peng. lok. lain": 832
+   },
+   "review_foto": {
+    "Sama": 61765,
+    "Tidak Sama": 17359,
+    "Perlu Reviu": 12382,
+    "Ditolak": 6129
+   }
+  },
+  {
+   "provinsi": "Bengkulu",
+   "pbp": 51675,
+   "sudah_reviu": 50618,
+   "belum_sesuai": 2963,
+   "komposisi": {
+    "Normal": 40696,
+    "Perwakilan 1 KK": 4828,
+    "Perwakilan": 2956,
+    "Pengganti": 2043,
+    "Kolektif": 1152
+   },
+   "kategori_belum_sesuai": {
+    "→ Perwakilan 1 KK": 800,
+    "Terima >1x Normal/Peng.": 693,
+    "Normal → Perw. beda KK": 624,
+    "Peng. → Peng. >1x": 482,
+    "Peng. → Perw. beda KK": 188,
+    "Normal → Peng. lok. lain": 176
+   },
+   "review_foto": {
+    "Sama": 29663,
+    "Tidak Sama": 11730,
+    "Perlu Reviu": 6618,
+    "Ditolak": 3664
+   }
+  },
+  {
+   "provinsi": "Lampung",
+   "pbp": 102494,
+   "sudah_reviu": 100632,
+   "belum_sesuai": 16589,
+   "komposisi": {
+    "Normal": 84152,
+    "Perwakilan 1 KK": 7132,
+    "Perwakilan": 5175,
+    "Pengganti": 3843,
+    "Kolektif": 2192
+   },
+   "kategori_belum_sesuai": {
+    "→ Perwakilan 1 KK": 5916,
+    "Terima >1x Normal/Peng.": 3836,
+    "Normal → Perw. beda KK": 2471,
+    "Peng. → Peng. >1x": 1737,
+    "Peng. → Perw. beda KK": 1466,
+    "Normal → Peng. lok. lain": 1163
+   },
+   "review_foto": {
+    "Sama": 60888,
+    "Tidak Sama": 20980,
+    "Perlu Reviu": 14636,
+    "Ditolak": 5990
+   }
+  },
+  {
+   "provinsi": "Kep. Bangka Belitung",
+   "pbp": 44776,
+   "sudah_reviu": 43959,
+   "belum_sesuai": 5129,
+   "komposisi": {
+    "Normal": 34695,
+    "Perwakilan 1 KK": 4158,
+    "Perwakilan": 3191,
+    "Pengganti": 1679,
+    "Kolektif": 1053
+   },
+   "kategori_belum_sesuai": {
+    "→ Perwakilan 1 KK": 1912,
+    "Terima >1x Normal/Peng.": 948,
+    "Normal → Perw. beda KK": 709,
+    "Peng. → Peng. >1x": 462,
+    "Peng. → Perw. beda KK": 532,
+    "Normal → Peng. lok. lain": 566
+   },
+   "review_foto": {
+    "Sama": 30121,
+    "Tidak Sama": 6974,
+    "Perlu Reviu": 5062,
+    "Ditolak": 2619
+   }
+  },
+  {
+   "provinsi": "Kepulauan Riau",
+   "pbp": 32930,
+   "sudah_reviu": 32705,
+   "belum_sesuai": 2749,
+   "komposisi": {
+    "Normal": 26287,
+    "Perwakilan 1 KK": 2493,
+    "Perwakilan": 2209,
+    "Pengganti": 1327,
+    "Kolektif": 614
+   },
+   "kategori_belum_sesuai": {
+    "→ Perwakilan 1 KK": 940,
+    "Terima >1x Normal/Peng.": 651,
+    "Normal → Perw. beda KK": 368,
+    "Peng. → Peng. >1x": 289,
+    "Peng. → Perw. beda KK": 320,
+    "Normal → Peng. lok. lain": 181
+   },
+   "review_foto": {
+    "Sama": 18585,
+    "Tidak Sama": 6958,
+    "Perlu Reviu": 5301,
+    "Ditolak": 2086
+   }
+  },
+  {
+   "provinsi": "DKI Jakarta",
+   "pbp": 41198,
+   "sudah_reviu": 40825,
+   "belum_sesuai": 6260,
+   "komposisi": {
+    "Normal": 32052,
+    "Perwakilan 1 KK": 3409,
+    "Perwakilan": 3131,
+    "Pengganti": 1643,
+    "Kolektif": 963
+   },
+   "kategori_belum_sesuai": {
+    "→ Perwakilan 1 KK": 2270,
+    "Terima >1x Normal/Peng.": 1108,
+    "Normal → Perw. beda KK": 1334,
+    "Peng. → Peng. >1x": 706,
+    "Peng. → Perw. beda KK": 418,
+    "Normal → Peng. lok. lain": 424
+   },
+   "review_foto": {
+    "Sama": 26343,
+    "Tidak Sama": 7224,
+    "Perlu Reviu": 4833,
+    "Ditolak": 2798
+   }
+  },
+  {
+   "provinsi": "Jawa Barat",
+   "pbp": 256497,
+   "sudah_reviu": 251369,
+   "belum_sesuai": 18619,
+   "komposisi": {
+    "Normal": 203980,
+    "Perwakilan 1 KK": 18741,
+    "Perwakilan": 17741,
+    "Pengganti": 10056,
+    "Kolektif": 5979
+   },
+   "kategori_belum_sesuai": {
+    "→ Perwakilan 1 KK": 5866,
+    "Terima >1x Normal/Peng.": 3057,
+    "Normal → Perw. beda KK": 4108,
+    "Peng. → Peng. >1x": 2683,
+    "Peng. → Perw. beda KK": 1865,
+    "Normal → Peng. lok. lain": 1040
+   },
+   "review_foto": {
+    "Sama": 149331,
+    "Tidak Sama": 50611,
+    "Perlu Reviu": 39672,
+    "Ditolak": 16883
+   }
+  },
+  {
+   "provinsi": "Jawa Tengah",
+   "pbp": 205998,
+   "sudah_reviu": 201317,
+   "belum_sesuai": 23109,
+   "komposisi": {
+    "Normal": 168122,
+    "Perwakilan 1 KK": 14652,
+    "Perwakilan": 10948,
+    "Pengganti": 8676,
+    "Kolektif": 3600
+   },
+   "kategori_belum_sesuai": {
+    "→ Perwakilan 1 KK": 7528,
+    "Terima >1x Normal/Peng.": 4709,
+    "Normal → Perw. beda KK": 3834,
+    "Peng. → Peng. >1x": 2877,
+    "Peng. → Perw. beda KK": 2251,
+    "Normal → Peng. lok. lain": 1910
+   },
+   "review_foto": {
+    "Sama": 127930,
+    "Tidak Sama": 41500,
+    "Perlu Reviu": 24403,
+    "Ditolak": 12165
+   }
+  },
+  {
+   "provinsi": "DI Yogyakarta",
+   "pbp": 57035,
+   "sudah_reviu": 56257,
+   "belum_sesuai": 2855,
+   "komposisi": {
+    "Normal": 47014,
+    "Perwakilan 1 KK": 3780,
+    "Perwakilan": 3299,
+    "Pengganti": 1938,
+    "Kolektif": 1004
+   },
+   "kategori_belum_sesuai": {
+    "→ Perwakilan 1 KK": 1025,
+    "Terima >1x Normal/Peng.": 671,
+    "Normal → Perw. beda KK": 447,
+    "Peng. → Peng. >1x": 314,
+    "Peng. → Perw. beda KK": 197,
+    "Normal → Peng. lok. lain": 201
+   },
+   "review_foto": {
+    "Sama": 33319,
+    "Tidak Sama": 11891,
+    "Perlu Reviu": 7792,
+    "Ditolak": 4033
+   }
+  },
+  {
+   "provinsi": "Jawa Timur",
+   "pbp": 221131,
+   "sudah_reviu": 214630,
+   "belum_sesuai": 21824,
+   "komposisi": {
+    "Normal": 177497,
+    "Perwakilan 1 KK": 16587,
+    "Perwakilan": 12404,
+    "Pengganti": 9788,
+    "Kolektif": 4855
+   },
+   "kategori_belum_sesuai": {
+    "→ Perwakilan 1 KK": 7198,
+    "Terima >1x Normal/Peng.": 5501,
+    "Normal → Perw. beda KK": 3691,
+    "Peng. → Peng. >1x": 1607,
+    "Peng. → Perw. beda KK": 2200,
+    "Normal → Peng. lok. lain": 1627
+   },
+   "review_foto": {
+    "Sama": 130559,
+    "Tidak Sama": 40008,
+    "Perlu Reviu": 36686,
+    "Ditolak": 13878
+   }
+  },
+  {
+   "provinsi": "Banten",
+   "pbp": 70765,
+   "sudah_reviu": 69879,
+   "belum_sesuai": 9496,
+   "komposisi": {
+    "Normal": 58473,
+    "Perwakilan 1 KK": 4872,
+    "Perwakilan": 3865,
+    "Pengganti": 2424,
+    "Kolektif": 1131
+   },
+   "kategori_belum_sesuai": {
+    "→ Perwakilan 1 KK": 4237,
+    "Terima >1x Normal/Peng.": 1593,
+    "Normal → Perw. beda KK": 1283,
+    "Peng. → Peng. >1x": 1197,
+    "Peng. → Perw. beda KK": 636,
+    "Normal → Peng. lok. lain": 550
+   },
+   "review_foto": {
+    "Sama": 40249,
+    "Tidak Sama": 14567,
+    "Perlu Reviu": 10614,
+    "Ditolak": 5335
+   }
+  },
+  {
+   "provinsi": "Bali",
+   "pbp": 38289,
+   "sudah_reviu": 37838,
+   "belum_sesuai": 3627,
+   "komposisi": {
+    "Normal": 30216,
+    "Perwakilan 1 KK": 3313,
+    "Perwakilan": 2190,
+    "Pengganti": 1849,
+    "Kolektif": 721
+   },
+   "kategori_belum_sesuai": {
+    "→ Perwakilan 1 KK": 1494,
+    "Terima >1x Normal/Peng.": 901,
+    "Normal → Perw. beda KK": 506,
+    "Peng. → Peng. >1x": 284,
+    "Peng. → Perw. beda KK": 257,
+    "Normal → Peng. lok. lain": 185
+   },
+   "review_foto": {
+    "Sama": 25032,
+    "Tidak Sama": 6458,
+    "Perlu Reviu": 5058,
+    "Ditolak": 1741
+   }
+  },
+  {
+   "provinsi": "Nusa Tenggara Barat",
+   "pbp": 37098,
+   "sudah_reviu": 36288,
+   "belum_sesuai": 4945,
+   "komposisi": {
+    "Normal": 30150,
+    "Perwakilan 1 KK": 2656,
+    "Perwakilan": 2127,
+    "Pengganti": 1537,
+    "Kolektif": 628
+   },
+   "kategori_belum_sesuai": {
+    "→ Perwakilan 1 KK": 1851,
+    "Terima >1x Normal/Peng.": 1336,
+    "Normal → Perw. beda KK": 664,
+    "Peng. → Peng. >1x": 583,
+    "Peng. → Perw. beda KK": 267,
+    "Normal → Peng. lok. lain": 244
+   },
+   "review_foto": {
+    "Sama": 23517,
+    "Tidak Sama": 5537,
+    "Perlu Reviu": 5821,
+    "Ditolak": 2223
+   }
+  },
+  {
+   "provinsi": "Nusa Tenggara Timur",
+   "pbp": 84717,
+   "sudah_reviu": 83509,
+   "belum_sesuai": 6032,
+   "komposisi": {
+    "Normal": 66371,
+    "Perwakilan 1 KK": 8002,
+    "Perwakilan": 5289,
+    "Pengganti": 3206,
+    "Kolektif": 1849
+   },
+   "kategori_belum_sesuai": {
+    "→ Perwakilan 1 KK": 2232,
+    "Terima >1x Normal/Peng.": 1320,
+    "Normal → Perw. beda KK": 931,
+    "Peng. → Peng. >1x": 584,
+    "Peng. → Perw. beda KK": 474,
+    "Normal → Peng. lok. lain": 491
+   },
+   "review_foto": {
+    "Sama": 53637,
+    "Tidak Sama": 15104,
+    "Perlu Reviu": 11307,
+    "Ditolak": 4669
+   }
+  },
+  {
+   "provinsi": "Kalimantan Barat",
+   "pbp": 67756,
+   "sudah_reviu": 66845,
+   "belum_sesuai": 4175,
+   "komposisi": {
+    "Normal": 51744,
+    "Perwakilan 1 KK": 6035,
+    "Perwakilan": 5018,
+    "Pengganti": 3442,
+    "Kolektif": 1517
+   },
+   "kategori_belum_sesuai": {
+    "→ Perwakilan 1 KK": 1619,
+    "Terima >1x Normal/Peng.": 1104,
+    "Normal → Perw. beda KK": 509,
+    "Peng. → Peng. >1x": 430,
+    "Peng. → Perw. beda KK": 262,
+    "Normal → Peng. lok. lain": 251
+   },
+   "review_foto": {
+    "Sama": 45035,
+    "Tidak Sama": 10809,
+    "Perlu Reviu": 8006,
+    "Ditolak": 3906
+   }
+  },
+  {
+   "provinsi": "Kalimantan Tengah",
+   "pbp": 15479,
+   "sudah_reviu": 15189,
+   "belum_sesuai": 1507,
+   "komposisi": {
+    "Normal": 12625,
+    "Perwakilan 1 KK": 1084,
+    "Perwakilan": 990,
+    "Pengganti": 501,
+    "Kolektif": 279
+   },
+   "kategori_belum_sesuai": {
+    "→ Perwakilan 1 KK": 484,
+    "Terima >1x Normal/Peng.": 300,
+    "Normal → Perw. beda KK": 345,
+    "Peng. → Peng. >1x": 161,
+    "Peng. → Perw. beda KK": 95,
+    "Normal → Peng. lok. lain": 122
+   },
+   "review_foto": {
+    "Sama": 10239,
+    "Tidak Sama": 2072,
+    "Perlu Reviu": 2306,
+    "Ditolak": 862
+   }
+  },
+  {
+   "provinsi": "Kalimantan Selatan",
+   "pbp": 43454,
+   "sudah_reviu": 42500,
+   "belum_sesuai": 7413,
+   "komposisi": {
+    "Normal": 34677,
+    "Perwakilan 1 KK": 3222,
+    "Perwakilan": 2911,
+    "Pengganti": 1872,
+    "Kolektif": 772
+   },
+   "kategori_belum_sesuai": {
+    "→ Perwakilan 1 KK": 2716,
+    "Terima >1x Normal/Peng.": 1766,
+    "Normal → Perw. beda KK": 1439,
+    "Peng. → Peng. >1x": 752,
+    "Peng. → Perw. beda KK": 390,
+    "Normal → Peng. lok. lain": 350
+   },
+   "review_foto": {
+    "Sama": 27283,
+    "Tidak Sama": 7713,
+    "Perlu Reviu": 5915,
+    "Ditolak": 2543
+   }
+  },
+  {
+   "provinsi": "Kalimantan Timur",
+   "pbp": 21276,
+   "sudah_reviu": 20765,
+   "belum_sesuai": 3641,
+   "komposisi": {
+    "Normal": 16635,
+    "Perwakilan 1 KK": 1976,
+    "Perwakilan": 1334,
+    "Pengganti": 902,
+    "Kolektif": 429
+   },
+   "kategori_belum_sesuai": {
+    "→ Perwakilan 1 KK": 1418,
+    "Terima >1x Normal/Peng.": 872,
+    "Normal → Perw. beda KK": 527,
+    "Peng. → Peng. >1x": 293,
+    "Peng. → Perw. beda KK": 364,
+    "Normal → Peng. lok. lain": 167
+   },
+   "review_foto": {
+    "Sama": 13167,
+    "Tidak Sama": 4318,
+    "Perlu Reviu": 2612,
+    "Ditolak": 1179
+   }
+  },
+  {
+   "provinsi": "Kalimantan Utara",
+   "pbp": 14843,
+   "sudah_reviu": 14567,
+   "belum_sesuai": 2295,
+   "komposisi": {
+    "Normal": 12290,
+    "Perwakilan 1 KK": 964,
+    "Perwakilan": 753,
+    "Pengganti": 554,
+    "Kolektif": 282
+   },
+   "kategori_belum_sesuai": {
+    "→ Perwakilan 1 KK": 691,
+    "Terima >1x Normal/Peng.": 610,
+    "Normal → Perw. beda KK": 363,
+    "Peng. → Peng. >1x": 269,
+    "Peng. → Perw. beda KK": 232,
+    "Normal → Peng. lok. lain": 130
+   },
+   "review_foto": {
+    "Sama": 9256,
+    "Tidak Sama": 2434,
+    "Perlu Reviu": 2211,
+    "Ditolak": 942
+   }
+  },
+  {
+   "provinsi": "Sulawesi Utara",
+   "pbp": 43468,
+   "sudah_reviu": 42976,
+   "belum_sesuai": 3291,
+   "komposisi": {
+    "Normal": 35132,
+    "Perwakilan 1 KK": 3356,
+    "Perwakilan": 2519,
+    "Pengganti": 1720,
+    "Kolektif": 741
+   },
+   "kategori_belum_sesuai": {
+    "→ Perwakilan 1 KK": 1216,
+    "Terima >1x Normal/Peng.": 617,
+    "Normal → Perw. beda KK": 597,
+    "Peng. → Peng. >1x": 419,
+    "Peng. → Perw. beda KK": 191,
+    "Normal → Peng. lok. lain": 251
+   },
+   "review_foto": {
+    "Sama": 27163,
+    "Tidak Sama": 7297,
+    "Perlu Reviu": 6670,
+    "Ditolak": 2338
+   }
+  },
+  {
+   "provinsi": "Sulawesi Tengah",
+   "pbp": 25216,
+   "sudah_reviu": 24461,
+   "belum_sesuai": 3530,
+   "komposisi": {
+    "Normal": 20275,
+    "Perwakilan 1 KK": 2009,
+    "Perwakilan": 1384,
+    "Pengganti": 1016,
+    "Kolektif": 532
+   },
+   "kategori_belum_sesuai": {
+    "→ Perwakilan 1 KK": 1432,
+    "Terima >1x Normal/Peng.": 630,
+    "Normal → Perw. beda KK": 582,
+    "Peng. → Peng. >1x": 336,
+    "Peng. → Perw. beda KK": 305,
+    "Normal → Peng. lok. lain": 245
+   },
+   "review_foto": {
+    "Sama": 15473,
+    "Tidak Sama": 4924,
+    "Perlu Reviu": 3503,
+    "Ditolak": 1316
+   }
+  },
+  {
+   "provinsi": "Sulawesi Selatan",
+   "pbp": 163664,
+   "sudah_reviu": 159489,
+   "belum_sesuai": 28371,
+   "komposisi": {
+    "Normal": 130884,
+    "Perwakilan 1 KK": 13781,
+    "Perwakilan": 9467,
+    "Pengganti": 6688,
+    "Kolektif": 2844
+   },
+   "kategori_belum_sesuai": {
+    "→ Perwakilan 1 KK": 11123,
+    "Terima >1x Normal/Peng.": 6669,
+    "Normal → Perw. beda KK": 3934,
+    "Peng. → Peng. >1x": 1972,
+    "Peng. → Perw. beda KK": 2708,
+    "Normal → Peng. lok. lain": 1965
+   },
+   "review_foto": {
+    "Sama": 105147,
+    "Tidak Sama": 25644,
+    "Perlu Reviu": 23506,
+    "Ditolak": 9367
+   }
+  },
+  {
+   "provinsi": "Sulawesi Tenggara",
+   "pbp": 33205,
+   "sudah_reviu": 32850,
+   "belum_sesuai": 2023,
+   "komposisi": {
+    "Normal": 26283,
+    "Perwakilan 1 KK": 2772,
+    "Perwakilan": 2005,
+    "Pengganti": 1423,
+    "Kolektif": 722
+   },
+   "kategori_belum_sesuai": {
+    "→ Perwakilan 1 KK": 594,
+    "Terima >1x Normal/Peng.": 508,
+    "Normal → Perw. beda KK": 413,
+    "Peng. → Peng. >1x": 260,
+    "Peng. → Perw. beda KK": 113,
+    "Normal → Peng. lok. lain": 135
+   },
+   "review_foto": {
+    "Sama": 22666,
+    "Tidak Sama": 4759,
+    "Perlu Reviu": 3895,
+    "Ditolak": 1885
+   }
+  },
+  {
+   "provinsi": "Gorontalo",
+   "pbp": 35604,
+   "sudah_reviu": 34599,
+   "belum_sesuai": 2563,
+   "komposisi": {
+    "Normal": 29080,
+    "Perwakilan 1 KK": 2934,
+    "Perwakilan": 1785,
+    "Pengganti": 1237,
+    "Kolektif": 568
+   },
+   "kategori_belum_sesuai": {
+    "→ Perwakilan 1 KK": 1136,
+    "Terima >1x Normal/Peng.": 403,
+    "Normal → Perw. beda KK": 453,
+    "Peng. → Peng. >1x": 213,
+    "Peng. → Perw. beda KK": 171,
+    "Normal → Peng. lok. lain": 187
+   },
+   "review_foto": {
+    "Sama": 22242,
+    "Tidak Sama": 6911,
+    "Perlu Reviu": 4733,
+    "Ditolak": 1718
+   }
+  },
+  {
+   "provinsi": "Sulawesi Barat",
+   "pbp": 16827,
+   "sudah_reviu": 16726,
+   "belum_sesuai": 2403,
+   "komposisi": {
+    "Normal": 13793,
+    "Perwakilan 1 KK": 1068,
+    "Perwakilan": 999,
+    "Pengganti": 681,
+    "Kolektif": 286
+   },
+   "kategori_belum_sesuai": {
+    "→ Perwakilan 1 KK": 803,
+    "Terima >1x Normal/Peng.": 403,
+    "Normal → Perw. beda KK": 356,
+    "Peng. → Peng. >1x": 390,
+    "Peng. → Perw. beda KK": 266,
+    "Normal → Peng. lok. lain": 185
+   },
+   "review_foto": {
+    "Sama": 10288,
+    "Tidak Sama": 2896,
+    "Perlu Reviu": 2444,
+    "Ditolak": 1199
+   }
+  },
+  {
+   "provinsi": "Maluku",
+   "pbp": 21278,
+   "sudah_reviu": 20671,
+   "belum_sesuai": 1695,
+   "komposisi": {
+    "Normal": 16558,
+    "Perwakilan 1 KK": 1872,
+    "Perwakilan": 1385,
+    "Pengganti": 947,
+    "Kolektif": 516
+   },
+   "kategori_belum_sesuai": {
+    "→ Perwakilan 1 KK": 598,
+    "Terima >1x Normal/Peng.": 426,
+    "Normal → Perw. beda KK": 244,
+    "Peng. → Peng. >1x": 172,
+    "Peng. → Perw. beda KK": 158,
+    "Normal → Peng. lok. lain": 97
+   },
+   "review_foto": {
+    "Sama": 13033,
+    "Tidak Sama": 3760,
+    "Perlu Reviu": 3131,
+    "Ditolak": 1354
+   }
+  },
+  {
+   "provinsi": "Maluku Utara",
+   "pbp": 17308,
+   "sudah_reviu": 17209,
+   "belum_sesuai": 2314,
+   "komposisi": {
+    "Normal": 13949,
+    "Perwakilan 1 KK": 1364,
+    "Perwakilan": 935,
+    "Pengganti": 716,
+    "Kolektif": 344
+   },
+   "kategori_belum_sesuai": {
+    "→ Perwakilan 1 KK": 943,
+    "Terima >1x Normal/Peng.": 426,
+    "Normal → Perw. beda KK": 384,
+    "Peng. → Peng. >1x": 272,
+    "Peng. → Perw. beda KK": 162,
+    "Normal → Peng. lok. lain": 127
+   },
+   "review_foto": {
+    "Sama": 9925,
+    "Tidak Sama": 3555,
+    "Perlu Reviu": 2846,
+    "Ditolak": 982
+   }
+  },
+  {
+   "provinsi": "Papua",
+   "pbp": 14340,
+   "sudah_reviu": 14114,
+   "belum_sesuai": 2153,
+   "komposisi": {
+    "Normal": 11429,
+    "Perwakilan 1 KK": 1145,
+    "Perwakilan": 899,
+    "Pengganti": 574,
+    "Kolektif": 293
+   },
+   "kategori_belum_sesuai": {
+    "→ Perwakilan 1 KK": 747,
+    "Terima >1x Normal/Peng.": 444,
+    "Normal → Perw. beda KK": 410,
+    "Peng. → Peng. >1x": 213,
+    "Peng. → Perw. beda KK": 149,
+    "Normal → Peng. lok. lain": 190
+   },
+   "review_foto": {
+    "Sama": 9243,
+    "Tidak Sama": 2491,
+    "Perlu Reviu": 1789,
+    "Ditolak": 817
+   }
+  },
+  {
+   "provinsi": "Papua Barat",
+   "pbp": 31038,
+   "sudah_reviu": 30629,
+   "belum_sesuai": 3676,
+   "komposisi": {
+    "Normal": 24281,
+    "Perwakilan 1 KK": 2949,
+    "Perwakilan": 1826,
+    "Pengganti": 1316,
+    "Kolektif": 666
+   },
+   "kategori_belum_sesuai": {
+    "→ Perwakilan 1 KK": 1017,
+    "Terima >1x Normal/Peng.": 707,
+    "Normal → Perw. beda KK": 833,
+    "Peng. → Peng. >1x": 568,
+    "Peng. → Perw. beda KK": 305,
+    "Normal → Peng. lok. lain": 246
+   },
+   "review_foto": {
+    "Sama": 17844,
+    "Tidak Sama": 5927,
+    "Perlu Reviu": 5330,
+    "Ditolak": 1937
+   }
+  },
+  {
+   "provinsi": "Papua Selatan",
+   "pbp": 54163,
+   "sudah_reviu": 53678,
+   "belum_sesuai": 6232,
+   "komposisi": {
+    "Normal": 41827,
+    "Perwakilan 1 KK": 5320,
+    "Perwakilan": 3347,
+    "Pengganti": 2339,
+    "Kolektif": 1330
+   },
+   "kategori_belum_sesuai": {
+    "→ Perwakilan 1 KK": 2661,
+    "Terima >1x Normal/Peng.": 937,
+    "Normal → Perw. beda KK": 983,
+    "Peng. → Peng. >1x": 607,
+    "Peng. → Perw. beda KK": 664,
+    "Normal → Peng. lok. lain": 380
+   },
+   "review_foto": {
+    "Sama": 31907,
+    "Tidak Sama": 10971,
+    "Perlu Reviu": 8588,
+    "Ditolak": 2697
+   }
+  },
+  {
+   "provinsi": "Papua Tengah",
+   "pbp": 14645,
+   "sudah_reviu": 14219,
+   "belum_sesuai": 1431,
+   "komposisi": {
+    "Normal": 11683,
+    "Perwakilan 1 KK": 1271,
+    "Perwakilan": 790,
+    "Pengganti": 651,
+    "Kolektif": 250
+   },
+   "kategori_belum_sesuai": {
+    "→ Perwakilan 1 KK": 451,
+    "Terima >1x Normal/Peng.": 312,
+    "Normal → Perw. beda KK": 203,
+    "Peng. → Peng. >1x": 215,
+    "Peng. → Perw. beda KK": 168,
+    "Normal → Peng. lok. lain": 82
+   },
+   "review_foto": {
+    "Sama": 8681,
+    "Tidak Sama": 3216,
+    "Perlu Reviu": 1837,
+    "Ditolak": 911
+   }
+  },
+  {
+   "provinsi": "Papua Pegunungan",
+   "pbp": 34273,
+   "sudah_reviu": 33673,
+   "belum_sesuai": 5488,
+   "komposisi": {
+    "Normal": 26726,
+    "Perwakilan 1 KK": 2843,
+    "Perwakilan": 2359,
+    "Pengganti": 1494,
+    "Kolektif": 851
+   },
+   "kategori_belum_sesuai": {
+    "→ Perwakilan 1 KK": 2246,
+    "Terima >1x Normal/Peng.": 1402,
+    "Normal → Perw. beda KK": 650,
+    "Peng. → Peng. >1x": 374,
+    "Peng. → Perw. beda KK": 360,
+    "Normal → Peng. lok. lain": 456
+   },
+   "review_foto": {
+    "Sama": 22461,
+    "Tidak Sama": 4837,
+    "Perlu Reviu": 4922,
+    "Ditolak": 2053
+   }
+  },
+  {
+   "provinsi": "Papua Barat Daya",
+   "pbp": 27477,
+   "sudah_reviu": 26753,
+   "belum_sesuai": 3431,
+   "komposisi": {
+    "Normal": 21895,
+    "Perwakilan 1 KK": 2283,
+    "Perwakilan": 1675,
+    "Pengganti": 1113,
+    "Kolektif": 511
+   },
+   "kategori_belum_sesuai": {
+    "→ Perwakilan 1 KK": 1035,
+    "Terima >1x Normal/Peng.": 778,
+    "Normal → Perw. beda KK": 698,
+    "Peng. → Peng. >1x": 399,
+    "Peng. → Perw. beda KK": 275,
+    "Normal → Peng. lok. lain": 246
+   },
+   "review_foto": {
+    "Sama": 17701,
+    "Tidak Sama": 4388,
+    "Perlu Reviu": 3950,
+    "Ditolak": 1438
+   }
+  }
+ ]
+}

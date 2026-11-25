@@ -4,8 +4,8 @@ Mockup dashboard SPI · Reviu TI. **Seluruh angka adalah data contoh (dummy), bu
 
 ## Struktur
 - `index.html` — tampilan dashboard (Versi 1: Reviu Data; Versi 2: Reviu Data dan Foto)
-- `data/tahap-N.json` — agregat per provinsi untuk Tahap N (halaman Ringkasan)
-- `data/temuan-tahap-N.csv` — contoh baris temuan untuk Tahap N (halaman Daftar temuan; juga bisa diimpor ke Power BI)
+- `data/cutoff-C/tahap-N.json` — agregat per provinsi untuk Cutoff C, Tahap N (halaman Ringkasan)
+- `data/cutoff-C/temuan-tahap-N.csv` — contoh baris temuan untuk Cutoff C, Tahap N (halaman Daftar temuan; juga bisa diimpor ke Power BI)
 - `scripts/generate_data.py` — pembangkit data contoh
 
 ## Total PBP per tahap
@@ -14,6 +14,14 @@ Mockup dashboard SPI · Reviu TI. **Seluruh angka adalah data contoh (dummy), bu
 | 1 | 20 November 2026 | 822.000 |
 | 2 | 29 November 2026 | 1.535.324 |
 | 3 | 5 Desember 2026 | 2.341.243 |
+
+## Cutoff
+| Cutoff | Tanggal |
+|---|---|
+| 1 | 20 November 2026 |
+| 2 | 30 Desember 2026 |
+
+Setiap cutoff memuat Tahap 1–3. Total PBP suatu tahap sama di kedua cutoff; yang berbeda adalah progres reviu dan jumlah temuan (Cutoff 2 lebih maju).
 
 ## Mengubah data
 Ubah `total`, `seed`, atau rentang rasio di `STAGES` pada `scripts/generate_data.py`, lalu jalankan `python3 scripts/generate_data.py`.
@@ -25,4 +33,4 @@ Halaman membaca file di `data/` lewat `fetch`, jadi harus dibuka lewat server we
 
 ## Catatan
 - CSV temuan hanya contoh (±2.000 baris per tahap); jumlah temuan total ada di kartu dan JSON.
-- Skema JSON: `provinsi[]` berisi `pbp`, `sudah_reviu`, `belum_sesuai`, `komposisi{}`, `kategori_belum_sesuai{}`, `review_foto{}`.
+- Skema JSON: `cutoff`, `tahap`, dan `provinsi[]` berisi `pbp`, `sudah_reviu`, `belum_sesuai`, `komposisi{}`, `kategori_belum_sesuai{}`, `review_foto{}`.
