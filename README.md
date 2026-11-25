@@ -30,6 +30,8 @@ Setiap cutoff memuat Tahap 1–3 dengan tanggal berbeda:
 | 3 | 5 Desember 2026 | 15 Januari 2027 |
  Total PBP suatu tahap sama di kedua cutoff; yang berbeda adalah progres reviu dan jumlah temuan (Cutoff 2 lebih maju).
 
+Pilihan Tahap "Semua Tahap (Tahap 1–3)" menjumlahkan ketiga tahap pada cutoff terpilih (dihitung di browser dari file yang sama).
+
 ## Mengubah data
 Ubah `total`, `seed`, atau rentang rasio di `STAGES` pada `scripts/generate_data.py`, lalu jalankan `python3 scripts/generate_data.py`.
 

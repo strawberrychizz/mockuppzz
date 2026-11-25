@@ -257,12 +257,18 @@ function setVer(v){
 function go(id){["p1","p2"].forEach(x=>$("#"+x).classList.toggle("hide",x!==id));document.querySelectorAll(".tab").forEach(t=>t.classList.toggle("on",t.dataset.p===id))}
 document.querySelectorAll(".tab").forEach(t=>t.onclick=()=>go(t.dataset.p));
 CUTOFFS.forEach((t,i)=>$("#sCo").add(new Option(t.n+" · "+t.d,i)));
-function fillTahap(){const cur=$("#sCut").value||"2",co=+$("#sCo").value;$("#sCut").innerHTML="";STAGES.forEach((t,i)=>$("#sCut").add(new Option(t.n+" · "+t.d[co],i)));$("#sCut").value=cur}
+function fillTahap(){const cur=$("#sCut").value||"all",co=+$("#sCo").value;$("#sCut").innerHTML="";$("#sCut").add(new Option("Semua Tahap (Tahap 1–3)","all"));STAGES.forEach((t,i)=>$("#sCut").add(new Option(t.n+" · "+t.d[co],i)));$("#sCut").value=cur}
+async function loadAll(co){ // gabungan Tahap 1–3: jumlah per provinsi + seluruh baris contoh
+  const key=co+"-all";if(cache[key])return cache[key];
+  const ds=await Promise.all(STAGES.map((_,t)=>loadData(co,t)));
+  const add=(a,b)=>Array.isArray(a)?a.map((x,i)=>x+b[i]):a+b;
+  const P=ds[0].P.map((p,i)=>ds.slice(1).reduce((acc,d)=>{const q=d.P[i];return{n:acc.n,pbp:acc.pbp+q.pbp,tem:acc.tem+q.tem,rv:acc.rv+q.rv,cm:add(acc.cm,q.cm),cc:add(acc.cc,q.cc),rl:add(acc.rl,q.rl)}},p));
+  return cache[key]={P,rows:ds.flatMap(d=>d.rows)}}
 async function setStage(){
-  try{const d=await loadData(+$("#sCo").value,+$("#sCut").value);$("#loadErr").classList.add("hide");P=d.P;rows=d.rows;fk=fc=fd="";buildProv();render1();render2()}
+  try{const co=+$("#sCo").value,t=$("#sCut").value,d=t==="all"?await loadAll(co):await loadData(co,+t);$("#loadErr").classList.add("hide");P=d.P;rows=d.rows;fk=fc=fd="";buildProv();render1();render2()}
   catch(e){$("#loadErr").textContent="Data contoh gagal dimuat: "+e.message+". Buka halaman ini lewat server web (mis. hosting Vercel atau 'python3 -m http.server'), bukan dengan klik dua kali file HTML.";$("#loadErr").classList.remove("hide")}}
 $("#sCo").onchange=()=>{fillTahap();setStage()};$("#sCut").onchange=setStage;
-$("#sCo").value=0;fillTahap();$("#sCut").value=2;setStage();
+$("#sCo").value=0;fillTahap();setStage();
 </script>
 </body>
 </html>
