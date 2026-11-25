@@ -85,7 +85,7 @@ tfoot td{font-weight:600;background:#eef2f5;position:sticky;bottom:0}
 <div id="app" class="hide">
 <div class="band">
   <div><small>SPI · REVIU TI</small><h1>Monitoring Anomali Data <span class="badge">Data contoh</span> <span class="badge" id="verBadge"></span><button class="switch" onclick="setVer(0)">Ganti versi</button></h1></div>
-  <div class="bandr"><label class="cutoff">Cutoff: <select id="sCut"><option>23 November 2026 23.24 WIB</option><option>21 November 2026 23.20 WIB</option><option>20 November 2026 15.24 WIB</option></select></label>
+  <div class="bandr"><label class="cutoff">Tahap: <select id="sCut"></select></label>
   <div class="slicers">
     <div><label>Tahun dan periode salur</label><select id="sPer"><option>Semua</option></select></div>
     <div><label>Provinsi</label><select id="sProv"><option value="">Semua</option></select></div>
@@ -101,8 +101,8 @@ tfoot td{font-weight:600;background:#eef2f5;position:sticky;bottom:0}
 <section id="p1">
   <div class="kpis">
     <div class="card"><h3>Total PBP</h3><div class="big" id="kTot">–</div><div class="sub" id="kScope">Seluruh provinsi</div></div>
-    <div class="card"><h3>Status serah</h3><div class="pieWrap" id="pSerah"></div></div>
-    <div class="card"><h3>Status verifikasi</h3><div class="pieWrap" id="pVer"></div></div>
+    <div class="card"><h3>Hasil Reviu</h3><div class="pieWrap" id="pSerah"></div></div>
+    <div class="card"><h3>Rincian Hasil Reviu per kategori</h3><div class="pieWrap" id="pVer"></div></div>
     <div class="card"><h3>Komposisi status PBP · <span id="compScope">Seluruh provinsi</span></h3><div class="pieWrap" id="pComp"></div></div>
   </div>
 
@@ -141,7 +141,7 @@ tfoot td{font-weight:600;background:#eef2f5;position:sticky;bottom:0}
       <thead><tr><th>#</th><th>Kategori temuan</th><th>No PBP</th><th>Nama (disamarkan)</th><th>Provinsi</th><th>Kota/Kabupaten</th><th>Kecamatan</th><th>Kelurahan/Desa</th><th>Status Serah</th><th>Verifikasi Serah</th><th>Hasil Review Data</th><th class="v2only">Hasil Review Foto</th></tr></thead>
       <tbody id="listBody"></tbody>
     </table></div>
-    <div class="foot">Nama PBP disamarkan di sumber data. Seluruh angka pada mockup ini adalah data contoh yang dibangkitkan acak (tetap, bukan data riil).</div>
+    <div class="foot">Nama PBP disamarkan di sumber data. Seluruh angka pada mockup ini adalah data contoh yang dibangkitkan acak (tetap, berbeda untuk tiap tahap, bukan data riil).</div>
   </div>
 </section>
 
@@ -151,46 +151,50 @@ tfoot td{font-weight:600;background:#eef2f5;position:sticky;bottom:0}
 <script>
 // ---- Data contoh dibangkitkan deterministik (seed tetap) untuk 38 provinsi ----
 function rng(seed){return function(){seed|=0;seed=seed+0x6D2B79F5|0;let t=Math.imul(seed^seed>>>15,1|seed);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
-const R=rng(20261120);
-const rnd=(a,b)=>a+(b-a)*R();
 const names=["Aceh","Sumatera Utara","Sumatera Barat","Riau","Jambi","Sumatera Selatan","Bengkulu","Lampung","Kep. Bangka Belitung","Kepulauan Riau","DKI Jakarta","Jawa Barat","Jawa Tengah","DI Yogyakarta","Jawa Timur","Banten","Bali","Nusa Tenggara Barat","Nusa Tenggara Timur","Kalimantan Barat","Kalimantan Tengah","Kalimantan Selatan","Kalimantan Timur","Kalimantan Utara","Sulawesi Utara","Sulawesi Tengah","Sulawesi Selatan","Sulawesi Tenggara","Gorontalo","Sulawesi Barat","Maluku","Maluku Utara","Papua","Papua Barat","Papua Selatan","Papua Tengah","Papua Pegunungan","Papua Barat Daya"];
 const size={"Jawa Barat":520,"Jawa Tengah":480,"Jawa Timur":500,"Sulawesi Selatan":360,"Sumatera Utara":300,"Lampung":240,"Sumatera Selatan":230,"Banten":160,"DI Yogyakarta":120,"Nusa Tenggara Timur":170,"Aceh":170,"Kalimantan Barat":150,"Bali":90,"DKI Jakarta":90};
 const cats=[["Belum sesuai (umum)",.30],["→ Perwakilan 1 KK",.24],["Terima >1x Normal/Peng.",.15],["Normal → Perw. beda KK",.12],["Peng. → Peng. >1x",.08],["Peng. → Perw. beda KK",.06],["Normal → Peng. lok. lain",.05]];
+const catCol=["#d64545","#e0a100","#e8743b","#8a63b8","#3f8fbf","#7aaed0","#8b6b4a"];
 const rlCats=["Sama","Tidak Sama","Perlu Reviu","Ditolak"];
-const R2=rng(777); // RNG terpisah agar data lain tidak berubah
 const comp=["Normal","Perwakilan 1 KK","Perwakilan","Pengganti","Kolektif"];
 const compCol=["#0b5c8a","#3f8fbf","#7aaed0","#e0a100","#d64545"];
 function split(n,w){ // pembagian n menurut bobot w, metode sisa terbesar
   const raw=w.map(x=>x*n),b=raw.map(Math.floor);let left=n-b.reduce((a,c)=>a+c,0);
   raw.map((r,i)=>[r-b[i],i]).sort((x,y)=>y[0]-x[0]).slice(0,left).forEach(([,i])=>b[i]++);return b}
-const jit=(w,k)=>{const j=w.map(x=>x*(1+(R()-.5)*k));const s=j.reduce((a,c)=>a+c,0);return j.map(x=>x/s)};
-const P=names.map(n=>{
-  const pbp=Math.round(size[n]?size[n]*rnd(.92,1.08):rnd(28,110));
-  const tem=Math.max(2,Math.round(pbp*rnd(.03,.17)));
-  const ser=Math.round(pbp*rnd(.86,.97));
-  const w=rnd(.70,.88),t=rnd(.02,.08);const v=split(pbp,[w,1-w-t,t]);
-  const cm=split(pbp,jit([.80,.08,.06,.04,.02],.3));
-  const cc=split(tem,jit(cats.map(c=>c[1]),.7));
-  const rl=split(pbp,(()=>{const j=[.62,.18,.14,.06].map(x=>x*(1+(R2()-.5)*.4));const t=j.reduce((a,c)=>a+c,0);return j.map(x=>x/t)})());
-  return{n,pbp,tem,ser,v,cm,cc,rl}});
+const STAGES=[
+ {n:"Tahap 1",d:"20 November 2026",seed:20261101,o:2,pf:.70,rf:.52,tf:.60},
+ {n:"Tahap 2",d:"29 November 2026",seed:20261111,o:1,pf:.88,rf:.78,tf:.85},
+ {n:"Tahap 3",d:"5 Desember 2026",seed:20261120,o:0,pf:1,rf:1,tf:1}];
+// pf = faktor jumlah PBP, rf = faktor porsi Sudah Reviu, tf = faktor porsi temuan (Belum Sesuai); seed berbeda per tahap
+function build(c){
+  const R=rng(c.seed),rnd=(a,b)=>a+(b-a)*R(),R2=rng(777+c.o),R3=rng(4242+c.o);
+  const jit=(w,k)=>{const j=w.map(x=>x*(1+(R()-.5)*k));const s=j.reduce((a,c)=>a+c,0);return j.map(x=>x/s)};
+  const P=names.map(n=>{
+    const pbp=Math.round((size[n]?size[n]*rnd(.92,1.08):rnd(28,110))*c.pf);
+    const tem=Math.max(2,Math.round(pbp*rnd(.03,.17)*c.tf));
+    const rv=Math.round(pbp*rnd(.86,.97)*c.rf); // Sudah Reviu
+    rnd(.70,.88);rnd(.02,.08);
+    const cm=split(pbp,jit([.80,.08,.06,.04,.02],.3));
+    const cc=split(tem,jit(cats.map(c=>c[1]),.7));
+    const rl=split(pbp,(()=>{const j=[.62,.18,.14,.06].map(x=>x*(1+(R2()-.5)*.4));const t=j.reduce((a,c)=>a+c,0);return j.map(x=>x/t)})());
+    return{n,pbp,tem,rv,cm,cc,rl}});
+  // baris temuan
+  const mask=["Ab","Si","Na","Wa","Ra","Ha","Ju","Su","Ma","Ni","Ta","Yo","Fa","Er","Di","Ko"],mask2=["Su","Ha","Pu","Ju","Wi","Ka","Ma","Ru","Li","Be","So","Da"];
+  const rows=[];let no=1000;
+  P.forEach(p=>cats.forEach(([c],ci)=>{for(let k=0;k<p.cc[ci];k++){no+=Math.round(rnd(3,29));
+    rows.push({c,w:p.n,k:"Kota "+(1+Math.floor(R()*3)),kc:"Kecamatan "+(1+Math.floor(R()*3)),d:"Desa "+(1+Math.floor(R()*4)),no:"PBP-"+String(no).padStart(6,"0"),nm:mask[Math.floor(R()*mask.length)]+"*** "+mask2[Math.floor(R()*mask2.length)]+"***"})}}));
+  const pick3=(a,w)=>{let x=R3()*w.reduce((p,c)=>p+c,0);for(let i=0;i<a.length;i++){x-=w[i];if(x<0)return a[i]}return a[a.length-1]};
+  const pet=["PET LAP Ab***","PET LAP Su***","PET LAP Ha***","PET LAP Ni***","PET LAP Ko***"],ver=["Ri*** Mu*** Mi***","Wi*** Ha***","De*** Pu***","An*** Sa***"];
+  rows.forEach(r=>{
+    r.ss=pick3(["Diserahkan","Belum diserahkan"],[92,8]);r.os=r.ss==="Diserahkan"?pet[Math.floor(R3()*pet.length)]:"";
+    r.vs=pick3(["Verified","Unverified"],[75,25]);r.ov=r.vs==="Verified"?ver[Math.floor(R3()*ver.length)]:"";
+    r.rd=pick3(["Sudah Sesuai","Belum Sesuai"],[40,60]);
+    r.rf=pick3(["Belum Direviu","Sudah Sesuai","Belum Sesuai"],[70,18,12]);
+  });
+  return{P,rows}}
+let P,rows;
 const sum=(f,L=P)=>L.reduce((a,p)=>a+f(p),0);
 const sumArr=(f,L=P)=>{const o=f(L[0]).map(()=>0);L.forEach(p=>f(p).forEach((x,i)=>o[i]+=x));return o};
-
-// baris temuan
-const mask=["Ab","Si","Na","Wa","Ra","Ha","Ju","Su","Ma","Ni","Ta","Yo","Fa","Er","Di","Ko"],mask2=["Su","Ha","Pu","Ju","Wi","Ka","Ma","Ru","Li","Be","So","Da"];
-const rows=[];let no=1000;
-P.forEach(p=>cats.forEach(([c],ci)=>{for(let k=0;k<p.cc[ci];k++){no+=Math.round(rnd(3,29));
-  rows.push({c,w:p.n,k:"Kota "+(1+Math.floor(R()*3)),kc:"Kecamatan "+(1+Math.floor(R()*3)),d:"Desa "+(1+Math.floor(R()*4)),no:"PBP-"+String(no).padStart(6,"0"),nm:mask[Math.floor(R()*mask.length)]+"*** "+mask2[Math.floor(R()*mask2.length)]+"***"})}}));
-
-// Data detail tambahan (RNG terpisah agar data lain tidak berubah)
-const R3=rng(4242),pick3=(a,w)=>{let x=R3()*w.reduce((p,c)=>p+c,0);for(let i=0;i<a.length;i++){x-=w[i];if(x<0)return a[i]}return a[a.length-1]};
-const pet=["PET LAP Ab***","PET LAP Su***","PET LAP Ha***","PET LAP Ni***","PET LAP Ko***"],ver=["Ri*** Mu*** Mi***","Wi*** Ha***","De*** Pu***","An*** Sa***"];
-rows.forEach(r=>{
-  r.ss=pick3(["Diserahkan","Belum diserahkan"],[92,8]);r.os=r.ss==="Diserahkan"?pet[Math.floor(R3()*pet.length)]:"";
-  r.vs=pick3(["Verified","Unverified"],[75,25]);r.ov=r.vs==="Verified"?ver[Math.floor(R3()*ver.length)]:"";
-  r.rd=pick3(["Sudah Sesuai","Belum Sesuai"],[40,60]);
-  r.rf=pick3(["Belum Direviu","Sudah Sesuai","Belum Sesuai"],[70,18,12]);
-});
 const badge=(t,o)=>{const c={"Diserahkan":"g","Verified":"g","Sudah Sesuai":"g","Unverified":"y","Belum diserahkan":"y","Belum Sesuai":"r","Belum Direviu":"n"}[t]||"n";return `<span class="bd ${c}">${t}</span>${o?`<span class="oleh">Oleh: ${o}</span>`:""}`};
 
 const $=s=>document.querySelector(s);
@@ -200,11 +204,13 @@ const fmt=n=>n.toLocaleString("id-ID");
 let sel="";
 
 const tg=p=>p.rl[1]; // Temuan Foto (dummy) = kategori "Tidak Sama"
-const order=[...P].sort((a,b)=>(b.tem/b.pbp-a.tem/a.pbp)||b.tem-a.tem);
 const cell=(n,t)=>{const r=n/t;return `<span class="sub" style="margin-right:8px">${fmt(n)}</span><span class="pill" style="background:${colorOf(r)}">${Math.round(r*100)}%</span>`};
-$("#provBody").innerHTML=order.map(p=>`<tr class="row" data-n="${p.n}" onclick="setSel(sel==='${p.n}'?'':'${p.n}')"><td>${p.n}</td><td class="n">${fmt(p.pbp)}</td><td class="n">${cell(p.tem,p.pbp)}</td><td class="n v2only">${cell(tg(p),p.pbp)}</td></tr>`).join("");
-$("#tfP").textContent=fmt(sum(p=>p.pbp));
-$("#tfD").innerHTML=cell(sum(p=>p.tem),sum(p=>p.pbp));$("#tfG").innerHTML=cell(sum(tg),sum(p=>p.pbp));
+function buildProv(){
+  const order=[...P].sort((a,b)=>(b.tem/b.pbp-a.tem/a.pbp)||b.tem-a.tem);
+  $("#provBody").innerHTML=order.map(p=>`<tr class="row" data-n="${p.n}" onclick="setSel(sel==='${p.n}'?'':'${p.n}')"><td>${p.n}</td><td class="n">${fmt(p.pbp)}</td><td class="n">${cell(p.tem,p.pbp)}</td><td class="n v2only">${cell(tg(p),p.pbp)}</td></tr>`).join("");
+  $("#tfP").textContent=fmt(sum(p=>p.pbp));
+  $("#tfD").innerHTML=cell(sum(p=>p.tem),sum(p=>p.pbp));$("#tfG").innerHTML=cell(sum(tg),sum(p=>p.pbp));
+}
 
 ["Semua"].concat(["2026 – Periode 1","2026 – Periode 2","2025 – Periode 1","2025 – Periode 2"]).slice(1).forEach(x=>$("#sPer").add(new Option(x)));
 $("#sPer").title="Mockup: slicer periode belum menyaring angka (data contoh)";
@@ -223,20 +229,20 @@ function pie(id,items,tot){
     if(fr>=.07){const am=(a0+a1)/2,[lx,ly]=P(am,r+3),[ex,ey]=P(am,r+15),right=Math.sin(am)>=0,tx=ex+(right?12:-12);
       labels+=`<polyline points="${lx},${ly} ${ex},${ey} ${tx+(right?-3:3)},${ey}" fill="none" stroke="#9aa5b1" stroke-width="1"/><text x="${tx}" y="${ey+4}" text-anchor="${right?"start":"end"}" font-size="11" fill="#4a5560">${fmt(n)} (${(fr*100).toFixed(2)}%)</text>`}
   });
-  $(id).innerHTML=`<svg viewBox="0 0 340 200" role="img">${paths}${labels}</svg><div class="pleg">${items.map(([c,l,n])=>`<div><i class="dot" style="background:${c}"></i><span>${l}<br><b>${fmt(n)}</b> · ${pct(n,tot)}%</span></div>`).join("")}</div>`;
+  $(id).innerHTML=`<svg viewBox="0 0 340 200" role="img">${paths}${labels}</svg><div class="pleg">${items.map(([c,l,n])=>`<div><i class="dot" style="background:${c}"></i><span>${l}<br><b>${fmt(n)}</b> · ${n>0&&pct(n,tot)===0?"<1":pct(n,tot)}%</span></div>`).join("")}</div>`;
 }
 function render1(){
   const L=sel?P.filter(p=>p.n===sel):P, lbl=sel||"Seluruh provinsi";
-  const tot=sum(p=>p.pbp,L),tem=sum(p=>p.tem,L),ser=sum(p=>p.ser,L),v=sumArr(p=>p.v,L),cc=sumArr(p=>p.cc,L),cm=sumArr(p=>p.cm,L);
+  const tot=sum(p=>p.pbp,L),tem=sum(p=>p.tem,L),rv=sum(p=>p.rv,L),cc=sumArr(p=>p.cc,L),cm=sumArr(p=>p.cm,L);
   $("#kTot").textContent=fmt(tot);$("#kScope").textContent=lbl;
-  pie("#pSerah",[["var(--accent)","Diserahkan",ser],["var(--grey)","Belum diserahkan",tot-ser]],tot);
-  pie("#pVer",[["var(--green)","Diverifikasi",v[0]],["var(--amber)","Belum diverifikasi",v[1]],["var(--red)","Ditolak",v[2]]],tot);
-  // v = [diverifikasi, belum diverifikasi, ditolak]
+  pie("#pSerah",[["var(--accent)","Sudah Reviu",rv],["var(--grey)","Belum Reviu",tot-rv]],tot);
+  // Rincian hasil reviu: dari PBP yang sudah direviu -> Sesuai + kategori Belum Sesuai
+  pie("#pVer",[["var(--green)","Sesuai",rv-tem]].concat(cats.map(([n],i)=>[catCol[i],n,cc[i]])),rv);
   const mx=Math.max(...cc,1);
   const rl=sumArr(p=>p.rl,L),mr=Math.max(...rl,1);
   $("#rlBars").innerHTML=rlCats.map((n,i)=>`<div class="hbar"><span>${n}</span><span class="t"><i style="width:${rl[i]/mr*100}%"></i></span><b>${fmt(rl[i])}</b></div>`).join("");
   $("#compScope").textContent=lbl;
-  const rin=[["Sesuai",tot-tem,"var(--green)"]].concat(cats.map(([n],i)=>[n,cc[i],"var(--accent)"])).sort((x,y)=>y[1]-x[1]),mr2=Math.max(...rin.map(x=>x[1]),1);
+  const rin=[["Sesuai",rv-tem,"var(--green)"]].concat(cats.map(([n],i)=>[n,cc[i],"var(--accent)"])).sort((x,y)=>y[1]-x[1]),mr2=Math.max(...rin.map(x=>x[1]),1);
   $("#catBars").innerHTML=rin.map(([n,x,c])=>`<div class="hbar"><span>${n}</span><span class="t"><i style="width:${x/mr2*100}%;background:${c}"></i></span><b>${fmt(x)}</b></div>`).join("");
   pie("#pComp",cm.map((x,i)=>[compCol[i],comp[i],x]),tot);
   $("#btnList").textContent=`Lihat daftar ${fmt(tem)} temuan SPI →`;
@@ -270,7 +276,10 @@ function setVer(v){
 }
 function go(id){["p1","p2"].forEach(x=>$("#"+x).classList.toggle("hide",x!==id));document.querySelectorAll(".tab").forEach(t=>t.classList.toggle("on",t.dataset.p===id))}
 document.querySelectorAll(".tab").forEach(t=>t.onclick=()=>go(t.dataset.p));
-render1();render2();
+STAGES.forEach((t,i)=>$("#sCut").add(new Option(t.n+" · "+t.d,i)));
+function setStage(i){const d=build(STAGES[i]);P=d.P;rows=d.rows;fk=fc=fd="";buildProv();render1();render2()}
+$("#sCut").onchange=e=>setStage(+e.target.value);
+$("#sCut").value=2;setStage(2);
 </script>
 </body>
 </html>
