@@ -10,7 +10,7 @@
   {
    "provinsi": "Aceh",
    "pbp": 6893,
-   "sudah_reviu": 5140,
+   "sudah_reviu": 6893,
    "belum_sesuai": 239,
    "komposisi": {
     "Normal": 5468,
@@ -37,7 +37,7 @@
   {
    "provinsi": "Sumatera Utara",
    "pbp": 4510,
-   "sudah_reviu": 3593,
+   "sudah_reviu": 4510,
    "belum_sesuai": 379,
    "komposisi": {
     "Normal": 3729,
@@ -64,7 +64,7 @@
   {
    "provinsi": "Sumatera Barat",
    "pbp": 30460,
-   "sudah_reviu": 22112,
+   "sudah_reviu": 30460,
    "belum_sesuai": 2065,
    "komposisi": {
     "Normal": 23643,
@@ -91,7 +91,7 @@
   {
    "provinsi": "Riau",
    "pbp": 9659,
-   "sudah_reviu": 7016,
+   "sudah_reviu": 9659,
    "belum_sesuai": 566,
    "komposisi": {
     "Normal": 7555,
@@ -118,7 +118,7 @@
   {
    "provinsi": "Jambi",
    "pbp": 3168,
-   "sudah_reviu": 2225,
+   "sudah_reviu": 3168,
    "belum_sesuai": 279,
    "komposisi": {
     "Normal": 2534,
@@ -145,7 +145,7 @@
   {
    "provinsi": "Bengkulu",
    "pbp": 13318,
-   "sudah_reviu": 10052,
+   "sudah_reviu": 13318,
    "belum_sesuai": 926,
    "komposisi": {
     "Normal": 11080,
@@ -172,7 +172,7 @@
   {
    "provinsi": "Lampung",
    "pbp": 25152,
-   "sudah_reviu": 19837,
+   "sudah_reviu": 25152,
    "belum_sesuai": 1134,
    "komposisi": {
     "Normal": 20340,
@@ -199,7 +199,7 @@
   {
    "provinsi": "Kepulauan Riau",
    "pbp": 1284,
-   "sudah_reviu": 936,
+   "sudah_reviu": 1284,
    "belum_sesuai": 123,
    "komposisi": {
     "Normal": 988,
@@ -226,7 +226,7 @@
   {
    "provinsi": "Jawa Barat",
    "pbp": 87089,
-   "sudah_reviu": 68577,
+   "sudah_reviu": 87089,
    "belum_sesuai": 3674,
    "komposisi": {
     "Normal": 67860,
@@ -253,7 +253,7 @@
   {
    "provinsi": "Jawa Tengah",
    "pbp": 1306,
-   "sudah_reviu": 1017,
+   "sudah_reviu": 1306,
    "belum_sesuai": 40,
    "komposisi": {
     "Normal": 1066,
@@ -280,7 +280,7 @@
   {
    "provinsi": "Jawa Timur",
    "pbp": 20054,
-   "sudah_reviu": 14229,
+   "sudah_reviu": 20054,
    "belum_sesuai": 2313,
    "komposisi": {
     "Normal": 16128,
@@ -307,7 +307,7 @@
   {
    "provinsi": "Banten",
    "pbp": 16183,
-   "sudah_reviu": 12704,
+   "sudah_reviu": 16183,
    "belum_sesuai": 1007,
    "komposisi": {
     "Normal": 13032,
@@ -334,7 +334,7 @@
   {
    "provinsi": "Bali",
    "pbp": 1945,
-   "sudah_reviu": 1375,
+   "sudah_reviu": 1945,
    "belum_sesuai": 81,
    "komposisi": {
     "Normal": 1497,
@@ -361,7 +361,7 @@
   {
    "provinsi": "Nusa Tenggara Timur",
    "pbp": 21002,
-   "sudah_reviu": 15717,
+   "sudah_reviu": 21002,
    "belum_sesuai": 2234,
    "komposisi": {
     "Normal": 17280,
@@ -388,7 +388,7 @@
   {
    "provinsi": "Kalimantan Barat",
    "pbp": 2152,
-   "sudah_reviu": 1523,
+   "sudah_reviu": 2152,
    "belum_sesuai": 249,
    "komposisi": {
     "Normal": 1735,
@@ -415,7 +415,7 @@
   {
    "provinsi": "Kalimantan Tengah",
    "pbp": 1810,
-   "sudah_reviu": 1343,
+   "sudah_reviu": 1810,
    "belum_sesuai": 171,
    "komposisi": {
     "Normal": 1449,
@@ -442,7 +442,7 @@
   {
    "provinsi": "Kalimantan Selatan",
    "pbp": 2739,
-   "sudah_reviu": 1931,
+   "sudah_reviu": 2739,
    "belum_sesuai": 140,
    "komposisi": {
     "Normal": 2156,
@@ -469,7 +469,7 @@
   {
    "provinsi": "Kalimantan Timur",
    "pbp": 3955,
-   "sudah_reviu": 2896,
+   "sudah_reviu": 3955,
    "belum_sesuai": 431,
    "komposisi": {
     "Normal": 3221,
@@ -496,7 +496,7 @@
   {
    "provinsi": "Sulawesi Utara",
    "pbp": 8184,
-   "sudah_reviu": 5942,
+   "sudah_reviu": 8184,
    "belum_sesuai": 558,
    "komposisi": {
     "Normal": 6660,
@@ -523,7 +523,7 @@
   {
    "provinsi": "Sulawesi Tengah",
    "pbp": 456,
-   "sudah_reviu": 327,
+   "sudah_reviu": 456,
    "belum_sesuai": 19,
    "komposisi": {
     "Normal": 369,
@@ -550,7 +550,7 @@
   {
    "provinsi": "Sulawesi Selatan",
    "pbp": 8469,
-   "sudah_reviu": 6762,
+   "sudah_reviu": 8469,
    "belum_sesuai": 446,
    "komposisi": {
     "Normal": 6505,
@@ -577,7 +577,7 @@
   {
    "provinsi": "Sulawesi Tenggara",
    "pbp": 27152,
-   "sudah_reviu": 20532,
+   "sudah_reviu": 27152,
    "belum_sesuai": 2710,
    "komposisi": {
     "Normal": 21733,
@@ -604,7 +604,7 @@
   {
    "provinsi": "Gorontalo",
    "pbp": 3416,
-   "sudah_reviu": 2513,
+   "sudah_reviu": 3416,
    "belum_sesuai": 309,
    "komposisi": {
     "Normal": 2733,
@@ -631,7 +631,7 @@
   {
    "provinsi": "Sulawesi Barat",
    "pbp": 6125,
-   "sudah_reviu": 4630,
+   "sudah_reviu": 6125,
    "belum_sesuai": 493,
    "komposisi": {
     "Normal": 4639,
@@ -658,7 +658,7 @@
   {
    "provinsi": "Maluku",
    "pbp": 2425,
-   "sudah_reviu": 1782,
+   "sudah_reviu": 2425,
    "belum_sesuai": 259,
    "komposisi": {
     "Normal": 1861,
@@ -685,7 +685,7 @@
   {
    "provinsi": "Maluku Utara",
    "pbp": 6678,
-   "sudah_reviu": 4700,
+   "sudah_reviu": 6678,
    "belum_sesuai": 682,
    "komposisi": {
     "Normal": 5244,
@@ -712,7 +712,7 @@
   {
    "provinsi": "Papua",
    "pbp": 12910,
-   "sudah_reviu": 9820,
+   "sudah_reviu": 12910,
    "belum_sesuai": 885,
    "komposisi": {
     "Normal": 10398,
@@ -739,7 +739,7 @@
   {
    "provinsi": "Papua Barat",
    "pbp": 13358,
-   "sudah_reviu": 9758,
+   "sudah_reviu": 13358,
    "belum_sesuai": 1208,
    "komposisi": {
     "Normal": 10787,
@@ -766,7 +766,7 @@
   {
    "provinsi": "Papua Tengah",
    "pbp": 9002,
-   "sudah_reviu": 6737,
+   "sudah_reviu": 9002,
    "belum_sesuai": 929,
    "komposisi": {
     "Normal": 7253,

@@ -2,7 +2,7 @@ kategori,provinsi,kota_kab,kecamatan,kel_desa,no_pbp,nama_disamarkan,status_sera
 → Perwakilan 1 KK,Aceh,KOTA BANDA ACEH,SYIAH KUALA,PINEUNG,PBP-1144112,Di*** Wi***,Diserahkan,PET LAP Su***,Verified,An*** Sa***,Belum Sesuai,Belum Sesuai
 → Perwakilan 1 KK,Aceh,KAB. ACEH TENGGARA,KETAMBE,PENUNGKUNEN,PBP-1468159,Fa*** Da***,Diserahkan,PET LAP Ni***,Unverified,,Sudah Sesuai,Belum Direviu
 → Perwakilan 1 KK,Aceh,KAB. ACEH TENGGARA,KETAMBE,PENYEBERANGAN CINGKAM,PBP-1432823,Fa*** Be***,Diserahkan,PET LAP Su***,Verified,An*** Sa***,Belum Sesuai,Belum Direviu
-→ Perwakilan 1 KK,Aceh,KOTA BANDA ACEH,LUENG BATA,LAMDOM,PBP-1402105,Ab*** Wi***,Diserahkan,PET LAP Ni***,Verified,Ri*** Mu*** Mi***,Sudah Sesuai,Sudah Sesuai
+→ Perwakilan 1 KK,Aceh,KOTA BANDA ACEH,LUENG BATA,COT MESJID,PBP-1402105,Ab*** Wi***,Diserahkan,PET LAP Ni***,Verified,Ri*** Mu*** Mi***,Sudah Sesuai,Sudah Sesuai
 → Perwakilan 1 KK,Aceh,KOTA BANDA ACEH,ULEE KARENG,LAMBHUK,PBP-1190234,Ko*** Ju***,Diserahkan,PET LAP Ni***,Verified,An*** Sa***,Belum Sesuai,Belum Direviu
 → Perwakilan 1 KK,Aceh,KAB. ACEH TENGGARA,KETAMBE,KAYU METANGUR,PBP-1108327,Si*** Ma***,Belum diserahkan,,Verified,Wi*** Ha***,Belum Sesuai,Sudah Sesuai
 → Perwakilan 1 KK,Aceh,KAB. ACEH TENGGARA,KETAMBE,DATOK PINING,PBP-1163597,Na*** Be***,Diserahkan,PET LAP Ni***,Verified,De*** Pu***,Belum Sesuai,Sudah Sesuai
@@ -32,7 +32,7 @@ Normal → Perw. beda KK,Aceh,KOTA BANDA ACEH,BANDA RAYA,LAMPEUOT,PBP-1456666,Yo
 Normal → Perw. beda KK,Aceh,KAB. ACEH TENGGARA,KETAMBE,KATI MAJU,PBP-1277886,Ta*** Pu***,Diserahkan,PET LAP Ab***,Verified,Wi*** Ha***,Sudah Sesuai,Belum Direviu
 Normal → Perw. beda KK,Aceh,KOTA BANDA ACEH,LUENG BATA,LAMSEUPEUNG,PBP-1054545,Ra*** Ma***,Diserahkan,PET LAP Su***,Verified,Ri*** Mu*** Mi***,Sudah Sesuai,Belum Sesuai
 Normal → Perw. beda KK,Aceh,KOTA BANDA ACEH,BANDA RAYA,LHONG CUT,PBP-1209602,Wa*** Ma***,Diserahkan,PET LAP Ha***,Verified,An*** Sa***,Belum Sesuai,Belum Sesuai
-Normal → Perw. beda KK,Aceh,KAB. ACEH TENGGARA,KETAMBE,BENER BEPAPAH,PBP-1683846,Ko*** Ju***,Diserahkan,PET LAP Ha***,Unverified,,Belum Sesuai,Belum Direviu
+Normal → Perw. beda KK,Aceh,KAB. ACEH TENGGARA,KETAMBE,AUNAN SEPAKAT,PBP-1683846,Ko*** Ju***,Diserahkan,PET LAP Ha***,Unverified,,Belum Sesuai,Belum Direviu
 Normal → Perw. beda KK,Aceh,KAB. ACEH TENGGARA,KETAMBE,LEUSER,PBP-1328101,Ha*** Da***,Diserahkan,PET LAP Ko***,Unverified,,Belum Sesuai,Belum Direviu
 Normal → Perw. beda KK,Aceh,KOTA BANDA ACEH,BANDA RAYA,LAM ARA,PBP-1260038,Ju*** So***,Diserahkan,PET LAP Ha***,Verified,Wi*** Ha***,Sudah Sesuai,Belum Direviu
 Peng. → Peng. >1x,Aceh,KOTA BANDA ACEH,LUENG BATA,SUKA DAMAI,PBP-1006595,Ma*** Ha***,Diserahkan,PET LAP Ni***,Verified,Wi*** Ha***,Belum Sesuai,Belum Sesuai
@@ -90,11 +90,11 @@ Normal → Peng. lok. lain,Sumatera Utara,KOTA MEDAN,MEDAN BARU,PETISAH HULU,PBP
 Normal → Peng. lok. lain,Sumatera Utara,KAB. LABUHANBATU UTARA,MARBAU,SIPARE PARE TENGAH,PBP-1264564,Di*** So***,Diserahkan,PET LAP Ab***,Unverified,,Belum Sesuai,Belum Direviu
 → Perwakilan 1 KK,Sumatera Barat,KAB. PASAMAN,LUBUK SIKAPING,SUNDATA UTARA,PBP-1234973,Yo*** Su***,Diserahkan,PET LAP Su***,Verified,De*** Pu***,Belum Sesuai,Belum Direviu
 → Perwakilan 1 KK,Sumatera Barat,KOTA SOLOK,LUBUK SIKARAH,SIMPANG RUMBIO,PBP-1159161,Ju*** Be***,Diserahkan,PET LAP Ha***,Verified,An*** Sa***,Sudah Sesuai,Belum Direviu
-→ Perwakilan 1 KK,Sumatera Barat,KAB. PASAMAN,LUBUK SIKAPING,AIA MANGGIH,PBP-1275935,Si*** Pu***,Diserahkan,PET LAP Ha***,Verified,De*** Pu***,Sudah Sesuai,Sudah Sesuai
-→ Perwakilan 1 KK,Sumatera Barat,KAB. PASAMAN,LUBUK SIKAPING,SUNDATA,PBP-1694028,Ni*** Pu***,Diserahkan,PET LAP Su***,Unverified,,Belum Sesuai,Belum Direviu
+→ Perwakilan 1 KK,Sumatera Barat,KAB. AGAM,MALALAK,MALALAK TIMUR,PBP-1275935,Si*** Pu***,Diserahkan,PET LAP Ha***,Verified,De*** Pu***,Sudah Sesuai,Sudah Sesuai
+→ Perwakilan 1 KK,Sumatera Barat,KAB. PASAMAN,LUBUK SIKAPING,PAUAH,PBP-1694028,Ni*** Pu***,Diserahkan,PET LAP Su***,Unverified,,Belum Sesuai,Belum Direviu
 → Perwakilan 1 KK,Sumatera Barat,KOTA PAYAKUMBUH,PAYAKUMBUH TIMUR,KOTO PANJANG,PBP-1466362,Di*** So***,Diserahkan,PET LAP Ni***,Verified,An*** Sa***,Belum Sesuai,Belum Direviu
 → Perwakilan 1 KK,Sumatera Barat,KAB. PASAMAN,LUBUK SIKAPING,AIA MANGGIH UTARA,PBP-1306851,Ta*** Da***,Diserahkan,PET LAP Ha***,Unverified,,Belum Sesuai,Belum Direviu
-→ Perwakilan 1 KK,Sumatera Barat,KOTA SOLOK,LUBUK SIKARAH,ARO IV KORONG,PBP-1264038,Ko*** Be***,Diserahkan,PET LAP Ha***,Verified,De*** Pu***,Belum Sesuai,Belum Direviu
+→ Perwakilan 1 KK,Sumatera Barat,KOTA PAYAKUMBUH,PAYAKUMBUH UTARA,TARATAK PADANG KAMPUANG,PBP-1264038,Ko*** Be***,Diserahkan,PET LAP Ha***,Verified,De*** Pu***,Belum Sesuai,Belum Direviu
 → Perwakilan 1 KK,Sumatera Barat,KOTA PARIAMAN,PARIAMAN TIMUR,TALAGO SARIK,PBP-1268767,Ha*** Ju***,Diserahkan,PET LAP Ni***,Unverified,,Belum Sesuai,Sudah Sesuai
 → Perwakilan 1 KK,Sumatera Barat,KOTA PARIAMAN,PARIAMAN TIMUR,KALUAT,PBP-1140253,Di*** Su***,Belum diserahkan,,Verified,An*** Sa***,Sudah Sesuai,Belum Direviu
 → Perwakilan 1 KK,Sumatera Barat,KAB. PASAMAN,LUBUK SIKAPING,SUNDATA,PBP-1435717,Di*** Pu***,Diserahkan,PET LAP Ko***,Unverified,,Belum Sesuai,Sudah Sesuai
@@ -115,10 +115,10 @@ Normal → Peng. lok. lain,Sumatera Utara,KAB. LABUHANBATU UTARA,MARBAU,SIPARE P
 → Perwakilan 1 KK,Sumatera Barat,KAB. PASAMAN BARAT,PASAMAN,LINGKUANG AUA JAMBAK,PBP-1530353,Ra*** Su***,Belum diserahkan,,Verified,Wi*** Ha***,Belum Sesuai,Belum Direviu
 → Perwakilan 1 KK,Sumatera Barat,KAB. PASAMAN BARAT,PASAMAN,AIA GADANG,PBP-1615880,Ma*** Ju***,Diserahkan,PET LAP Ha***,Unverified,,Sudah Sesuai,Belum Direviu
 → Perwakilan 1 KK,Sumatera Barat,KOTA PARIAMAN,PARIAMAN TIMUR,TALAGO SARIK,PBP-1187201,Ma*** Ju***,Diserahkan,PET LAP Ha***,Verified,De*** Pu***,Sudah Sesuai,Belum Direviu
-→ Perwakilan 1 KK,Sumatera Barat,KAB. AGAM,MALALAK,MALALAK BARAT,PBP-1662034,Ma*** Ha***,Diserahkan,PET LAP Ni***,Verified,Ri*** Mu*** Mi***,Belum Sesuai,Belum Direviu
+→ Perwakilan 1 KK,Sumatera Barat,KOTA PARIAMAN,PARIAMAN UTARA,TUNGKAL UTARA MENJADI KELURAHAN,PBP-1662034,Ma*** Ha***,Diserahkan,PET LAP Ni***,Verified,Ri*** Mu*** Mi***,Belum Sesuai,Belum Direviu
 → Perwakilan 1 KK,Sumatera Barat,KOTA PARIAMAN,PARIAMAN UTARA,NARAS I NAGARI NARAS III KOTO,PBP-1046686,Wa*** Ju***,Diserahkan,PET LAP Ha***,Verified,Wi*** Ha***,Belum Sesuai,Belum Direviu
 Terima >1x Normal/Peng.,Sumatera Barat,KOTA SOLOK,TANJUNG HARAPAN,TANJUNG PAKU,PBP-1374969,Su*** Be***,Diserahkan,PET LAP Su***,Verified,Ri*** Mu*** Mi***,Sudah Sesuai,Belum Direviu
-Terima >1x Normal/Peng.,Sumatera Barat,KAB. PASAMAN BARAT,LUHAK NAN DUO,JAMBAK SELATAN,PBP-1271201,Fa*** Ka***,Diserahkan,PET LAP Ko***,Unverified,,Sudah Sesuai,Belum Direviu
+Terima >1x Normal/Peng.,Sumatera Barat,KAB. PASAMAN,LUBUK SIKAPING,SUNDATA UTARA,PBP-1271201,Fa*** Ka***,Diserahkan,PET LAP Ko***,Unverified,,Sudah Sesuai,Belum Direviu
 Terima >1x Normal/Peng.,Sumatera Barat,KOTA PARIAMAN,PARIAMAN UTARA,MANGGUNG NAGARI MANGGUNG,PBP-1077587,Na*** Ka***,Diserahkan,PET LAP Su***,Unverified,,Sudah Sesuai,Belum Direviu
 Terima >1x Normal/Peng.,Sumatera Barat,KOTA PARIAMAN,PARIAMAN TIMUR,TALAGO SARIK,PBP-1535318,Fa*** Da***,Belum diserahkan,,Verified,Wi*** Ha***,Sudah Sesuai,Sudah Sesuai
 Terima >1x Normal/Peng.,Sumatera Barat,KOTA PARIAMAN,PARIAMAN UTARA,SIKAPAK BARAT NAGARI TUNGKAL,PBP-1226269,Fa*** Ju***,Diserahkan,PET LAP Su***,Unverified,,Belum Sesuai,Belum Direviu
@@ -133,10 +133,10 @@ Terima >1x Normal/Peng.,Sumatera Barat,KOTA PARIAMAN,PARIAMAN SELATAN,MARUNGGI N
 Terima >1x Normal/Peng.,Sumatera Barat,KAB. PASAMAN BARAT,PASAMAN,LINGKUANG AUA BARAT,PBP-1298481,Di*** Su***,Diserahkan,PET LAP Su***,Unverified,,Sudah Sesuai,Sudah Sesuai
 Terima >1x Normal/Peng.,Sumatera Barat,KOTA SOLOK,LUBUK SIKARAH,KAMPAI TABU KARAMBIA,PBP-1029262,Na*** Ka***,Diserahkan,PET LAP Ab***,Verified,Wi*** Ha***,Sudah Sesuai,Belum Direviu
 Terima >1x Normal/Peng.,Sumatera Barat,KOTA PARIAMAN,PARIAMAN TENGAH,PAUH BARAT,PBP-1030177,Si*** Pu***,Diserahkan,PET LAP Ab***,Verified,Wi*** Ha***,Belum Sesuai,Belum Direviu
-Terima >1x Normal/Peng.,Sumatera Barat,KOTA PARIAMAN,PARIAMAN TIMUR,TALAGO SARIK,PBP-1037568,Ni*** Pu***,Diserahkan,PET LAP Ha***,Unverified,,Sudah Sesuai,Sudah Sesuai
+Terima >1x Normal/Peng.,Sumatera Barat,KOTA PARIAMAN,PARIAMAN TIMUR,SUNGAI SIRAH,PBP-1037568,Ni*** Pu***,Diserahkan,PET LAP Ha***,Unverified,,Sudah Sesuai,Sudah Sesuai
 Terima >1x Normal/Peng.,Sumatera Barat,KOTA SOLOK,TANJUNG HARAPAN,TANJUNG PAKU,PBP-1191067,Ko*** Ka***,Diserahkan,PET LAP Ni***,Verified,Ri*** Mu*** Mi***,Sudah Sesuai,Belum Direviu
 Terima >1x Normal/Peng.,Sumatera Barat,KAB. AGAM,MALALAK,MALALAK BARAT,PBP-1271331,Ab*** Ru***,Diserahkan,PET LAP Su***,Verified,De*** Pu***,Belum Sesuai,Sudah Sesuai
-Terima >1x Normal/Peng.,Sumatera Barat,KOTA PARIAMAN,PARIAMAN UTARA,CUBADAK AIR SELATAN NAGARI CUBADAK AIR,PBP-1255590,Ko*** Ka***,Diserahkan,PET LAP Ab***,Unverified,,Belum Sesuai,Belum Direviu
+Terima >1x Normal/Peng.,Sumatera Barat,KOTA PARIAMAN,PARIAMAN UTARA,CUBADAK AIR NAGARI CUBADAK AIR,PBP-1255590,Ko*** Ka***,Diserahkan,PET LAP Ab***,Unverified,,Belum Sesuai,Belum Direviu
 Terima >1x Normal/Peng.,Sumatera Barat,KOTA PARIAMAN,PARIAMAN TENGAH,ALAI GELOMBANG,PBP-1125717,Ra*** Be***,Diserahkan,PET LAP Ab***,Unverified,,Belum Sesuai,Belum Direviu
 Normal → Perw. beda KK,Sumatera Barat,KOTA SOLOK,LUBUK SIKARAH,TANAH GARAM,PBP-1094931,Na*** Pu***,Belum diserahkan,,Verified,An*** Sa***,Sudah Sesuai,Belum Sesuai
 Normal → Perw. beda KK,Sumatera Barat,KOTA SOLOK,LUBUK SIKARAH,SINAPA PILIANG,PBP-1319886,Si*** Li***,Diserahkan,PET LAP Ab***,Verified,Ri*** Mu*** Mi***,Belum Sesuai,Sudah Sesuai
@@ -151,7 +151,7 @@ Normal → Perw. beda KK,Sumatera Barat,KOTA PARIAMAN,PARIAMAN SELATAN,TOBOH PAL
 Normal → Perw. beda KK,Sumatera Barat,KOTA SOLOK,LUBUK SIKARAH,SIMPANG RUMBIO,PBP-1150285,Ni*** Ju***,Diserahkan,PET LAP Ha***,Verified,Ri*** Mu*** Mi***,Belum Sesuai,Belum Direviu
 Normal → Perw. beda KK,Sumatera Barat,KOTA PARIAMAN,PARIAMAN UTARA,TUNGKAL SELATAN MENJADI KELURAHAN,PBP-1331174,Ab*** Da***,Diserahkan,PET LAP Ko***,Verified,Ri*** Mu*** Mi***,Belum Sesuai,Belum Direviu
 Normal → Perw. beda KK,Sumatera Barat,KOTA PARIAMAN,PARIAMAN TIMUR,KALUAT,PBP-1541185,Ni*** Wi***,Diserahkan,PET LAP Ha***,Unverified,,Sudah Sesuai,Belum Direviu
-Normal → Perw. beda KK,Sumatera Barat,KOTA PAYAKUMBUH,PAYAKUMBUH TIMUR,BALAI JARING,PBP-1233378,Ra*** Su***,Diserahkan,PET LAP Su***,Verified,Ri*** Mu*** Mi***,Sudah Sesuai,Belum Direviu
+Normal → Perw. beda KK,Sumatera Barat,KOTA PAYAKUMBUH,PAYAKUMBUH SELATAN,PADANG KARAMBIA,PBP-1233378,Ra*** Su***,Diserahkan,PET LAP Su***,Verified,Ri*** Mu*** Mi***,Sudah Sesuai,Belum Direviu
 Peng. → Peng. >1x,Sumatera Barat,KOTA PAYAKUMBUH,PAYAKUMBUH TIMUR,BALAI JARING,PBP-1491453,Fa*** Pu***,Diserahkan,PET LAP Ni***,Unverified,,Sudah Sesuai,Belum Direviu
 Peng. → Peng. >1x,Sumatera Barat,KAB. PASAMAN BARAT,PASAMAN,AIA GADANG,PBP-1309290,Fa*** Ru***,Diserahkan,PET LAP Su***,Unverified,,Sudah Sesuai,Belum Direviu
 Peng. → Peng. >1x,Sumatera Barat,KOTA PARIAMAN,PARIAMAN UTARA,CUBADAK AIR NAGARI CUBADAK AIR,PBP-1657758,Ab*** Li***,Diserahkan,PET LAP Ni***,Unverified,,Sudah Sesuai,Belum Direviu
@@ -194,7 +194,7 @@ Terima >1x Normal/Peng.,Riau,KAB. BENGKALIS,BENGKALIS,SIMPANG AYAM,PBP-1432198,H
 Terima >1x Normal/Peng.,Riau,KAB. KUANTAN SINGINGI,BENAI,BANJAR BENAI,PBP-1098242,Ab*** So***,Belum diserahkan,,Verified,De*** Pu***,Sudah Sesuai,Belum Direviu
 Terima >1x Normal/Peng.,Riau,KAB. KUANTAN SINGINGI,SENTAJO RAYA,JALUR PATAH,PBP-1695265,Na*** Li***,Diserahkan,PET LAP Ab***,Verified,De*** Pu***,Belum Sesuai,Belum Direviu
 Normal → Perw. beda KK,Riau,KAB. KUANTAN SINGINGI,BENAI,TEBING TINGGI,PBP-1539777,Na*** Ju***,Diserahkan,PET LAP Ko***,Verified,Ri*** Mu*** Mi***,Belum Sesuai,Belum Direviu
-Normal → Perw. beda KK,Riau,KAB. KUANTAN SINGINGI,BENAI,BANJAR BENAI,PBP-1567395,Ma*** Ma***,Diserahkan,PET LAP Su***,Unverified,,Sudah Sesuai,Sudah Sesuai
+Normal → Perw. beda KK,Riau,KAB. INDRAGIRI HILIR,TEMBILAHAN,SEBERANG TEMBILAHAN SELATAN,PBP-1567395,Ma*** Ma***,Diserahkan,PET LAP Su***,Unverified,,Sudah Sesuai,Sudah Sesuai
 Normal → Perw. beda KK,Riau,KAB. BENGKALIS,BENGKALIS,RIMBA SEKAMPUNG,PBP-1047225,Ko*** Da***,Diserahkan,PET LAP Su***,Unverified,,Belum Sesuai,Belum Direviu
 Normal → Perw. beda KK,Riau,KAB. INDRAGIRI HILIR,BATANG TUAKA,TANJUNGSIANTAR,PBP-1121312,Si*** Da***,Diserahkan,PET LAP Ha***,Verified,Ri*** Mu*** Mi***,Belum Sesuai,Sudah Sesuai
 Normal → Perw. beda KK,Riau,KAB. BENGKALIS,BENGKALIS,PRAPAT TUNGGAL,PBP-1496510,Si*** Pu***,Diserahkan,PET LAP Ab***,Unverified,,Belum Sesuai,Belum Direviu
@@ -202,11 +202,11 @@ Peng. → Peng. >1x,Riau,KAB. KUANTAN SINGINGI,BENAI,PULAUINGU,PBP-1012095,Ab***
 Peng. → Peng. >1x,Riau,KAB. KUANTAN SINGINGI,BENAI,BANJAR BENAI,PBP-1645270,Ra*** Li***,Belum diserahkan,,Verified,Wi*** Ha***,Belum Sesuai,Belum Direviu
 Peng. → Peng. >1x,Riau,KAB. INDRAGIRI HILIR,BATANG TUAKA,SUNGAILUAR,PBP-1243357,Ju*** Ka***,Diserahkan,PET LAP Su***,Verified,De*** Pu***,Belum Sesuai,Belum Direviu
 Peng. → Perw. beda KK,Riau,KAB. BENGKALIS,BENGKALIS,SENDERAK,PBP-1574379,Di*** Ka***,Diserahkan,PET LAP Su***,Verified,Ri*** Mu*** Mi***,Sudah Sesuai,Belum Direviu
-Peng. → Perw. beda KK,Riau,KAB. KUANTAN SINGINGI,BENAI,SIBERAKUN,PBP-1390853,Ma*** So***,Belum diserahkan,,Unverified,,Belum Sesuai,Belum Direviu
+Peng. → Perw. beda KK,Riau,KAB. KUANTAN SINGINGI,BENAI,PULAUTONGAH,PBP-1390853,Ma*** So***,Belum diserahkan,,Unverified,,Belum Sesuai,Belum Direviu
 Normal → Peng. lok. lain,Riau,KAB. BENGKALIS,BENGKALIS,SEBAUK,PBP-1095582,Wa*** Ma***,Diserahkan,PET LAP Ab***,Verified,Ri*** Mu*** Mi***,Belum Sesuai,Belum Direviu
 Normal → Peng. lok. lain,Riau,KAB. KUANTAN SINGINGI,BENAI,UJUNG TANJUNG,PBP-1145999,Si*** Ju***,Diserahkan,PET LAP Ni***,Verified,Ri*** Mu*** Mi***,Belum Sesuai,Belum Direviu
-→ Perwakilan 1 KK,Jambi,KAB. MERANGIN,BANGKO,LANGLING,PBP-1307805,Ab*** Pu***,Diserahkan,PET LAP Ni***,Verified,Ri*** Mu*** Mi***,Sudah Sesuai,Belum Direviu
-→ Perwakilan 1 KK,Jambi,KOTA SUNGAI PENUH,SUNGAI BUNGKAL,PELAYANG RAYA,PBP-1480760,Ko*** Ha***,Diserahkan,PET LAP Ni***,Verified,Ri*** Mu*** Mi***,Sudah Sesuai,Belum Direviu
+→ Perwakilan 1 KK,Jambi,KAB. MERANGIN,BANGKO,MUDO,PBP-1307805,Ab*** Pu***,Diserahkan,PET LAP Ni***,Verified,Ri*** Mu*** Mi***,Sudah Sesuai,Belum Direviu
+→ Perwakilan 1 KK,Jambi,KOTA SUNGAI PENUH,SUNGAI PENUH,AMAR SAKTI,PBP-1480760,Ko*** Ha***,Diserahkan,PET LAP Ni***,Verified,Ri*** Mu*** Mi***,Sudah Sesuai,Belum Direviu
 → Perwakilan 1 KK,Jambi,KOTA JAMBI,JAMBI TIMUR,SULANJANA,PBP-1335672,Si*** Li***,Diserahkan,PET LAP Ha***,Verified,Wi*** Ha***,Belum Sesuai,Belum Direviu
 → Perwakilan 1 KK,Jambi,KAB. TANJUNG JABUNG BARAT,KUALA BETARA,BETARA KANAN,PBP-1088321,Di*** Ha***,Diserahkan,PET LAP Ha***,Unverified,,Sudah Sesuai,Belum Sesuai
 Terima >1x Normal/Peng.,Jambi,KOTA JAMBI,PELAYANGAN,MUDUNG LAUT,PBP-1253402,Wa*** So***,Diserahkan,PET LAP Su***,Verified,Ri*** Mu*** Mi***,Sudah Sesuai,Belum Direviu
@@ -214,11 +214,11 @@ Terima >1x Normal/Peng.,Jambi,KAB. TANJUNG JABUNG BARAT,KUALA BETARA,SUNGAIDUALA
 Terima >1x Normal/Peng.,Jambi,KAB. TANJUNG JABUNG BARAT,KUALA BETARA,KUALA INDAH,PBP-1560905,Ko*** Ru***,Diserahkan,PET LAP Ab***,Verified,Ri*** Mu*** Mi***,Sudah Sesuai,Belum Direviu
 Normal → Perw. beda KK,Jambi,KOTA JAMBI,PELAYANGAN,MUDUNG LAUT,PBP-1056973,Ab*** Ru***,Diserahkan,PET LAP Ko***,Verified,An*** Sa***,Sudah Sesuai,Belum Sesuai
 Normal → Perw. beda KK,Jambi,KOTA JAMBI,PELAYANGAN,MUDUNG LAUT,PBP-1325941,Na*** Be***,Diserahkan,PET LAP Ni***,Verified,An*** Sa***,Belum Sesuai,Belum Direviu
-Normal → Perw. beda KK,Jambi,KOTA SUNGAI PENUH,SUNGAI PENUH,AMAR SAKTI,PBP-1672510,Di*** Li***,Diserahkan,PET LAP Ni***,Unverified,,Sudah Sesuai,Belum Sesuai
+Normal → Perw. beda KK,Jambi,KAB. MERANGIN,BANGKO,LANGLING,PBP-1672510,Di*** Li***,Diserahkan,PET LAP Ni***,Unverified,,Sudah Sesuai,Belum Sesuai
 Peng. → Peng. >1x,Jambi,KOTA JAMBI,JAMBI TIMUR,SULANJANA,PBP-1519754,Ab*** Ma***,Diserahkan,PET LAP Ni***,Unverified,,Belum Sesuai,Belum Direviu
 Peng. → Peng. >1x,Jambi,KOTA JAMBI,JAMBI TIMUR,SULANJANA,PBP-1393957,Ko*** Wi***,Diserahkan,PET LAP Ab***,Verified,Ri*** Mu*** Mi***,Sudah Sesuai,Belum Direviu
 Peng. → Perw. beda KK,Jambi,KOTA JAMBI,JAMBI TIMUR,SULANJANA,PBP-1115475,Ju*** Da***,Diserahkan,PET LAP Ko***,Verified,De*** Pu***,Belum Sesuai,Belum Direviu
-Normal → Peng. lok. lain,Jambi,KAB. TANJUNG JABUNG BARAT,KUALA BETARA,BETARA KIRI,PBP-1566543,Ab*** So***,Diserahkan,PET LAP Ab***,Verified,Wi*** Ha***,Belum Sesuai,Belum Direviu
+Normal → Peng. lok. lain,Jambi,KAB. TANJUNG JABUNG BARAT,KUALA BETARA,DATARAN PINANG,PBP-1566543,Ab*** So***,Diserahkan,PET LAP Ab***,Verified,Wi*** Ha***,Belum Sesuai,Belum Direviu
 → Perwakilan 1 KK,Bengkulu,KAB. KEPAHIANG,KEBAWETAN,SUKA SARI,PBP-1336437,Yo*** Ju***,Diserahkan,PET LAP Ko***,Verified,Ri*** Mu*** Mi***,Belum Sesuai,Belum Direviu
 → Perwakilan 1 KK,Bengkulu,KAB. REJANG LEBONG,CURUP UTARA,BATU PANCO,PBP-1429215,Ma*** Ma***,Diserahkan,PET LAP Ab***,Unverified,,Belum Sesuai,Belum Direviu
 → Perwakilan 1 KK,Bengkulu,KAB. KEPAHIANG,SEBERANG MUSI,KANDANG,PBP-1016609,Ab*** Da***,Diserahkan,PET LAP Ni***,Verified,De*** Pu***,Sudah Sesuai,Belum Direviu
@@ -566,7 +566,7 @@ Normal → Peng. lok. lain,Kepulauan Riau,KAB. BINTAN,MANTANG,MANTANG BARU,PBP-1
 → Perwakilan 1 KK,Jawa Barat,KOTA TASIKMALAYA,CIHIDEUNG,NAGARAWANGI,PBP-1686149,Wa*** Pu***,Diserahkan,PET LAP Ab***,Verified,Ri*** Mu*** Mi***,Belum Sesuai,Belum Direviu
 → Perwakilan 1 KK,Jawa Barat,KOTA TASIKMALAYA,TAMANSARI,SUMELAP,PBP-1203626,Ab*** Ru***,Belum diserahkan,,Verified,De*** Pu***,Sudah Sesuai,Belum Direviu
 → Perwakilan 1 KK,Jawa Barat,KOTA TASIKMALAYA,MANGKUBUMI,CIPARI,PBP-1451751,Ta*** Pu***,Belum diserahkan,,Verified,Ri*** Mu*** Mi***,Sudah Sesuai,Belum Direviu
-→ Perwakilan 1 KK,Jawa Barat,KOTA TASIKMALAYA,PURBARATU,SUKANAGARA,PBP-1562329,Na*** Su***,Diserahkan,PET LAP Ab***,Unverified,,Sudah Sesuai,Belum Direviu
+→ Perwakilan 1 KK,Jawa Barat,KOTA TASIKMALAYA,TAMANSARI,SETIAMULYA,PBP-1562329,Na*** Su***,Diserahkan,PET LAP Ab***,Unverified,,Sudah Sesuai,Belum Direviu
 → Perwakilan 1 KK,Jawa Barat,KOTA TASIKMALAYA,INDIHIANG,SUKAMAJU KIDUL,PBP-1216359,Ni*** Li***,Diserahkan,PET LAP Ab***,Verified,Ri*** Mu*** Mi***,Belum Sesuai,Belum Sesuai
 → Perwakilan 1 KK,Jawa Barat,KOTA TASIKMALAYA,INDIHIANG,PARAKANNYASAG,PBP-1157440,Si*** Su***,Diserahkan,PET LAP Ni***,Verified,An*** Sa***,Sudah Sesuai,Belum Direviu
 → Perwakilan 1 KK,Jawa Barat,KAB. MAJALENGKA,LEMAHSUGIH,DAYEUHWANGI,PBP-1106804,Ra*** Pu***,Diserahkan,PET LAP Ha***,Unverified,,Belum Sesuai,Belum Direviu
@@ -604,7 +604,7 @@ Normal → Peng. lok. lain,Kepulauan Riau,KAB. BINTAN,MANTANG,MANTANG BARU,PBP-1
 → Perwakilan 1 KK,Jawa Barat,KAB. MAJALENGKA,LEMAHSUGIH,CIPASUNG,PBP-1447680,Ma*** Da***,Diserahkan,PET LAP Ni***,Unverified,,Belum Sesuai,Belum Sesuai
 → Perwakilan 1 KK,Jawa Barat,KOTA TASIKMALAYA,INDIHIANG,SUKAMAJU KIDUL,PBP-1001205,Fa*** Ha***,Diserahkan,PET LAP Ko***,Verified,Wi*** Ha***,Sudah Sesuai,Belum Direviu
 → Perwakilan 1 KK,Jawa Barat,KOTA TASIKMALAYA,KAWALU,TALAGASARI,PBP-1335829,Yo*** Ju***,Diserahkan,PET LAP Ni***,Verified,Wi*** Ha***,Belum Sesuai,Belum Direviu
-→ Perwakilan 1 KK,Jawa Barat,KOTA TASIKMALAYA,KAWALU,TANJUNG,PBP-1143335,Ju*** Ma***,Diserahkan,PET LAP Ko***,Unverified,,Belum Sesuai,Belum Direviu
+→ Perwakilan 1 KK,Jawa Barat,KOTA TASIKMALAYA,KAWALU,URUG,PBP-1143335,Ju*** Ma***,Diserahkan,PET LAP Ko***,Unverified,,Belum Sesuai,Belum Direviu
 → Perwakilan 1 KK,Jawa Barat,KOTA TASIKMALAYA,KAWALU,CIBEUTI,PBP-1135106,Wa*** Ha***,Diserahkan,PET LAP Ha***,Unverified,,Belum Sesuai,Sudah Sesuai
 → Perwakilan 1 KK,Jawa Barat,KAB. MAJALENGKA,BANJARAN,GIRIMULYA,PBP-1665790,Si*** Pu***,Diserahkan,PET LAP Ni***,Verified,Wi*** Ha***,Belum Sesuai,Sudah Sesuai
 → Perwakilan 1 KK,Jawa Barat,KAB. MAJALENGKA,BANJARAN,GIRIMULYA,PBP-1670288,Di*** Ma***,Diserahkan,PET LAP Ha***,Verified,Ri*** Mu*** Mi***,Belum Sesuai,Belum Direviu
@@ -897,7 +897,7 @@ Peng. → Perw. beda KK,Jawa Barat,KOTA TASIKMALAYA,MANGKUBUMI,SAMBONGJAYA,PBP-1
 Peng. → Perw. beda KK,Jawa Barat,KOTA TASIKMALAYA,TAWANG,KAHURIPAN,PBP-1653094,Su*** Pu***,Diserahkan,PET LAP Su***,Verified,Wi*** Ha***,Belum Sesuai,Belum Direviu
 Peng. → Perw. beda KK,Jawa Barat,KOTA TASIKMALAYA,KAWALU,TALAGASARI,PBP-1375824,Yo*** Li***,Diserahkan,PET LAP Su***,Verified,Ri*** Mu*** Mi***,Sudah Sesuai,Belum Direviu
 Normal → Peng. lok. lain,Jawa Barat,KOTA TASIKMALAYA,PURBARATU,SUKANAGARA,PBP-1003623,Di*** Ka***,Diserahkan,PET LAP Ab***,Verified,Ri*** Mu*** Mi***,Belum Sesuai,Sudah Sesuai
-Normal → Peng. lok. lain,Jawa Barat,KOTA TASIKMALAYA,KAWALU,KERSAMENAK,PBP-1687839,Ra*** Be***,Diserahkan,PET LAP Ab***,Verified,An*** Sa***,Belum Sesuai,Sudah Sesuai
+Normal → Peng. lok. lain,Jawa Barat,KOTA TASIKMALAYA,KAWALU,LEUWILIANG,PBP-1687839,Ra*** Be***,Diserahkan,PET LAP Ab***,Verified,An*** Sa***,Belum Sesuai,Sudah Sesuai
 Normal → Peng. lok. lain,Jawa Barat,KOTA TASIKMALAYA,KAWALU,KERSAMENAK,PBP-1622228,Yo*** Be***,Diserahkan,PET LAP Ha***,Verified,An*** Sa***,Belum Sesuai,Belum Direviu
 Normal → Peng. lok. lain,Jawa Barat,KAB. MAJALENGKA,RAJAGALUH,CIPINANG,PBP-1632493,Ko*** Pu***,Diserahkan,PET LAP Ni***,Verified,Wi*** Ha***,Belum Sesuai,Belum Direviu
 Normal → Peng. lok. lain,Jawa Barat,KOTA TASIKMALAYA,INDIHIANG,SUKAMAJU KIDUL,PBP-1435983,Di*** Ju***,Diserahkan,PET LAP Ko***,Verified,Ri*** Mu*** Mi***,Belum Sesuai,Belum Direviu
@@ -1005,7 +1005,7 @@ Normal → Perw. beda KK,Jawa Timur,KAB. TUBAN,TUBAN,RONGGOMULYO,PBP-1570540,Si*
 Normal → Perw. beda KK,Jawa Timur,KAB. LAMONGAN,NGIMBANG,GEBANGANGKRIK,PBP-1679119,Er*** Ha***,Diserahkan,PET LAP Su***,Verified,Ri*** Mu*** Mi***,Sudah Sesuai,Belum Sesuai
 Normal → Perw. beda KK,Jawa Timur,KAB. TUBAN,TUBAN,KARANGSARI,PBP-1641918,Su*** Be***,Diserahkan,PET LAP Su***,Verified,Ri*** Mu*** Mi***,Belum Sesuai,Belum Direviu
 Normal → Perw. beda KK,Jawa Timur,KAB. LAMONGAN,NGIMBANG,GEBANGANGKRIK,PBP-1327476,Ma*** Da***,Diserahkan,PET LAP Ab***,Verified,Ri*** Mu*** Mi***,Sudah Sesuai,Sudah Sesuai
-Normal → Perw. beda KK,Jawa Timur,KAB. LAMONGAN,NGIMBANG,GEBANGANGKRIK,PBP-1057091,Ta*** Ka***,Diserahkan,PET LAP Ko***,Unverified,,Sudah Sesuai,Belum Direviu
+Normal → Perw. beda KK,Jawa Timur,KAB. LAMONGAN,NGIMBANG,GANGGANGTINGAN,PBP-1057091,Ta*** Ka***,Diserahkan,PET LAP Ko***,Unverified,,Sudah Sesuai,Belum Direviu
 Normal → Perw. beda KK,Jawa Timur,KAB. JOMBANG,NGUSIKAN,NGUSIKAN,PBP-1360030,Wa*** Ru***,Diserahkan,PET LAP Su***,Unverified,,Belum Sesuai,Belum Direviu
 Normal → Perw. beda KK,Jawa Timur,KAB. PROBOLINGGO,TEGALSIWALAN,SUMBERKLEDUNG,PBP-1516076,Fa*** Li***,Diserahkan,PET LAP Ni***,Verified,Ri*** Mu*** Mi***,Belum Sesuai,Belum Direviu
 Normal → Perw. beda KK,Jawa Timur,KAB. TUBAN,TUBAN,LATSARI,PBP-1201775,Ha*** Be***,Diserahkan,PET LAP Ha***,Unverified,,Sudah Sesuai,Belum Direviu
@@ -1014,7 +1014,7 @@ Normal → Perw. beda KK,Jawa Timur,KAB. TUBAN,TUBAN,LATSARI,PBP-1143792,Di*** S
 Normal → Perw. beda KK,Jawa Timur,KAB. LAMONGAN,NGIMBANG,LAMONGREJO,PBP-1494646,Ma*** Ma***,Diserahkan,PET LAP Ab***,Verified,Ri*** Mu*** Mi***,Sudah Sesuai,Belum Sesuai
 Normal → Perw. beda KK,Jawa Timur,KAB. LAMONGAN,NGIMBANG,DRUJUGURIT,PBP-1097039,Yo*** Ha***,Diserahkan,PET LAP Ko***,Verified,De*** Pu***,Belum Sesuai,Belum Direviu
 Normal → Perw. beda KK,Jawa Timur,KAB. LAMONGAN,NGIMBANG,NGASEMLEMAHBANG,PBP-1248439,Ha*** Be***,Diserahkan,PET LAP Ab***,Verified,An*** Sa***,Sudah Sesuai,Belum Direviu
-Normal → Perw. beda KK,Jawa Timur,KAB. LAMONGAN,NGIMBANG,CERME,PBP-1003226,Ta*** Be***,Diserahkan,PET LAP Su***,Verified,De*** Pu***,Belum Sesuai,Belum Sesuai
+Normal → Perw. beda KK,Jawa Timur,KAB. JOMBANG,NGUSIKAN,SUMBERNONGKO,PBP-1003226,Ta*** Be***,Diserahkan,PET LAP Su***,Verified,De*** Pu***,Belum Sesuai,Belum Sesuai
 Normal → Perw. beda KK,Jawa Timur,KAB. LAMONGAN,NGIMBANG,KAKATPENJALIN,PBP-1640292,Di*** Ru***,Diserahkan,PET LAP Ab***,Verified,Ri*** Mu*** Mi***,Belum Sesuai,Sudah Sesuai
 Normal → Perw. beda KK,Jawa Timur,KAB. TUBAN,TUBAN,SUMURGUNG,PBP-1108617,Di*** Li***,Diserahkan,PET LAP Su***,Unverified,,Belum Sesuai,Sudah Sesuai
 Normal → Perw. beda KK,Jawa Timur,KAB. TUBAN,TUBAN,SUGIHARJO,PBP-1507182,Ma*** Ju***,Diserahkan,PET LAP Ab***,Verified,An*** Sa***,Sudah Sesuai,Belum Direviu
@@ -1058,7 +1058,7 @@ Peng. → Perw. beda KK,Jawa Timur,KAB. TUBAN,TUBAN,KEMBANGBILO,PBP-1288193,Su**
 Peng. → Perw. beda KK,Jawa Timur,KAB. TUBAN,TUBAN,SUMURGUNG,PBP-1174822,Di*** Ha***,Diserahkan,PET LAP Ha***,Verified,An*** Sa***,Sudah Sesuai,Belum Direviu
 Peng. → Perw. beda KK,Jawa Timur,KAB. LAMONGAN,NGIMBANG,CERME,PBP-1639444,Ra*** Be***,Diserahkan,PET LAP Ko***,Verified,An*** Sa***,Sudah Sesuai,Belum Direviu
 Peng. → Perw. beda KK,Jawa Timur,KAB. LAMONGAN,NGIMBANG,JEJEL,PBP-1496621,Ta*** Li***,Diserahkan,PET LAP Su***,Verified,Wi*** Ha***,Belum Sesuai,Belum Direviu
-Peng. → Perw. beda KK,Jawa Timur,KAB. LAMONGAN,NGIMBANG,DRUJUGURIT,PBP-1550884,Ha*** Ka***,Diserahkan,PET LAP Ha***,Verified,Ri*** Mu*** Mi***,Sudah Sesuai,Belum Direviu
+Peng. → Perw. beda KK,Jawa Timur,KAB. LAMONGAN,NGIMBANG,CERME,PBP-1550884,Ha*** Ka***,Diserahkan,PET LAP Ha***,Verified,Ri*** Mu*** Mi***,Sudah Sesuai,Belum Direviu
 Peng. → Perw. beda KK,Jawa Timur,KAB. LAMONGAN,NGIMBANG,LAMONGREJO,PBP-1056390,Si*** Ru***,Diserahkan,PET LAP Ni***,Unverified,,Belum Sesuai,Belum Direviu
 Peng. → Perw. beda KK,Jawa Timur,KAB. LAMONGAN,NGIMBANG,LAMONGREJO,PBP-1480916,Fa*** Ma***,Diserahkan,PET LAP Ni***,Verified,Ri*** Mu*** Mi***,Sudah Sesuai,Sudah Sesuai
 Peng. → Perw. beda KK,Jawa Timur,KAB. LAMONGAN,NGIMBANG,TLEMANG,PBP-1670680,Ta*** Su***,Diserahkan,PET LAP Ab***,Verified,Ri*** Mu*** Mi***,Belum Sesuai,Belum Direviu
@@ -1206,7 +1206,7 @@ Peng. → Perw. beda KK,Bali,KAB. KLUNGKUNG,BANJARANGKAN,GETAKAN,PBP-1377229,Ma*
 Peng. → Perw. beda KK,Bali,KAB. KARANGASEM,ABANG,KESIMPAR,PBP-1178040,Ra*** Pu***,Diserahkan,PET LAP Ni***,Unverified,,Belum Sesuai,Belum Direviu
 Normal → Peng. lok. lain,Bali,KAB. TABANAN,KERAMBITAN,BELUMBANG,PBP-1001439,Ra*** Li***,Diserahkan,PET LAP Ha***,Verified,De*** Pu***,Belum Sesuai,Belum Direviu
 → Perwakilan 1 KK,Nusa Tenggara Timur,KAB. MANGGARAI,LANGKE REMBONG,TENDA,PBP-1523293,Su*** So***,Diserahkan,PET LAP Ko***,Unverified,,Belum Sesuai,Belum Direviu
-→ Perwakilan 1 KK,Nusa Tenggara Timur,KAB. MANGGARAI,REOK,WANGKUNG,PBP-1628779,Si*** Ma***,Belum diserahkan,,Verified,Wi*** Ha***,Belum Sesuai,Belum Direviu
+→ Perwakilan 1 KK,Nusa Tenggara Timur,KAB. MANGGARAI,REOK,SALAMA,PBP-1628779,Si*** Ma***,Belum diserahkan,,Verified,Wi*** Ha***,Belum Sesuai,Belum Direviu
 → Perwakilan 1 KK,Nusa Tenggara Timur,KAB. MANGGARAI,LANGKE REMBONG,WASO,PBP-1043699,Si*** Ru***,Diserahkan,PET LAP Ni***,Verified,Wi*** Ha***,Belum Sesuai,Belum Direviu
 → Perwakilan 1 KK,Nusa Tenggara Timur,KAB. MANGGARAI,LANGKE REMBONG,WASO,PBP-1304289,Fa*** Ha***,Belum diserahkan,,Verified,De*** Pu***,Belum Sesuai,Sudah Sesuai
 → Perwakilan 1 KK,Nusa Tenggara Timur,KAB. MANGGARAI,REOK,RUIS,PBP-1163765,Yo*** Wi***,Diserahkan,PET LAP Ni***,Verified,De*** Pu***,Belum Sesuai,Belum Direviu
@@ -1231,7 +1231,7 @@ Normal → Peng. lok. lain,Bali,KAB. TABANAN,KERAMBITAN,BELUMBANG,PBP-1001439,Ra
 → Perwakilan 1 KK,Nusa Tenggara Timur,KAB. SUMBA BARAT DAYA,KODI UTARA,BILA CENGE,PBP-1365599,Ab*** Li***,Belum diserahkan,,Verified,Wi*** Ha***,Belum Sesuai,Belum Direviu
 → Perwakilan 1 KK,Nusa Tenggara Timur,KAB. MANGGARAI,REOK,BARU,PBP-1448178,Ha*** So***,Diserahkan,PET LAP Ab***,Unverified,,Belum Sesuai,Belum Direviu
 → Perwakilan 1 KK,Nusa Tenggara Timur,KAB. MANGGARAI,LANGKE REMBONG,CAREP,PBP-1401688,Ra*** Ru***,Diserahkan,PET LAP Su***,Unverified,,Belum Sesuai,Sudah Sesuai
-→ Perwakilan 1 KK,Nusa Tenggara Timur,KAB. MANGGARAI,REOK,WATU BAUR,PBP-1280014,Ni*** Da***,Diserahkan,PET LAP Ha***,Verified,Wi*** Ha***,Belum Sesuai,Belum Direviu
+→ Perwakilan 1 KK,Nusa Tenggara Timur,KAB. MANGGARAI,REOK,WANGKUNG,PBP-1280014,Ni*** Da***,Diserahkan,PET LAP Ha***,Verified,Wi*** Ha***,Belum Sesuai,Belum Direviu
 → Perwakilan 1 KK,Nusa Tenggara Timur,KAB. MANGGARAI,LANGKE REMBONG,POCO MAL,PBP-1476006,Ta*** Be***,Diserahkan,PET LAP Ha***,Verified,De*** Pu***,Belum Sesuai,Belum Direviu
 → Perwakilan 1 KK,Nusa Tenggara Timur,KAB. MANGGARAI,LANGKE REMBONG,TADONG,PBP-1121405,Na*** Su***,Diserahkan,PET LAP Ko***,Verified,Wi*** Ha***,Sudah Sesuai,Belum Sesuai
 → Perwakilan 1 KK,Nusa Tenggara Timur,KAB. MANGGARAI,REOK,SALAMA,PBP-1502155,Ko*** Ru***,Diserahkan,PET LAP Ha***,Verified,An*** Sa***,Sudah Sesuai,Belum Sesuai
@@ -1268,7 +1268,7 @@ Terima >1x Normal/Peng.,Nusa Tenggara Timur,KAB. SUMBA BARAT DAYA,WEWEWA TENGAH,
 Terima >1x Normal/Peng.,Nusa Tenggara Timur,KAB. MANGGARAI,REOK,BAJAK,PBP-1023882,Si*** Ma***,Belum diserahkan,,Verified,An*** Sa***,Belum Sesuai,Belum Direviu
 Terima >1x Normal/Peng.,Nusa Tenggara Timur,KAB. MANGGARAI,LANGKE REMBONG,POCO MAL,PBP-1562841,Wa*** Li***,Diserahkan,PET LAP Ha***,Verified,Wi*** Ha***,Sudah Sesuai,Belum Direviu
 Terima >1x Normal/Peng.,Nusa Tenggara Timur,KAB. MANGGARAI,LANGKE REMBONG,BANGKA LEDA,PBP-1266410,Di*** Ju***,Diserahkan,PET LAP Ni***,Unverified,,Sudah Sesuai,Sudah Sesuai
-Terima >1x Normal/Peng.,Nusa Tenggara Timur,KAB. MANGGARAI,REOK,MATA AIR,PBP-1577822,Su*** Ru***,Diserahkan,PET LAP Ko***,Unverified,,Sudah Sesuai,Belum Direviu
+Terima >1x Normal/Peng.,Nusa Tenggara Timur,KAB. MANGGARAI,REOK,BARU,PBP-1577822,Su*** Ru***,Diserahkan,PET LAP Ko***,Unverified,,Sudah Sesuai,Belum Direviu
 Terima >1x Normal/Peng.,Nusa Tenggara Timur,KAB. MANGGARAI,REOK,RUIS,PBP-1280774,Si*** Be***,Belum diserahkan,,Verified,Wi*** Ha***,Belum Sesuai,Belum Sesuai
 Terima >1x Normal/Peng.,Nusa Tenggara Timur,KAB. MANGGARAI,REOK,WANGKUNG,PBP-1470108,Na*** Be***,Diserahkan,PET LAP Ha***,Unverified,,Sudah Sesuai,Belum Direviu
 Terima >1x Normal/Peng.,Nusa Tenggara Timur,KAB. MANGGARAI,LANGKE REMBONG,SATAR TACIK,PBP-1213055,Wa*** Ma***,Diserahkan,PET LAP Ni***,Verified,De*** Pu***,Sudah Sesuai,Belum Direviu
@@ -1311,11 +1311,11 @@ Peng. → Peng. >1x,Nusa Tenggara Timur,KAB. SUMBA BARAT DAYA,WEWEWA TENGAH,WEE 
 Peng. → Peng. >1x,Nusa Tenggara Timur,KAB. SUMBA BARAT DAYA,WEWEWA UTARA,WEE PABOBA,PBP-1316030,Na*** Be***,Diserahkan,PET LAP Ko***,Unverified,,Belum Sesuai,Belum Direviu
 Peng. → Peng. >1x,Nusa Tenggara Timur,KAB. SUMBA BARAT DAYA,WEWEWA UTARA,WEE NAMBA,PBP-1417728,Yo*** So***,Diserahkan,PET LAP Su***,Unverified,,Sudah Sesuai,Belum Direviu
 Peng. → Peng. >1x,Nusa Tenggara Timur,KAB. MANGGARAI,REOK BARAT,NGGALAK,PBP-1284622,Ta*** Pu***,Diserahkan,PET LAP Ni***,Verified,De*** Pu***,Sudah Sesuai,Sudah Sesuai
-Peng. → Perw. beda KK,Nusa Tenggara Timur,KAB. MANGGARAI,LANGKE REMBONG,MBAUMUKU,PBP-1384554,Er*** Su***,Diserahkan,PET LAP Ab***,Verified,Ri*** Mu*** Mi***,Belum Sesuai,Belum Direviu
+Peng. → Perw. beda KK,Nusa Tenggara Timur,KAB. MANGGARAI,LANGKE REMBONG,LAWIR,PBP-1384554,Er*** Su***,Diserahkan,PET LAP Ab***,Verified,Ri*** Mu*** Mi***,Belum Sesuai,Belum Direviu
 Peng. → Perw. beda KK,Nusa Tenggara Timur,KAB. SUMBA BARAT DAYA,KODI UTARA,BILA CENGE,PBP-1310307,Yo*** Be***,Belum diserahkan,,Unverified,,Belum Sesuai,Belum Direviu
 Peng. → Perw. beda KK,Nusa Tenggara Timur,KAB. SUMBA BARAT DAYA,WEWEWA TENGAH,MATA WEE KARORO,PBP-1529356,Ko*** Wi***,Diserahkan,PET LAP Ab***,Unverified,,Belum Sesuai,Belum Sesuai
 Peng. → Perw. beda KK,Nusa Tenggara Timur,KAB. SUMBA BARAT DAYA,WEWEWA TENGAH,LIMBU WATU,PBP-1078457,Si*** Ru***,Diserahkan,PET LAP Ni***,Unverified,,Belum Sesuai,Belum Direviu
-Peng. → Perw. beda KK,Nusa Tenggara Timur,KAB. MANGGARAI,REOK,SALAMA,PBP-1197219,Na*** Ka***,Belum diserahkan,,Verified,De*** Pu***,Sudah Sesuai,Sudah Sesuai
+Peng. → Perw. beda KK,Nusa Tenggara Timur,KAB. MANGGARAI,REOK,RUIS,PBP-1197219,Na*** Ka***,Belum diserahkan,,Verified,De*** Pu***,Sudah Sesuai,Sudah Sesuai
 Peng. → Perw. beda KK,Nusa Tenggara Timur,KAB. MANGGARAI,LANGKE REMBONG,BANGKA LEDA,PBP-1152863,Ab*** Ru***,Diserahkan,PET LAP Ha***,Verified,An*** Sa***,Sudah Sesuai,Sudah Sesuai
 Peng. → Perw. beda KK,Nusa Tenggara Timur,KAB. MANGGARAI,LANGKE REMBONG,BANGKA LEDA,PBP-1124228,Fa*** Da***,Diserahkan,PET LAP Ha***,Verified,Ri*** Mu*** Mi***,Sudah Sesuai,Sudah Sesuai
 Normal → Peng. lok. lain,Nusa Tenggara Timur,KAB. MANGGARAI,LANGKE REMBONG,WASO,PBP-1179895,Ra*** Ha***,Diserahkan,PET LAP Ab***,Verified,Ri*** Mu*** Mi***,Belum Sesuai,Sudah Sesuai
@@ -1384,7 +1384,7 @@ Normal → Peng. lok. lain,Kalimantan Selatan,KAB. BANJAR,TATAH MAKMUR,PEMANGKIH
 → Perwakilan 1 KK,Kalimantan Timur,KAB. PASER,LONG IKIS,KRAYAN JAYA,PBP-1211695,Ni*** Li***,Diserahkan,PET LAP Ab***,Verified,Ri*** Mu*** Mi***,Belum Sesuai,Belum Direviu
 → Perwakilan 1 KK,Kalimantan Timur,KAB. PASER,LONG IKIS,KRAYAN JAYA,PBP-1643987,Na*** Ru***,Diserahkan,PET LAP Su***,Verified,Ri*** Mu*** Mi***,Belum Sesuai,Belum Direviu
 → Perwakilan 1 KK,Kalimantan Timur,KAB. PASER,LONG IKIS,TELUK WARU,PBP-1085548,Su*** Da***,Diserahkan,PET LAP Ha***,Verified,De*** Pu***,Sudah Sesuai,Sudah Sesuai
-→ Perwakilan 1 KK,Kalimantan Timur,KAB. PASER,LONG IKIS,SEKUROU JAYA,PBP-1207789,Ab*** Ka***,Diserahkan,PET LAP Ko***,Verified,De*** Pu***,Sudah Sesuai,Belum Direviu
+→ Perwakilan 1 KK,Kalimantan Timur,KAB. PASER,LONG IKIS,SAWIT JAYA,PBP-1207789,Ab*** Ka***,Diserahkan,PET LAP Ko***,Verified,De*** Pu***,Sudah Sesuai,Belum Direviu
 Terima >1x Normal/Peng.,Kalimantan Timur,KAB. PASER,LONG IKIS,TAJUR,PBP-1068347,Ra*** Ma***,Diserahkan,PET LAP Ha***,Verified,Wi*** Ha***,Belum Sesuai,Belum Direviu
 Terima >1x Normal/Peng.,Kalimantan Timur,KAB. PASER,LONG IKIS,OLUNG,PBP-1688791,Ko*** So***,Diserahkan,PET LAP Su***,Verified,Ri*** Mu*** Mi***,Belum Sesuai,Belum Direviu
 Terima >1x Normal/Peng.,Kalimantan Timur,KAB. PASER,LONG IKIS,LONG IKIS,PBP-1367990,Su*** Ka***,Diserahkan,PET LAP Ab***,Unverified,,Belum Sesuai,Belum Direviu
@@ -1549,7 +1549,7 @@ Normal → Peng. lok. lain,Sulawesi Selatan,KAB. SIDENRENG RAPPANG,TELLU LIMPOE,
 Normal → Peng. lok. lain,Sulawesi Selatan,KAB. ENREKANG,ANGGERAJA,SINGKI,PBP-1353476,Yo*** Da***,Diserahkan,PET LAP Ko***,Verified,An*** Sa***,Sudah Sesuai,Belum Direviu
 Normal → Peng. lok. lain,Sulawesi Selatan,KAB. ENREKANG,ANGGERAJA,BAMBA PUANG,PBP-1503760,Su*** Wi***,Diserahkan,PET LAP Su***,Verified,Wi*** Ha***,Belum Sesuai,Belum Direviu
 Normal → Peng. lok. lain,Sulawesi Selatan,KAB. WAJO,KEERA,PATTIROLOKKA,PBP-1229770,Ko*** Ma***,Diserahkan,PET LAP Ko***,Verified,De*** Pu***,Belum Sesuai,Belum Direviu
-→ Perwakilan 1 KK,Sulawesi Tenggara,KAB. KOLAKA,WUNDULAKO,UNAMENDAA,PBP-1101778,Ta*** Ma***,Diserahkan,PET LAP Ha***,Verified,An*** Sa***,Sudah Sesuai,Belum Direviu
+→ Perwakilan 1 KK,Sulawesi Tenggara,KAB. KOLAKA,WUNDULAKO,WUNDULAKO,PBP-1101778,Ta*** Ma***,Diserahkan,PET LAP Ha***,Verified,An*** Sa***,Sudah Sesuai,Belum Direviu
 → Perwakilan 1 KK,Sulawesi Tenggara,KAB. KONAWE SELATAN,ANDOOLO,LALOBAO,PBP-1532500,Ra*** Ka***,Diserahkan,PET LAP Ko***,Unverified,,Sudah Sesuai,Belum Direviu
 → Perwakilan 1 KK,Sulawesi Tenggara,KAB. MUNA BARAT,LAWA,LATUGHO,PBP-1352870,Fa*** Wi***,Diserahkan,PET LAP Ha***,Verified,An*** Sa***,Sudah Sesuai,Belum Direviu
 → Perwakilan 1 KK,Sulawesi Tenggara,KOTA KENDARI,NAMBO,NAMBO,PBP-1033056,Di*** Pu***,Diserahkan,PET LAP Ha***,Verified,An*** Sa***,Sudah Sesuai,Belum Direviu
@@ -1568,7 +1568,7 @@ Normal → Peng. lok. lain,Sulawesi Selatan,KAB. WAJO,KEERA,PATTIROLOKKA,PBP-122
 → Perwakilan 1 KK,Sulawesi Tenggara,KOTA KENDARI,PUUWATU,TOBUUHA,PBP-1563825,Si*** Ka***,Diserahkan,PET LAP Ha***,Verified,Wi*** Ha***,Belum Sesuai,Belum Direviu
 → Perwakilan 1 KK,Sulawesi Tenggara,KAB. MUNA,LASALEPA,PARIDA,PBP-1636978,Fa*** Ha***,Diserahkan,PET LAP Ni***,Verified,De*** Pu***,Sudah Sesuai,Sudah Sesuai
 → Perwakilan 1 KK,Sulawesi Tenggara,KAB. WAKATOBI,TOGO BINONGKO,OIHU,PBP-1110789,Ra*** Pu***,Diserahkan,PET LAP Ko***,Verified,Ri*** Mu*** Mi***,Sudah Sesuai,Sudah Sesuai
-→ Perwakilan 1 KK,Sulawesi Tenggara,KAB. KONAWE,PURIALA,PUUSANGI,PBP-1218347,Fa*** Ka***,Diserahkan,PET LAP Ni***,Unverified,,Belum Sesuai,Belum Direviu
+→ Perwakilan 1 KK,Sulawesi Tenggara,KAB. KONAWE,PURIALA,SONAI,PBP-1218347,Fa*** Ka***,Diserahkan,PET LAP Ni***,Unverified,,Belum Sesuai,Belum Direviu
 → Perwakilan 1 KK,Sulawesi Tenggara,KOTA KENDARI,ABELI,LAPULU,PBP-1610283,Wa*** Ma***,Diserahkan,PET LAP Ab***,Verified,De*** Pu***,Sudah Sesuai,Sudah Sesuai
 → Perwakilan 1 KK,Sulawesi Tenggara,KAB. MUNA BARAT,LAWA,LATUGHO,PBP-1096925,Ta*** Pu***,Diserahkan,PET LAP Ha***,Verified,Wi*** Ha***,Belum Sesuai,Belum Sesuai
 → Perwakilan 1 KK,Sulawesi Tenggara,KAB. KONAWE KEPULAUAN,WAWONII TIMUR LAUT,MATA DIMBA,PBP-1118722,Yo*** Ma***,Diserahkan,PET LAP Ni***,Verified,An*** Sa***,Sudah Sesuai,Belum Direviu
@@ -1579,7 +1579,7 @@ Normal → Peng. lok. lain,Sulawesi Selatan,KAB. WAJO,KEERA,PATTIROLOKKA,PBP-122
 → Perwakilan 1 KK,Sulawesi Tenggara,KAB. MUNA BARAT,LAWA,LAPADAKU,PBP-1419269,Ni*** Pu***,Diserahkan,PET LAP Ko***,Verified,An*** Sa***,Belum Sesuai,Belum Direviu
 → Perwakilan 1 KK,Sulawesi Tenggara,KAB. BUTON,LASALIMU SELATAN,AMBUAU INDAH,PBP-1432116,Di*** Ma***,Diserahkan,PET LAP Su***,Verified,Ri*** Mu*** Mi***,Belum Sesuai,Sudah Sesuai
 → Perwakilan 1 KK,Sulawesi Tenggara,KAB. MUNA,LASALEPA,KOMBUNGO,PBP-1478056,Su*** Li***,Diserahkan,PET LAP Ha***,Unverified,,Sudah Sesuai,Sudah Sesuai
-→ Perwakilan 1 KK,Sulawesi Tenggara,KAB. BUTON,LASALIMU SELATAN,SIOMANURU,PBP-1153781,Ra*** Su***,Diserahkan,PET LAP Ab***,Verified,De*** Pu***,Sudah Sesuai,Belum Direviu
+→ Perwakilan 1 KK,Sulawesi Tenggara,KAB. BUTON,LASALIMU SELATAN,SIONTAPINA,PBP-1153781,Ra*** Su***,Diserahkan,PET LAP Ab***,Verified,De*** Pu***,Sudah Sesuai,Belum Direviu
 → Perwakilan 1 KK,Sulawesi Tenggara,KAB. BUTON,LASALIMU SELATAN,BALIMU,PBP-1204819,Ni*** Ha***,Diserahkan,PET LAP Ko***,Unverified,,Belum Sesuai,Belum Direviu
 → Perwakilan 1 KK,Sulawesi Tenggara,KOTA KENDARI,KENDARI BARAT,SANUA,PBP-1295935,Ha*** Ka***,Diserahkan,PET LAP Ha***,Verified,Ri*** Mu*** Mi***,Belum Sesuai,Belum Direviu
 → Perwakilan 1 KK,Sulawesi Tenggara,KAB. BOMBANA,POLEANG UTARA,TOBURI,PBP-1125607,Ma*** Pu***,Diserahkan,PET LAP Ko***,Verified,An*** Sa***,Sudah Sesuai,Belum Direviu
@@ -1597,7 +1597,7 @@ Normal → Peng. lok. lain,Sulawesi Selatan,KAB. WAJO,KEERA,PATTIROLOKKA,PBP-122
 → Perwakilan 1 KK,Sulawesi Tenggara,KOTA KENDARI,ABELI,LAPULU,PBP-1049358,Er*** Ha***,Diserahkan,PET LAP Ni***,Verified,Wi*** Ha***,Belum Sesuai,Belum Direviu
 → Perwakilan 1 KK,Sulawesi Tenggara,KAB. KONAWE,PURIALA,PUUSANGI,PBP-1040705,Wa*** Da***,Diserahkan,PET LAP Ni***,Verified,Wi*** Ha***,Sudah Sesuai,Sudah Sesuai
 → Perwakilan 1 KK,Sulawesi Tenggara,KAB. KONAWE UTARA,SAWA,LAIMEO,PBP-1186809,Ab*** Wi***,Diserahkan,PET LAP Ko***,Verified,Ri*** Mu*** Mi***,Belum Sesuai,Belum Direviu
-→ Perwakilan 1 KK,Sulawesi Tenggara,KAB. KONAWE,PURIALA,WONUA MOROME,PBP-1605655,Ab*** Da***,Diserahkan,PET LAP Ko***,Verified,An*** Sa***,Sudah Sesuai,Belum Direviu
+→ Perwakilan 1 KK,Sulawesi Tenggara,KAB. BOMBANA,KABAENA,RAHADOPI,PBP-1605655,Ab*** Da***,Diserahkan,PET LAP Ko***,Verified,An*** Sa***,Sudah Sesuai,Belum Direviu
 → Perwakilan 1 KK,Sulawesi Tenggara,KOTA KENDARI,POASIA,WUNDUMBATU,PBP-1461157,Ma*** Wi***,Diserahkan,PET LAP Ni***,Unverified,,Belum Sesuai,Belum Direviu
 → Perwakilan 1 KK,Sulawesi Tenggara,KOTA KENDARI,ABELI,LAPULU,PBP-1479461,Ma*** So***,Belum diserahkan,,Verified,De*** Pu***,Sudah Sesuai,Belum Direviu
 → Perwakilan 1 KK,Sulawesi Tenggara,KAB. KOLAKA,BAULA,PUUBUNGA,PBP-1378962,Wa*** Ru***,Diserahkan,PET LAP Ni***,Verified,De*** Pu***,Sudah Sesuai,Belum Direviu
@@ -1619,21 +1619,21 @@ Normal → Peng. lok. lain,Sulawesi Selatan,KAB. WAJO,KEERA,PATTIROLOKKA,PBP-122
 → Perwakilan 1 KK,Sulawesi Tenggara,KAB. WAKATOBI,BINONGKO,WALI,PBP-1246042,Ha*** So***,Belum diserahkan,,Verified,De*** Pu***,Belum Sesuai,Belum Direviu
 → Perwakilan 1 KK,Sulawesi Tenggara,KAB. KONAWE KEPULAUAN,WAWONII TIMUR LAUT,DIMBA,PBP-1025646,Na*** Li***,Diserahkan,PET LAP Ab***,Verified,Ri*** Mu*** Mi***,Sudah Sesuai,Belum Direviu
 → Perwakilan 1 KK,Sulawesi Tenggara,KOTA KENDARI,PUUWATU,LALODATI,PBP-1385662,Ni*** Ru***,Diserahkan,PET LAP Su***,Unverified,,Belum Sesuai,Belum Direviu
-→ Perwakilan 1 KK,Sulawesi Tenggara,KAB. BOMBANA,KABAENA,TEOMOKOLE,PBP-1285505,Su*** Ka***,Diserahkan,PET LAP Ha***,Verified,An*** Sa***,Belum Sesuai,Belum Direviu
+→ Perwakilan 1 KK,Sulawesi Tenggara,KAB. BOMBANA,KABAENA,TIRONGKOTUA,PBP-1285505,Su*** Ka***,Diserahkan,PET LAP Ha***,Verified,An*** Sa***,Belum Sesuai,Belum Direviu
 → Perwakilan 1 KK,Sulawesi Tenggara,KOTA KENDARI,ABELI,LAPULU,PBP-1034032,Wa*** Ha***,Diserahkan,PET LAP Su***,Verified,Ri*** Mu*** Mi***,Belum Sesuai,Sudah Sesuai
 Terima >1x Normal/Peng.,Sulawesi Tenggara,KAB. BUTON UTARA,KULISUSU,BANU-BANUA JAYA,PBP-1399203,Er*** Li***,Belum diserahkan,,Verified,Ri*** Mu*** Mi***,Belum Sesuai,Belum Direviu
 Terima >1x Normal/Peng.,Sulawesi Tenggara,KAB. MUNA BARAT,LAWA,WAMELAI,PBP-1401720,Fa*** Pu***,Diserahkan,PET LAP Ha***,Verified,An*** Sa***,Sudah Sesuai,Belum Direviu
 Terima >1x Normal/Peng.,Sulawesi Tenggara,KOTA KENDARI,POASIA,WUNDUMBATU,PBP-1330556,Ra*** Da***,Diserahkan,PET LAP Ha***,Verified,De*** Pu***,Belum Sesuai,Belum Direviu
 Terima >1x Normal/Peng.,Sulawesi Tenggara,KAB. BUTON UTARA,KULISUSU,BANU-BANUA JAYA,PBP-1173421,Ko*** Pu***,Diserahkan,PET LAP Ha***,Verified,Wi*** Ha***,Belum Sesuai,Belum Direviu
 Terima >1x Normal/Peng.,Sulawesi Tenggara,KAB. BUTON,LASALIMU SELATAN,AMBUAU INDAH,PBP-1583987,Ab*** Ju***,Diserahkan,PET LAP Ko***,Verified,De*** Pu***,Belum Sesuai,Sudah Sesuai
-Terima >1x Normal/Peng.,Sulawesi Tenggara,KAB. KOLAKA UTARA,WAWO,LATAWE,PBP-1179838,Wa*** Da***,Diserahkan,PET LAP Ni***,Verified,Ri*** Mu*** Mi***,Belum Sesuai,Belum Direviu
+Terima >1x Normal/Peng.,Sulawesi Tenggara,KAB. KOLAKA UTARA,WAWO,PUMBOLO,PBP-1179838,Wa*** Da***,Diserahkan,PET LAP Ni***,Verified,Ri*** Mu*** Mi***,Belum Sesuai,Belum Direviu
 Terima >1x Normal/Peng.,Sulawesi Tenggara,KAB. MUNA,LASALEPA,LABONE,PBP-1353048,Si*** So***,Diserahkan,PET LAP Ni***,Verified,De*** Pu***,Sudah Sesuai,Sudah Sesuai
 Terima >1x Normal/Peng.,Sulawesi Tenggara,KOTA KENDARI,POASIA,ANGGOEYA,PBP-1347112,Er*** Pu***,Diserahkan,PET LAP Ab***,Verified,Ri*** Mu*** Mi***,Belum Sesuai,Belum Direviu
 Terima >1x Normal/Peng.,Sulawesi Tenggara,KOTA KENDARI,POASIA,ANGGOEYA,PBP-1353344,Di*** Ru***,Diserahkan,PET LAP Ha***,Unverified,,Sudah Sesuai,Belum Sesuai
 Terima >1x Normal/Peng.,Sulawesi Tenggara,KAB. KOLAKA,BAULA,PUUBUNGA,PBP-1242792,Ra*** Ma***,Diserahkan,PET LAP Su***,Unverified,,Sudah Sesuai,Sudah Sesuai
 Terima >1x Normal/Peng.,Sulawesi Tenggara,KAB. KONAWE UTARA,SAWA,ULU SAWA,PBP-1336208,Ab*** Ma***,Diserahkan,PET LAP Ni***,Verified,An*** Sa***,Belum Sesuai,Belum Direviu
 Terima >1x Normal/Peng.,Sulawesi Tenggara,KAB. BOMBANA,KABAENA SELATAN,BATUAWU,PBP-1167505,Ni*** Li***,Diserahkan,PET LAP Ab***,Verified,Ri*** Mu*** Mi***,Belum Sesuai,Belum Direviu
-Terima >1x Normal/Peng.,Sulawesi Tenggara,KAB. KONAWE,PURIALA,WONUA MOROME,PBP-1641989,Ni*** So***,Diserahkan,PET LAP Ab***,Verified,Wi*** Ha***,Belum Sesuai,Belum Direviu
+Terima >1x Normal/Peng.,Sulawesi Tenggara,KAB. BOMBANA,KABAENA,RAHADOPI,PBP-1641989,Ni*** So***,Diserahkan,PET LAP Ab***,Verified,Wi*** Ha***,Belum Sesuai,Belum Direviu
 Terima >1x Normal/Peng.,Sulawesi Tenggara,KAB. KOLAKA,BAULA,PUUBUNGA,PBP-1071987,Ma*** Be***,Diserahkan,PET LAP Ni***,Verified,Ri*** Mu*** Mi***,Belum Sesuai,Sudah Sesuai
 Terima >1x Normal/Peng.,Sulawesi Tenggara,KOTA KENDARI,POASIA,ANGGOEYA,PBP-1076657,Ab*** Be***,Diserahkan,PET LAP Su***,Verified,De*** Pu***,Belum Sesuai,Belum Sesuai
 Terima >1x Normal/Peng.,Sulawesi Tenggara,KAB. WAKATOBI,TOGO BINONGKO,SOWA,PBP-1604663,Ko*** Ha***,Diserahkan,PET LAP Ko***,Verified,De*** Pu***,Belum Sesuai,Belum Direviu
@@ -1674,8 +1674,8 @@ Terima >1x Normal/Peng.,Sulawesi Tenggara,KOTA KENDARI,PUUWATU,LALODATI,PBP-1087
 Normal → Perw. beda KK,Sulawesi Tenggara,KOTA KENDARI,POASIA,ANGGOEYA,PBP-1542277,Ko*** Ma***,Diserahkan,PET LAP Ni***,Unverified,,Belum Sesuai,Sudah Sesuai
 Normal → Perw. beda KK,Sulawesi Tenggara,KAB. KONAWE,PURIALA,PUUHOPA,PBP-1046371,Ni*** Pu***,Diserahkan,PET LAP Su***,Verified,Wi*** Ha***,Belum Sesuai,Belum Direviu
 Normal → Perw. beda KK,Sulawesi Tenggara,KAB. KOLAKA,BAULA,BAULA,PBP-1142106,Ab*** Be***,Diserahkan,PET LAP Ko***,Verified,An*** Sa***,Sudah Sesuai,Belum Direviu
-Normal → Perw. beda KK,Sulawesi Tenggara,KAB. KOLAKA,WATUBANGGA,WATUBANGGA,PBP-1431121,Ta*** Be***,Diserahkan,PET LAP Ni***,Verified,De*** Pu***,Belum Sesuai,Belum Direviu
-Normal → Perw. beda KK,Sulawesi Tenggara,KAB. KOLAKA TIMUR,LOEA,MATAIWOI,PBP-1232083,Di*** Ju***,Diserahkan,PET LAP Su***,Verified,De*** Pu***,Belum Sesuai,Belum Direviu
+Normal → Perw. beda KK,Sulawesi Tenggara,KAB. KOLAKA,WATUBANGGA,WOLULU,PBP-1431121,Ta*** Be***,Diserahkan,PET LAP Ni***,Verified,De*** Pu***,Belum Sesuai,Belum Direviu
+Normal → Perw. beda KK,Sulawesi Tenggara,KAB. KOLAKA TIMUR,LOEA,TEPOSUA,PBP-1232083,Di*** Ju***,Diserahkan,PET LAP Su***,Verified,De*** Pu***,Belum Sesuai,Belum Direviu
 Normal → Perw. beda KK,Sulawesi Tenggara,KAB. KONAWE SELATAN,ANDOOLO,ANDOOLO,PBP-1111022,Na*** Ju***,Diserahkan,PET LAP Su***,Verified,An*** Sa***,Sudah Sesuai,Belum Direviu
 Normal → Perw. beda KK,Sulawesi Tenggara,KAB. BUTON UTARA,KULISUSU,JAMPAKA,PBP-1172637,Di*** Be***,Diserahkan,PET LAP Ni***,Verified,De*** Pu***,Sudah Sesuai,Belum Direviu
 Normal → Perw. beda KK,Sulawesi Tenggara,KAB. KOLAKA,BAULA,PUUBUNGA,PBP-1324850,Na*** Da***,Diserahkan,PET LAP Su***,Verified,Wi*** Ha***,Belum Sesuai,Belum Direviu
@@ -1695,7 +1695,7 @@ Peng. → Peng. >1x,Sulawesi Tenggara,KAB. KOLAKA,WUNDULAKO,WUNDULAKO,PBP-154093
 Peng. → Peng. >1x,Sulawesi Tenggara,KAB. BOMBANA,KABAENA BARAT,SIKELI,PBP-1572116,Su*** Pu***,Diserahkan,PET LAP Ni***,Verified,De*** Pu***,Sudah Sesuai,Belum Direviu
 Peng. → Peng. >1x,Sulawesi Tenggara,KOTA KENDARI,POASIA,WUNDUMBATU,PBP-1669003,Ta*** Be***,Diserahkan,PET LAP Ha***,Unverified,,Belum Sesuai,Belum Direviu
 Peng. → Peng. >1x,Sulawesi Tenggara,KAB. BUTON UTARA,KULISUSU,KALIBU,PBP-1527848,Ju*** So***,Diserahkan,PET LAP Su***,Verified,An*** Sa***,Belum Sesuai,Belum Direviu
-Peng. → Peng. >1x,Sulawesi Tenggara,KAB. KONAWE,PURIALA,MOKALELEO,PBP-1525359,Ha*** Ma***,Diserahkan,PET LAP Ab***,Verified,An*** Sa***,Belum Sesuai,Belum Direviu
+Peng. → Peng. >1x,Sulawesi Tenggara,KAB. KONAWE,PURIALA,POANAHA,PBP-1525359,Ha*** Ma***,Diserahkan,PET LAP Ab***,Verified,An*** Sa***,Belum Sesuai,Belum Direviu
 Peng. → Peng. >1x,Sulawesi Tenggara,KOTA KENDARI,KENDARI BARAT,SANUA,PBP-1477094,Ni*** So***,Diserahkan,PET LAP Ko***,Verified,Ri*** Mu*** Mi***,Belum Sesuai,Belum Direviu
 Peng. → Peng. >1x,Sulawesi Tenggara,KAB. WAKATOBI,TOGO BINONGKO,OIHU,PBP-1366990,Fa*** Ru***,Diserahkan,PET LAP Ko***,Verified,De*** Pu***,Belum Sesuai,Belum Direviu
 Peng. → Peng. >1x,Sulawesi Tenggara,KAB. WAKATOBI,BINONGKO,LAGONGGA,PBP-1178565,Wa*** Ma***,Diserahkan,PET LAP Ni***,Verified,De*** Pu***,Belum Sesuai,Belum Direviu
@@ -1712,7 +1712,7 @@ Peng. → Perw. beda KK,Sulawesi Tenggara,KAB. KOLAKA,BAULA,LONGORI,PBP-1003784,
 Peng. → Perw. beda KK,Sulawesi Tenggara,KOTA KENDARI,POASIA,ANGGOEYA,PBP-1284563,Ma*** Ju***,Diserahkan,PET LAP Ab***,Verified,De*** Pu***,Sudah Sesuai,Belum Direviu
 Peng. → Perw. beda KK,Sulawesi Tenggara,KAB. BOMBANA,POLEANG UTARA,WAMBAREMA,PBP-1185144,Di*** So***,Diserahkan,PET LAP Su***,Verified,De*** Pu***,Belum Sesuai,Belum Direviu
 Peng. → Perw. beda KK,Sulawesi Tenggara,KOTA KENDARI,NAMBO,TOBIMEITA,PBP-1409655,Si*** Su***,Diserahkan,PET LAP Ni***,Verified,Wi*** Ha***,Belum Sesuai,Belum Direviu
-Peng. → Perw. beda KK,Sulawesi Tenggara,KOTA KENDARI,POASIA,WUNDUMBATU,PBP-1561044,Ab*** So***,Diserahkan,PET LAP Ni***,Unverified,,Sudah Sesuai,Belum Direviu
+Peng. → Perw. beda KK,Sulawesi Tenggara,KOTA KENDARI,PUUWATU,LALODATI,PBP-1561044,Ab*** So***,Diserahkan,PET LAP Ni***,Unverified,,Sudah Sesuai,Belum Direviu
 Peng. → Perw. beda KK,Sulawesi Tenggara,KAB. KONAWE SELATAN,ANDOOLO,ANDOOLO,PBP-1254838,Ta*** Ju***,Belum diserahkan,,Verified,De*** Pu***,Belum Sesuai,Belum Direviu
 Peng. → Perw. beda KK,Sulawesi Tenggara,KAB. KOLAKA,BAULA,LONGORI,PBP-1088690,Ma*** Ju***,Diserahkan,PET LAP Ko***,Verified,An*** Sa***,Belum Sesuai,Sudah Sesuai
 Peng. → Perw. beda KK,Sulawesi Tenggara,KAB. KONAWE,PURIALA,SONAI,PBP-1269356,Fa*** Pu***,Diserahkan,PET LAP Ko***,Verified,Wi*** Ha***,Belum Sesuai,Belum Direviu
@@ -1784,7 +1784,7 @@ Terima >1x Normal/Peng.,Sulawesi Barat,KAB. MAJENE,BANGGAE TIMUR,BAURUNG,PBP-163
 Terima >1x Normal/Peng.,Sulawesi Barat,KAB. MAJENE,PAMBOANG,BANUA ADOLANG,PBP-1396084,Ra*** Ju***,Diserahkan,PET LAP Su***,Verified,De*** Pu***,Belum Sesuai,Belum Direviu
 Terima >1x Normal/Peng.,Sulawesi Barat,KAB. MAJENE,PAMBOANG,LALAMPANUA,PBP-1498552,Na*** Da***,Diserahkan,PET LAP Ha***,Verified,De*** Pu***,Belum Sesuai,Belum Sesuai
 Terima >1x Normal/Peng.,Sulawesi Barat,KAB. MAJENE,PAMBOANG,BONDE UTARA,PBP-1087764,Na*** So***,Diserahkan,PET LAP Su***,Verified,De*** Pu***,Sudah Sesuai,Belum Direviu
-Normal → Perw. beda KK,Sulawesi Barat,KAB. MAJENE,PAMBOANG,BUTTU PAMBOANG,PBP-1239605,Ni*** Ha***,Belum diserahkan,,Verified,De*** Pu***,Sudah Sesuai,Belum Direviu
+Normal → Perw. beda KK,Sulawesi Barat,KAB. MAJENE,PAMBOANG,LALAMPANUA,PBP-1239605,Ni*** Ha***,Belum diserahkan,,Verified,De*** Pu***,Sudah Sesuai,Belum Direviu
 Normal → Perw. beda KK,Sulawesi Barat,KAB. MAJENE,BANGGAE TIMUR,BAURUNG,PBP-1694165,Er*** Ha***,Belum diserahkan,,Verified,De*** Pu***,Belum Sesuai,Belum Direviu
 Normal → Perw. beda KK,Sulawesi Barat,KAB. MAJENE,TUBO SENDANA,BONDE BONDE,PBP-1538240,Fa*** Li***,Diserahkan,PET LAP Ko***,Verified,Ri*** Mu*** Mi***,Belum Sesuai,Sudah Sesuai
 Normal → Perw. beda KK,Sulawesi Barat,KAB. MAJENE,MALUNDA,MALUNDA,PBP-1032751,Yo*** Ju***,Diserahkan,PET LAP Ko***,Unverified,,Belum Sesuai,Belum Direviu
@@ -1820,7 +1820,7 @@ Normal → Peng. lok. lain,Maluku,KOTA TUAL,TAYANDO TAM,TAYANDO OHOIEL,PBP-11816
 → Perwakilan 1 KK,Maluku Utara,KOTA TERNATE,MOTI,MOTI KOTA,PBP-1039089,Si*** Li***,Diserahkan,PET LAP Ni***,Verified,De*** Pu***,Belum Sesuai,Belum Direviu
 → Perwakilan 1 KK,Maluku Utara,KOTA TERNATE,KOTA TERNATE UTARA,SANGAJI UTARA,PBP-1043682,Ju*** So***,Diserahkan,PET LAP Su***,Verified,Wi*** Ha***,Belum Sesuai,Sudah Sesuai
 → Perwakilan 1 KK,Maluku Utara,KOTA TERNATE,KOTA TERNATE TENGAH,GAMALAMA,PBP-1494319,Ma*** Pu***,Diserahkan,PET LAP Ni***,Verified,Ri*** Mu*** Mi***,Sudah Sesuai,Belum Direviu
-→ Perwakilan 1 KK,Maluku Utara,KOTA TERNATE,KOTA TERNATE UTARA,TUBO,PBP-1061849,Su*** Da***,Diserahkan,PET LAP Ni***,Unverified,,Belum Sesuai,Belum Direviu
+→ Perwakilan 1 KK,Maluku Utara,KOTA TERNATE,MOTI,FIGUR,PBP-1061849,Su*** Da***,Diserahkan,PET LAP Ni***,Unverified,,Belum Sesuai,Belum Direviu
 → Perwakilan 1 KK,Maluku Utara,KOTA TERNATE,KOTA TERNATE TENGAH,MALIARO,PBP-1524745,Ju*** Ka***,Diserahkan,PET LAP Ko***,Verified,De*** Pu***,Belum Sesuai,Belum Direviu
 → Perwakilan 1 KK,Maluku Utara,KOTA TERNATE,KOTA TERNATE TENGAH,MALIARO,PBP-1392623,Wa*** Da***,Diserahkan,PET LAP Su***,Verified,Ri*** Mu*** Mi***,Belum Sesuai,Belum Direviu
 → Perwakilan 1 KK,Maluku Utara,KOTA TERNATE,KOTA TERNATE TENGAH,MAKASSAR TIMUR,PBP-1612572,Ni*** Ma***,Diserahkan,PET LAP Ha***,Unverified,,Belum Sesuai,Sudah Sesuai
@@ -1834,7 +1834,7 @@ Normal → Peng. lok. lain,Maluku,KOTA TUAL,TAYANDO TAM,TAYANDO OHOIEL,PBP-11816
 → Perwakilan 1 KK,Maluku Utara,KOTA TERNATE,KOTA TERNATE TENGAH,MAKASSAR TIMUR,PBP-1028084,Ab*** Wi***,Diserahkan,PET LAP Su***,Verified,Wi*** Ha***,Belum Sesuai,Sudah Sesuai
 Terima >1x Normal/Peng.,Maluku Utara,KOTA TERNATE,KOTA TERNATE TENGAH,KAMPUNG PISANG,PBP-1281963,Na*** Ma***,Diserahkan,PET LAP Ha***,Unverified,,Belum Sesuai,Belum Direviu
 Terima >1x Normal/Peng.,Maluku Utara,KOTA TERNATE,KOTA TERNATE UTARA,TUBO,PBP-1158300,Yo*** Ka***,Diserahkan,PET LAP Ab***,Unverified,,Belum Sesuai,Belum Direviu
-Terima >1x Normal/Peng.,Maluku Utara,KOTA TERNATE,KOTA TERNATE UTARA,TOBOLEU,PBP-1497986,Su*** Ru***,Diserahkan,PET LAP Ab***,Verified,Wi*** Ha***,Belum Sesuai,Belum Direviu
+Terima >1x Normal/Peng.,Maluku Utara,KOTA TERNATE,KOTA TERNATE UTARA,TUBO,PBP-1497986,Su*** Ru***,Diserahkan,PET LAP Ab***,Verified,Wi*** Ha***,Belum Sesuai,Belum Direviu
 Terima >1x Normal/Peng.,Maluku Utara,KOTA TERNATE,KOTA TERNATE TENGAH,MARIKURUBU,PBP-1123482,Si*** Ha***,Diserahkan,PET LAP Ni***,Verified,De*** Pu***,Sudah Sesuai,Belum Direviu
 Terima >1x Normal/Peng.,Maluku Utara,KOTA TERNATE,KOTA TERNATE TENGAH,MAKASSAR TIMUR,PBP-1635422,Fa*** Su***,Diserahkan,PET LAP Ko***,Unverified,,Sudah Sesuai,Sudah Sesuai
 Terima >1x Normal/Peng.,Maluku Utara,KOTA TERNATE,MOTI,TADENAS,PBP-1670162,Ni*** So***,Diserahkan,PET LAP Ko***,Verified,De*** Pu***,Belum Sesuai,Belum Direviu
@@ -1985,7 +1985,7 @@ Normal → Peng. lok. lain,Papua Barat,KAB. FAK FAK,FAK-FAK TENGAH,DANAWERIA,PBP
 → Perwakilan 1 KK,Papua Tengah,KAB. DEIYAI,TIGI TIMUR,WAITAKOTU,PBP-1639197,Di*** Ma***,Diserahkan,PET LAP Ha***,Unverified,,Belum Sesuai,Belum Direviu
 → Perwakilan 1 KK,Papua Tengah,KAB. DEIYAI,TIGI TIMUR,KOKOBAYA,PBP-1375823,Ko*** Ma***,Diserahkan,PET LAP Ab***,Verified,De*** Pu***,Sudah Sesuai,Sudah Sesuai
 → Perwakilan 1 KK,Papua Tengah,KAB. DEIYAI,TIGI TIMUR,KOKOBAYA,PBP-1186799,Si*** Su***,Belum diserahkan,,Verified,De*** Pu***,Sudah Sesuai,Belum Direviu
-→ Perwakilan 1 KK,Papua Tengah,KAB. DEIYAI,TIGI,ONEIBO,PBP-1289204,Si*** Pu***,Diserahkan,PET LAP Ko***,Verified,Wi*** Ha***,Belum Sesuai,Belum Direviu
+→ Perwakilan 1 KK,Papua Tengah,KAB. DEIYAI,TIGI,OKOMOTADI,PBP-1289204,Si*** Pu***,Diserahkan,PET LAP Ko***,Verified,Wi*** Ha***,Belum Sesuai,Belum Direviu
 → Perwakilan 1 KK,Papua Tengah,KAB. DEIYAI,TIGI TIMUR,KOKOBAYA,PBP-1268231,Ma*** Be***,Diserahkan,PET LAP Ni***,Unverified,,Belum Sesuai,Belum Direviu
 Terima >1x Normal/Peng.,Papua Tengah,KAB. DEIYAI,TIGI,BUWOUDIMI,PBP-1466725,Ab*** Ma***,Diserahkan,PET LAP Su***,Verified,An*** Sa***,Sudah Sesuai,Belum Direviu
 Terima >1x Normal/Peng.,Papua Tengah,KAB. DEIYAI,TIGI,PEKU,PBP-1088214,Ab*** Li***,Diserahkan,PET LAP Ko***,Verified,De*** Pu***,Belum Sesuai,Belum Direviu
@@ -1999,5 +1999,5 @@ Peng. → Peng. >1x,Papua Tengah,KAB. DEIYAI,TIGI,OKOMAKEBO,PBP-1147919,Ab*** Li
 Peng. → Peng. >1x,Papua Tengah,KAB. DEIYAI,TIGI,WAGHETE I,PBP-1280476,Ra*** Be***,Diserahkan,PET LAP Ab***,Unverified,,Sudah Sesuai,Belum Direviu
 Peng. → Perw. beda KK,Papua Tengah,KAB. DEIYAI,TIGI TIMUR,UDAUGIDA,PBP-1092289,Ta*** Ka***,Diserahkan,PET LAP Ko***,Verified,De*** Pu***,Belum Sesuai,Sudah Sesuai
 Peng. → Perw. beda KK,Papua Tengah,KAB. DEIYAI,TIGI TIMUR,IDAYODAGI,PBP-1453818,Ko*** Li***,Diserahkan,PET LAP Ha***,Unverified,,Belum Sesuai,Sudah Sesuai
-Normal → Peng. lok. lain,Papua Tengah,KAB. DEIYAI,TIGI,UGIYA,PBP-1674972,Ra*** Su***,Belum diserahkan,,Verified,De*** Pu***,Sudah Sesuai,Sudah Sesuai
+Normal → Peng. lok. lain,Papua Tengah,KAB. DEIYAI,TIGI,PEKU,PBP-1674972,Ra*** Su***,Belum diserahkan,,Verified,De*** Pu***,Sudah Sesuai,Sudah Sesuai
 Normal → Peng. lok. lain,Papua Tengah,KAB. DEIYAI,TIGI,WAGHETE II,PBP-1033300,Fa*** Ju***,Diserahkan,PET LAP Ni***,Verified,An*** Sa***,Belum Sesuai,Belum Sesuai

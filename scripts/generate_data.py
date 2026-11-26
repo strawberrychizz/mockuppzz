@@ -8,6 +8,7 @@ Hasil (untuk setiap Cutoff C dan Tahap N):
     data/cutoff-C/temuan-tahap-N.csv   contoh baris temuan (dipakai halaman Daftar temuan; bisa diimpor ke Power BI)
 Total PBP suatu tahap sama di semua cutoff; yang berubah adalah progres reviu dan temuan.
 Tahap 1 memakai PBP asli per provinsi dari data/sumber/ (hanya provinsi yang ada di file); metrik lainnya tetap contoh.
+Tahap 1 sudah direviu 100% (sudah_reviu = pbp) di semua cutoff.
 Cutoff 1: total Tahap 1+2+3 = data asli "Tersalur 100% per 20 Nov 2026"; Tahap 2 dan 3 = selisih terhadap Tahap 1 (dibagi contoh per provinsi).
 Seluruh angka acak tetapi deterministik (seed tetap) dan BUKAN data riil.
 """
@@ -85,6 +86,8 @@ for st in STAGES:
     for p, n in zip(provs, pbp):
         tem = max(2, round(n * r.uniform(*st["temuan"][co - 1])))
         rv = max(tem, round(n * r.uniform(*st["reviu"][co - 1])))
+        if st.get("sumber"):
+            rv = n  # Tahap 1 sudah direviu 100%
         cm = split(n, jit(r, [w for _, w in KOMPOSISI], .3))
         cc = split(tem, jit(r, [w for _, w in KATEGORI], .7))
         rl = split(n, jit(r, [w for _, w in FOTO], .4))

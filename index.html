@@ -109,7 +109,7 @@ tfoot td{font-weight:600;background:#eef2f5;position:sticky;bottom:0}
       <div class="sub" id="kTahLbl">Tahap</div><div class="big" id="kTot">–</div>
       <div class="sub" id="kScope" style="margin-top:8px">Seluruh provinsi</div></div>
     <div class="card"><h3>Perbandingan Cutoff dan Tahap</h3><div class="pieWrap" id="pSerah"></div></div>
-    <div class="card"><h3>Rincian Hasil Reviu</h3><div class="pieWrap" id="pVer"></div></div>
+    <div class="card"><h3>Rincian Hasil Reviu <span class="sub">· Belum sesuai per kategori</span></h3><div class="pieWrap" id="pVer"></div></div>
     <div class="card"><h3>Komposisi status PBP · <span id="compScope">Seluruh provinsi</span></h3><div class="pieWrap" id="pComp"></div></div>
   </div>
 
@@ -171,6 +171,7 @@ tfoot td{font-weight:600;background:#eef2f5;position:sticky;bottom:0}
 // ---- Data contoh dibangkitkan deterministik (seed tetap) untuk 38 provinsi ----
 const names=["Aceh","Sumatera Utara","Sumatera Barat","Riau","Jambi","Sumatera Selatan","Bengkulu","Lampung","Kep. Bangka Belitung","Kepulauan Riau","DKI Jakarta","Jawa Barat","Jawa Tengah","DI Yogyakarta","Jawa Timur","Banten","Bali","Nusa Tenggara Barat","Nusa Tenggara Timur","Kalimantan Barat","Kalimantan Tengah","Kalimantan Selatan","Kalimantan Timur","Kalimantan Utara","Sulawesi Utara","Sulawesi Tengah","Sulawesi Selatan","Sulawesi Tenggara","Gorontalo","Sulawesi Barat","Maluku","Maluku Utara","Papua","Papua Barat","Papua Selatan","Papua Tengah","Papua Pegunungan","Papua Barat Daya"];
 const cats=[["→ Perwakilan 1 KK"],["Terima >1x Normal/Peng."],["Normal → Perw. beda KK"],["Peng. → Peng. >1x"],["Peng. → Perw. beda KK"],["Normal → Peng. lok. lain"]];
+const catCol=["#d64545","#e0a100","#e8743b","#8a63b8","#3f8fbf","#8b6b4a"];
 const rlCats=["Sama","Tidak Sama","Perlu Reviu","Ditolak"];
 const comp=["Normal","Perwakilan 1 KK","Perwakilan","Pengganti","Kolektif"];
 const compCol=["#0b5c8a","#3f8fbf","#7aaed0","#e0a100","#d64545"];
@@ -260,8 +261,8 @@ function render1(){
   // Chart 1: perbandingan cutoff dan tahap = porsi tiap tahap terhadap total cutoff
   const tc=["var(--accent)","#3f8fbf","#7aaed0"];
   pie("#pSerah",ti==="all"?STAGES.map((t,i)=>[tc[i],t.n,tahTot[i]]):[[tc[0],STAGES[+ti].n+" (dipilih)",tahTot[+ti]],["var(--grey)","Tahap lainnya",cutTot-tahTot[+ti]]],cutTot);
-  // Rincian hasil reviu: dari PBP yang sudah direviu -> Sesuai dan Belum sesuai
-  pie("#pVer",[["var(--green)","Sesuai",rv-tem],["var(--red)","Belum sesuai",tem]],rv);
+  // Rincian hasil reviu: breakdown PBP Belum sesuai ke 6 kategori
+  pie("#pVer",cats.map(([n],i)=>[catCol[i],n,cc[i]]),tem);
   const mx=Math.max(...cc,1);
   const rl=sumArr(p=>p.rl,L),mr=Math.max(...rl,1);
   $("#rlBars").innerHTML=rlCats.map((n,i)=>`<div class="hbar"><span>${n}</span><span class="t"><i style="width:${rl[i]/mr*100}%"></i></span><b>${fmt(rl[i])}</b></div>`).join("");
