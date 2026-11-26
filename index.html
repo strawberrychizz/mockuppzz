@@ -85,7 +85,7 @@ tfoot td{font-weight:600;background:#eef2f5;position:sticky;bottom:0}
 
 <div id="app" class="hide">
 <div class="band">
-  <div><small>SPI · REVIU TI</small><h1>Monitoring Anomali Data <span class="badge">Data contoh</span> <span class="badge" id="verBadge"></span><button class="switch" onclick="setVer(0)">Ganti versi</button></h1></div>
+  <div><small>SPI · REVIU TI</small><h1>Monitoring Anomali Data <span class="badge" id="dataBadge">Data contoh</span> <span class="badge" id="verBadge"></span><button class="switch" onclick="setVer(0)">Ganti versi</button></h1></div>
   <div class="bandr"><div class="cutrow"><label class="cutoff">Cutoff: <select id="sCo"></select></label><label class="cutoff">Tahap: <select id="sCut"></select></label></div>
   <div class="slicers">
     <div><label>Tahun dan periode salur</label><select id="sPer"><option>Semua</option></select></div>
@@ -110,13 +110,13 @@ tfoot td{font-weight:600;background:#eef2f5;position:sticky;bottom:0}
 
   <div class="grid2">
     <div class="card">
-      <h3>Breakdown provinsi · 38 provinsi <span class="sub">(klik baris untuk memilih provinsi, klik lagi untuk membatalkan)</span></h3>
+      <h3>Breakdown provinsi · <span id="provCnt">38</span> provinsi <span class="sub">(klik baris untuk memilih provinsi, klik lagi untuk membatalkan)</span></h3>
       <div class="scroll"><table>
         <thead><tr><th>Provinsi</th><th class="n">PBP</th><th class="n">Rasio Temuan Data</th><th class="n v2only">Rasio Temuan Foto</th></tr></thead>
         <tbody id="provBody"></tbody>
         <tfoot><tr><td>Total</td><td class="n" id="tfP"></td><td class="n" id="tfD"></td><td class="n v2only" id="tfG"></td></tr></tfoot>
       </table></div>
-      <div class="foot">Menampilkan 12 dari 38 provinsi · gulir untuk sisanya</div>
+      <div class="foot">Menampilkan 12 dari <span id="provCnt2">38</span> provinsi · gulir untuk sisanya</div>
     </div>
 
     <div class="card"><div class="chead"><h3>Rincian Data</h3><button class="btn sm" id="btnList" onclick="go('p2')"></button></div><div id="catBars"></div></div>
@@ -158,8 +158,8 @@ const rlCats=["Sama","Tidak Sama","Perlu Reviu","Ditolak"];
 const comp=["Normal","Perwakilan 1 KK","Perwakilan","Pengganti","Kolektif"];
 const compCol=["#0b5c8a","#3f8fbf","#7aaed0","#e0a100","#d64545"];
 // Data contoh dibaca dari folder data/ (dibangkitkan oleh scripts/generate_data.py)
-const CUTOFFS=[{n:"Cutoff 1",d:"20 November 2026"},{n:"Cutoff 2",d:"30 Desember 2026"}];
-const STAGES=[{n:"Tahap 1",d:["20 November 2026","1 Januari 2027"]},{n:"Tahap 2",d:["29 November 2026","8 Januari 2027"]},{n:"Tahap 3",d:["5 Desember 2026","15 Januari 2027"]}]; // tanggal tahap berbeda per cutoff
+const CUTOFFS=[{n:"Cutoff 1",d:"25 November 2026"},{n:"Cutoff 2",d:"30 Desember 2026"}];
+const STAGES=[{n:"Tahap 1",d:["25 November 2026","1 Januari 2027"]},{n:"Tahap 2",d:["29 November 2026","8 Januari 2027"]},{n:"Tahap 3",d:["5 Desember 2026","15 Januari 2027"]}]; // tanggal tahap berbeda per cutoff
 const cache={};
 async function loadData(co,t){
   const key=co+"-"+t;if(cache[key])return cache[key];
@@ -168,7 +168,7 @@ async function loadData(co,t){
   const P=js.provinsi.map(p=>({n:p.provinsi,pbp:p.pbp,tem:p.belum_sesuai,rv:p.sudah_reviu,
     cm:comp.map(k=>p.komposisi[k]),cc:cats.map(([c])=>p.kategori_belum_sesuai[c]),rl:rlCats.map(k=>p.review_foto[k])}));
   const rows=cs.trim().split(/\r?\n/).slice(1).map(l=>{const a=l.split(",");return{c:a[0],w:a[1],k:a[2],kc:a[3],d:a[4],no:a[5],nm:a[6],ss:a[7],os:a[8],vs:a[9],ov:a[10],rd:a[11],rf:a[12]}});
-  return cache[key]={P,rows}}
+  return cache[key]={P,rows,real:!!js.sumber_pbp}}
 let P,rows;
 const sum=(f,L=P)=>L.reduce((a,p)=>a+f(p),0);
 const sumArr=(f,L=P)=>{const o=f(L[0]).map(()=>0);L.forEach(p=>f(p).forEach((x,i)=>o[i]+=x));return o};
@@ -191,7 +191,10 @@ function buildProv(){
 
 ["Semua"].concat(["2026 – Periode 1","2026 – Periode 2","2025 – Periode 1","2025 – Periode 2"]).slice(1).forEach(x=>$("#sPer").add(new Option(x)));
 $("#sPer").title="Mockup: slicer periode belum menyaring angka (data contoh)";
-[...names].sort().forEach(n=>{$("#sProv").add(new Option(n,n));$("#fProv").add(new Option(n,n))});
+function fillProv(){const ns=P.map(p=>p.n).sort((a,b)=>a.localeCompare(b,"id"));
+  ["#sProv","#fProv"].forEach(id=>{const e=$(id),first=e.options[0].text;e.innerHTML="";e.add(new Option(first,""));ns.forEach(n=>e.add(new Option(n,n)))});
+  if(!ns.includes(sel))sel="";$("#sProv").value=sel;$("#fProv").value=sel;
+  $("#provCnt").textContent=$("#provCnt2").textContent=ns.length}
 cats.forEach(([c])=>$("#fKat").add(new Option(c,c)));
 
 function pie(id,items,tot){
@@ -262,10 +265,12 @@ async function loadAll(co){ // gabungan Tahap 1–3: jumlah per provinsi + selur
   const key=co+"-all";if(cache[key])return cache[key];
   const ds=await Promise.all(STAGES.map((_,t)=>loadData(co,t)));
   const add=(a,b)=>Array.isArray(a)?a.map((x,i)=>x+b[i]):a+b;
-  const P=ds[0].P.map((p,i)=>ds.slice(1).reduce((acc,d)=>{const q=d.P[i];return{n:acc.n,pbp:acc.pbp+q.pbp,tem:acc.tem+q.tem,rv:acc.rv+q.rv,cm:add(acc.cm,q.cm),cc:add(acc.cc,q.cc),rl:add(acc.rl,q.rl)}},p));
-  return cache[key]={P,rows:ds.flatMap(d=>d.rows)}}
+  const m=new Map(); // gabung per nama provinsi (jumlah provinsi bisa berbeda antar tahap)
+  ds.slice().sort((a,b)=>b.P.length-a.P.length).forEach(d=>d.P.forEach(q=>{const p=m.get(q.n);
+    m.set(q.n,p?{n:p.n,pbp:p.pbp+q.pbp,tem:p.tem+q.tem,rv:p.rv+q.rv,cm:add(p.cm,q.cm),cc:add(p.cc,q.cc),rl:add(p.rl,q.rl)}:{...q})}));
+  return cache[key]={P:[...m.values()],rows:ds.flatMap(d=>d.rows),real:ds.some(d=>d.real)}}
 async function setStage(){
-  try{const co=+$("#sCo").value,t=$("#sCut").value,d=t==="all"?await loadAll(co):await loadData(co,+t);$("#loadErr").classList.add("hide");P=d.P;rows=d.rows;fk=fc=fd="";buildProv();render1();render2()}
+  try{const co=+$("#sCo").value,t=$("#sCut").value,d=t==="all"?await loadAll(co):await loadData(co,+t);$("#loadErr").classList.add("hide");P=d.P;rows=d.rows;fk=fc=fd="";$("#dataBadge").textContent=d.real?"PBP data asli · lainnya contoh":"Data contoh";fillProv();buildProv();render1();render2()}
   catch(e){$("#loadErr").textContent="Data contoh gagal dimuat: "+e.message+". Buka halaman ini lewat server web (mis. hosting Vercel atau 'python3 -m http.server'), bukan dengan klik dua kali file HTML.";$("#loadErr").classList.remove("hide")}}
 $("#sCo").onchange=()=>{fillTahap();setStage()};$("#sCut").onchange=setStage;
 $("#sCo").value=0;fillTahap();setStage();

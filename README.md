@@ -11,26 +11,29 @@ Mockup dashboard SPI · Reviu TI. **Seluruh angka adalah data contoh (dummy), bu
 ## Total PBP per tahap
 | Tahap | Tanggal | Total PBP |
 |---|---|---|
-| 1 | 20 November 2026 | 822.000 |
+| 1 | 25 November 2026 | 350.854 (PBP asli, lihat catatan) |
 | 2 | 29 November 2026 | 1.535.324 |
 | 3 | 5 Desember 2026 | 2.341.243 |
 
 ## Cutoff
 | Cutoff | Tanggal |
 |---|---|
-| 1 | 20 November 2026 |
+| 1 | 25 November 2026 |
 | 2 | 30 Desember 2026 |
 
 Setiap cutoff memuat Tahap 1–3 dengan tanggal berbeda:
 
 | Tahap | Cutoff 1 | Cutoff 2 |
 |---|---|---|
-| 1 | 20 November 2026 | 1 Januari 2027 |
+| 1 | 25 November 2026 | 1 Januari 2027 |
 | 2 | 29 November 2026 | 8 Januari 2027 |
 | 3 | 5 Desember 2026 | 15 Januari 2027 |
  Total PBP suatu tahap sama di kedua cutoff; yang berbeda adalah progres reviu dan jumlah temuan (Cutoff 2 lebih maju).
 
 Pilihan Tahap "Semua Tahap (Tahap 1–3)" menjumlahkan ketiga tahap pada cutoff terpilih (dihitung di browser dari file yang sama).
+
+## Sumber PBP asli (Tahap 1)
+Jumlah PBP per provinsi untuk Tahap 1 (kedua cutoff) berasal dari `STATUS_VERIFIKASI_BANPANG.xlsx` (sheet TAHAP I, 29 provinsi, total 350.854), diringkas ke `data/sumber/pbp-tahap-1-per-provinsi.csv`. Hanya PBP yang asli; hasil reviu, temuan, komposisi, dan foto tetap data contoh. Tahap 2 dan 3 sepenuhnya contoh.
 
 ## Mengubah data
 Ubah `total`, `seed`, atau rentang rasio di `STAGES` pada `scripts/generate_data.py`, lalu jalankan `python3 scripts/generate_data.py`.

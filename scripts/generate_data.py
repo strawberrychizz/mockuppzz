@@ -7,14 +7,15 @@ Hasil (untuk setiap Cutoff C dan Tahap N):
     data/cutoff-C/tahap-N.json         agregat per provinsi (dipakai halaman Ringkasan)
     data/cutoff-C/temuan-tahap-N.csv   contoh baris temuan (dipakai halaman Daftar temuan; bisa diimpor ke Power BI)
 Total PBP suatu tahap sama di semua cutoff; yang berubah adalah progres reviu dan temuan.
+Tahap 1 memakai PBP asli per provinsi dari data/sumber/ (hanya provinsi yang ada di file); metrik lainnya tetap contoh.
 Seluruh angka acak tetapi deterministik (seed tetap) dan BUKAN data riil.
 """
 import csv, json, os, random
 
-CUTOFFS = {1: "20 November 2026", 2: "30 Desember 2026"}
+CUTOFFS = {1: "25 November 2026", 2: "30 Desember 2026"}
 # tanggal = (Cutoff 1, Cutoff 2); reviu = rentang porsi Sudah Reviu, temuan = rentang porsi Belum Sesuai (terhadap PBP); indeks 0 = Cutoff 1, 1 = Cutoff 2
 STAGES = [
-    dict(n=1, nama="Tahap 1", tanggal=("20 November 2026", "1 Januari 2027"), total=822_000,   seed=20261101, reviu=[(.44, .52), (.70, .80)],   temuan=[(.018, .10), (.03, .12)]),
+    dict(n=1, nama="Tahap 1", tanggal=("25 November 2026", "1 Januari 2027"), sumber="data/sumber/pbp-tahap-1-per-provinsi.csv", total=None,   seed=20261101, reviu=[(.44, .52), (.70, .80)],   temuan=[(.018, .10), (.03, .12)]),
     dict(n=2, nama="Tahap 2", tanggal=("29 November 2026", "8 Januari 2027"), total=1_535_324, seed=20261111, reviu=[(.66, .77), (.86, .93)],   temuan=[(.026, .145), (.04, .15)]),
     dict(n=3, nama="Tahap 3", tanggal=("5 Desember 2026", "15 Januari 2027"), total=2_341_243, seed=20261120, reviu=[(.86, .97), (.97, .995)],  temuan=[(.03, .17), (.05, .19)]),
 ]
@@ -46,12 +47,18 @@ for st in STAGES:
   for co, co_tgl in CUTOFFS.items():
     # PBP per provinsi sama di semua cutoff (seed tahap); sisanya memakai RNG milik cutoff
     r = random.Random(st["seed"])
-    pbp = split(st["total"], [BASE[p] * r.uniform(.9, 1.1) for p in PROVINSI])
+    if st.get("sumber"):  # PBP asli per provinsi dari file sumber (hanya provinsi yang ada di file)
+        with open(st["sumber"], encoding="utf-8") as f:
+            src = {row["provinsi"]: int(row["pbp"]) for row in csv.DictReader(f)}
+        provs = [p for p in PROVINSI if p in src]; pbp = [src[p] for p in provs]; total = sum(pbp)
+    else:
+        provs = PROVINSI; total = st["total"]
+        pbp = split(total, [BASE[p] * r.uniform(.9, 1.1) for p in PROVINSI])
     if co > 1:
         r = random.Random(st["seed"] + 1000 * co)
     os.makedirs(f"data/cutoff-{co}", exist_ok=True)
     out = []
-    for p, n in zip(PROVINSI, pbp):
+    for p, n in zip(provs, pbp):
         tem = max(2, round(n * r.uniform(*st["temuan"][co - 1])))
         rv = max(tem, round(n * r.uniform(*st["reviu"][co - 1])))
         cm = split(n, jit(r, [w for _, w in KOMPOSISI], .3))
@@ -61,9 +68,9 @@ for st in STAGES:
                     "komposisi": {k: v for (k, _), v in zip(KOMPOSISI, cm)},
                     "kategori_belum_sesuai": {k: v for (k, _), v in zip(KATEGORI, cc)},
                     "review_foto": {k: v for (k, _), v in zip(FOTO, rl)}})
-    assert sum(o["pbp"] for o in out) == st["total"]
+    assert sum(o["pbp"] for o in out) == total
     with open(f"data/cutoff-{co}/tahap-{st['n']}.json", "w", encoding="utf-8") as f:
-        json.dump({"cutoff": f"Cutoff {co}", "tanggal_cutoff": co_tgl, "tahap": st["nama"], "tanggal": st["tanggal"][co - 1], "total_pbp": st["total"], "provinsi": out}, f, ensure_ascii=False, indent=1)
+        json.dump({"cutoff": f"Cutoff {co}", "tanggal_cutoff": co_tgl, "tahap": st["nama"], "tanggal": st["tanggal"][co - 1], "total_pbp": total, **({"sumber_pbp": "STATUS_VERIFIKASI_BANPANG.xlsx (TAHAP I): PBP asli; hasil reviu, temuan, komposisi, dan foto adalah contoh"} if st.get("sumber") else {}), "provinsi": out}, f, ensure_ascii=False, indent=1)
 
     # contoh baris temuan: proporsional per (provinsi, kategori), minimal 1 baris bila ada temuan
     tot_tem = sum(o["belum_sesuai"] for o in out); frac = SAMPLE_ROWS / tot_tem
@@ -72,7 +79,7 @@ for st in STAGES:
     for prov, kat, v in cells:
         for _ in range(min(v, max(1, round(v * frac)))):
             rows.append([kat, prov, f"Kota {r.randint(1,3)}", f"Kecamatan {r.randint(1,3)}", f"Desa {r.randint(1,4)}"])
-    ids = r.sample(range(1_000_000, 1_000_000 + st["total"] * 2), len(rows))
+    ids = r.sample(range(1_000_000, 1_000_000 + total * 2), len(rows))
     for row, i in zip(rows, ids):
         ss = r.choices(["Diserahkan", "Belum diserahkan"], [92, 8])[0]
         vs = r.choices(["Verified", "Unverified"], [75, 25])[0]
@@ -85,4 +92,4 @@ for st in STAGES:
         w = csv.writer(f)
         w.writerow(["kategori", "provinsi", "kota_kab", "kecamatan", "kel_desa", "no_pbp", "nama_disamarkan", "status_serah", "oleh_serah", "status_verifikasi", "oleh_verifikasi", "hasil_review_data", "hasil_review_foto"])
         w.writerows(rows)
-    print(f"Cutoff {co}", st["nama"], "PBP", st["total"], "temuan", tot_tem, "baris contoh", len(rows))
+    print(f"Cutoff {co}", st["nama"], "PBP", total, "temuan", tot_tem, "baris contoh", len(rows))
