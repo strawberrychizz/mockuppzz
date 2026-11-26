@@ -1,10 +1,11 @@
 {
  "cutoff": "Cutoff 1",
- "tanggal_cutoff": "25 November 2026",
+ "tanggal_cutoff": "20 November 2026",
  "tahap": "Tahap 1",
  "tanggal": "25 November 2026",
  "total_pbp": 350854,
  "sumber_pbp": "STATUS_VERIFIKASI_BANPANG.xlsx (TAHAP I): PBP asli; hasil reviu, temuan, komposisi, dan foto adalah contoh",
+ "wilayah": "wilayah-tahap-1.csv",
  "provinsi": [
   {
    "provinsi": "Aceh",

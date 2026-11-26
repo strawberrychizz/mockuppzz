@@ -58,6 +58,7 @@ tfoot td{font-weight:600;background:#eef2f5;position:sticky;bottom:0}
 .btn.ghost{background:#fff;color:var(--accent);border:1px solid var(--accent)}
 .chead{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:8px}.chead h3{margin:0}.btn.sm{padding:6px 12px;font-size:13px}
 .foot{color:var(--mute);font-size:12px;margin-top:6px}
+.crumb{cursor:pointer;color:var(--accent);background:none;border:0;padding:0;font:inherit}.crumb:hover{text-decoration:underline}.crumbs{font-size:13px;margin:2px 0 8px}.crumbs span.sep{color:var(--mute);margin:0 4px}
 .top2{display:flex;gap:12px;align-items:end;flex-wrap:wrap}
 .hide{display:none!important}
 .v1 .v2only{display:none!important}
@@ -102,8 +103,12 @@ tfoot td{font-weight:600;background:#eef2f5;position:sticky;bottom:0}
 <!-- HALAMAN 1 -->
 <section id="p1">
   <div class="kpis">
-    <div class="card"><h3>Total PBP</h3><div class="big" id="kTot">–</div><div class="sub" id="kScope">Seluruh provinsi</div></div>
-    <div class="card"><h3>Hasil Reviu</h3><div class="pieWrap" id="pSerah"></div></div>
+    <div class="card"><h3>Total PBP</h3>
+      <div class="sub" id="kCutLbl">Cutoff</div><div class="big" id="kCut">–</div>
+      <div style="border-top:1px solid var(--line);margin:12px 0"></div>
+      <div class="sub" id="kTahLbl">Tahap</div><div class="big" id="kTot">–</div>
+      <div class="sub" id="kScope" style="margin-top:8px">Seluruh provinsi</div></div>
+    <div class="card"><h3>Perbandingan Cutoff dan Tahap</h3><div class="pieWrap" id="pSerah"></div></div>
     <div class="card"><h3>Rincian Hasil Reviu</h3><div class="pieWrap" id="pVer"></div></div>
     <div class="card"><h3>Komposisi status PBP · <span id="compScope">Seluruh provinsi</span></h3><div class="pieWrap" id="pComp"></div></div>
   </div>
@@ -117,6 +122,17 @@ tfoot td{font-weight:600;background:#eef2f5;position:sticky;bottom:0}
         <tfoot><tr><td>Total</td><td class="n" id="tfP"></td><td class="n" id="tfD"></td><td class="n v2only" id="tfG"></td></tr></tfoot>
       </table></div>
       <div class="foot">Menampilkan 12 dari <span id="provCnt2">38</span> provinsi · gulir untuk sisanya</div>
+    </div>
+
+    <div class="card" id="wilCard">
+      <div class="chead"><h3>Rincian Wilayah <span class="sub" id="wilLevel"></span></h3><input type="search" id="wilQ" placeholder="Cari nama wilayah" style="min-width:200px"></div>
+      <div class="crumbs" id="wilBc"></div>
+      <div id="wilNote" class="sub hide" style="padding:8px 2px"></div>
+      <div class="scroll" id="wilTbl"><table>
+        <thead><tr><th id="wilTh">Wilayah</th><th class="n">PBP</th><th class="n">Sudah Reviu</th><th class="n">Rasio Temuan Data</th></tr></thead>
+        <tbody id="wilBody"></tbody>
+      </table></div>
+      <div class="foot" id="wilFoot"></div>
     </div>
 
     <div class="card"><div class="chead"><h3>Rincian Data</h3><button class="btn sm" id="btnList" onclick="go('p2')"></button></div><div id="catBars"></div></div>
@@ -135,6 +151,7 @@ tfoot td{font-weight:600;background:#eef2f5;position:sticky;bottom:0}
     <div><div class="sub">Kota/Kabupaten</div><select id="fKota"><option value="">Semua</option></select></div>
     <div><div class="sub">Kecamatan</div><select id="fKec"><option value="">Semua</option></select></div>
     <div><div class="sub">Kelurahan/Desa</div><select id="fDesa"><option value="">Semua</option></select></div>
+    <div><div class="sub">Cari wilayah</div><input type="search" id="fWil" placeholder="mis. banda raya"></div>
     <div><div class="sub">Cari No PBP</div><input type="search" id="fQ" placeholder="mis. PBP-0007"></div>
     <div class="card" style="padding:8px 16px;margin-left:auto"><div class="sub">Baris contoh temuan</div><div class="big" id="cnt" style="font-size:26px">0</div><div class="sub" id="cntTot"></div></div>
   </div>
@@ -158,18 +175,21 @@ const rlCats=["Sama","Tidak Sama","Perlu Reviu","Ditolak"];
 const comp=["Normal","Perwakilan 1 KK","Perwakilan","Pengganti","Kolektif"];
 const compCol=["#0b5c8a","#3f8fbf","#7aaed0","#e0a100","#d64545"];
 // Data contoh dibaca dari folder data/ (dibangkitkan oleh scripts/generate_data.py)
-const CUTOFFS=[{n:"Cutoff 1",d:"25 November 2026"},{n:"Cutoff 2",d:"30 Desember 2026"}];
+const CUTOFFS=[{n:"Cutoff 1",d:"20 November 2026"},{n:"Cutoff 2",d:"30 Desember 2026"}];
 const STAGES=[{n:"Tahap 1",d:["25 November 2026","1 Januari 2027"]},{n:"Tahap 2",d:["29 November 2026","8 Januari 2027"]},{n:"Tahap 3",d:["5 Desember 2026","15 Januari 2027"]}]; // tanggal tahap berbeda per cutoff
 const cache={};
+const getFile=async p=>{const r=await fetch(p);if(!r.ok)throw new Error(p+" ("+r.status+")");return r.text()};
 async function loadData(co,t){
   const key=co+"-"+t;if(cache[key])return cache[key];
   const jf=`data/cutoff-${co+1}/tahap-${t+1}.json`,cf=`data/cutoff-${co+1}/temuan-tahap-${t+1}.csv`;
-  const [js,cs]=await Promise.all([fetch(jf).then(r=>{if(!r.ok)throw new Error(jf+" ("+r.status+")");return r.json()}),fetch(cf).then(r=>{if(!r.ok)throw new Error(cf+" ("+r.status+")");return r.text()})]);
+  const [js0,cs]=await Promise.all([getFile(jf),getFile(cf)]);const js=JSON.parse(js0);
+  const ws=js.wilayah?await getFile(`data/cutoff-${co+1}/${js.wilayah}`):null; // rincian per kelurahan (hanya tahap dengan sumber asli)
   const P=js.provinsi.map(p=>({n:p.provinsi,pbp:p.pbp,tem:p.belum_sesuai,rv:p.sudah_reviu,
     cm:comp.map(k=>p.komposisi[k]),cc:cats.map(([c])=>p.kategori_belum_sesuai[c]),rl:rlCats.map(k=>p.review_foto[k])}));
   const rows=cs.trim().split(/\r?\n/).slice(1).map(l=>{const a=l.split(",");return{c:a[0],w:a[1],k:a[2],kc:a[3],d:a[4],no:a[5],nm:a[6],ss:a[7],os:a[8],vs:a[9],ov:a[10],rd:a[11],rf:a[12]}});
-  return cache[key]={P,rows,real:!!js.sumber_pbp}}
-let P,rows;
+  const W=ws?ws.trim().split(/\r?\n/).slice(1).map(l=>{const a=l.split(",");return{p:a[0],kb:a[1],kc:a[2],kl:a[3],id:a[4],pbp:+a[5],rv:+a[6],tem:+a[7]}}):null;
+  return cache[key]={P,rows,W,real:!!js.sumber_pbp}}
+let P,rows,W=null,dp=[],TP=[],CP=[];
 const sum=(f,L=P)=>L.reduce((a,p)=>a+f(p),0);
 const sumArr=(f,L=P)=>{const o=f(L[0]).map(()=>0);L.forEach(p=>f(p).forEach((x,i)=>o[i]+=x));return o};
 const badge=(t,o)=>{const c={"Diserahkan":"g","Verified":"g","Sudah Sesuai":"g","Unverified":"y","Belum diserahkan":"y","Belum Sesuai":"r","Belum Direviu":"n"}[t]||"n";return `<span class="bd ${c}">${t}</span>${o?`<span class="oleh">Oleh: ${o}</span>`:""}`};
@@ -197,6 +217,25 @@ function fillProv(){const ns=P.map(p=>p.n).sort((a,b)=>a.localeCompare(b,"id"));
   $("#provCnt").textContent=$("#provCnt2").textContent=ns.length}
 cats.forEach(([c])=>$("#fKat").add(new Option(c,c)));
 
+const WL=["Provinsi","Kabupaten/Kota","Kecamatan","Kelurahan/Desa"],WK=["p","kb","kc","kl"];
+function wilGo(n){dp=dp.slice(0,n);if(n===0||n===1){if(sel!==(dp[0]||""))return setSel(dp[0]||"")}renderWil()}
+function wilDown(name){if(dp.length===0)return setSel(name);dp.push(name);$("#wilQ").value="";renderWil()}
+function renderWil(){
+  const has=!!W;["#wilTbl","#wilBc","#wilFoot","#wilQ"].forEach(id=>$(id).classList.toggle("hide",!has));$("#wilNote").classList.toggle("hide",has);
+  if(!has){$("#wilLevel").textContent="";$("#wilNote").textContent="Rincian wilayah (kabupaten/kota → kecamatan → kelurahan/desa) hanya tersedia untuk Tahap 1, yang memakai data PBP asli per kelurahan. Pilih Tahap 1 pada dropdown Tahap.";return}
+  dp=sel?[sel,...dp.slice(1)]:[];const L=dp.length;
+  const src=W.filter(w=>dp.every((v,i)=>w[WK[i]]===v)),m=new Map();
+  src.forEach(w=>{const k=w[WK[L]],x=m.get(k)||{n:k,pbp:0,rv:0,tem:0,id:""};x.pbp+=w.pbp;x.rv+=w.rv;x.tem+=w.tem;if(L===3)x.id=w.id;m.set(k,x)});
+  const q=$("#wilQ").value.trim().toLowerCase();
+  let list=[...m.values()].sort((a,b)=>(b.tem/b.pbp-a.tem/a.pbp)||b.tem-a.tem);const all=list.length;
+  if(q)list=list.filter(x=>x.n.toLowerCase().includes(q));
+  const esc=t=>t.replace(/'/g,"\\'");
+  $("#wilLevel").textContent="· "+WL[L];$("#wilTh").textContent=WL[L];
+  $("#wilBc").innerHTML=[`<button class="crumb" onclick="wilGo(0)">Semua provinsi</button>`].concat(dp.map((v,i)=>i===L-1?`<b>${v}</b>`:`<button class="crumb" onclick="wilGo(${i+1})">${v}</button>`)).join('<span class="sep">›</span>');
+  $("#wilBody").innerHTML=list.map(x=>`<tr class="${L<3?"row":""}" ${L<3?`onclick="wilDown('${esc(x.n)}')"`:""}><td>${x.n}${x.id?` <span class="sub">${x.id}</span>`:""}</td><td class="n">${fmt(x.pbp)}</td><td class="n"><span class="sub" style="margin-right:8px">${fmt(x.rv)}</span>${pct(x.rv,x.pbp)}%</td><td class="n">${cell(x.tem,x.pbp)}</td></tr>`).join("")||`<tr><td colspan="4" class="sub">Tidak ada wilayah yang cocok.</td></tr>`;
+  $("#wilFoot").textContent=`${fmt(list.length)}${q?" dari "+fmt(all):""} ${WL[L].toLowerCase()}${L<3?" · klik baris untuk melihat tingkat berikutnya":""}`;
+}
+$("#wilQ").oninput=renderWil;
 function pie(id,items,tot){
   const cx=210,cy=100,r=72,P=(a,rad)=>[cx+rad*Math.sin(a),cy-rad*Math.cos(a)];
   let ang=0,paths="",labels="";
@@ -214,8 +253,13 @@ function pie(id,items,tot){
 function render1(){
   const L=sel?P.filter(p=>p.n===sel):P, lbl=sel||"Seluruh provinsi";
   const tot=sum(p=>p.pbp,L),tem=sum(p=>p.tem,L),rv=sum(p=>p.rv,L),cc=sumArr(p=>p.cc,L),cm=sumArr(p=>p.cm,L);
-  $("#kTot").textContent=fmt(tot);$("#kScope").textContent=lbl;
-  pie("#pSerah",[["var(--accent)","Sudah Reviu",rv],["var(--grey)","Belum Reviu",tot-rv]],tot);
+  const ti=$("#sCut").value,co=+$("#sCo").value,Lc=sel?CP.filter(p=>p.n===sel):CP,cutTot=sum(p=>p.pbp,Lc);
+  const tahTot=TP.map(P_=>sum(p=>p.pbp,sel?P_.filter(p=>p.n===sel):P_));
+  $("#kCutLbl").textContent=`${CUTOFFS[co].n} · ${CUTOFFS[co].d}`;$("#kCut").textContent=fmt(cutTot);
+  $("#kTahLbl").textContent=ti==="all"?"Semua Tahap (Tahap 1–3)":`${STAGES[+ti].n} · ${STAGES[+ti].d[co]}`;$("#kTot").textContent=fmt(tot);$("#kScope").textContent=lbl;
+  // Chart 1: perbandingan cutoff dan tahap = porsi tiap tahap terhadap total cutoff
+  const tc=["var(--accent)","#3f8fbf","#7aaed0"];
+  pie("#pSerah",ti==="all"?STAGES.map((t,i)=>[tc[i],t.n,tahTot[i]]):[[tc[0],STAGES[+ti].n+" (dipilih)",tahTot[+ti]],["var(--grey)","Tahap lainnya",cutTot-tahTot[+ti]]],cutTot);
   // Rincian hasil reviu: dari PBP yang sudah direviu -> Sesuai dan Belum sesuai
   pie("#pVer",[["var(--green)","Sesuai",rv-tem],["var(--red)","Belum sesuai",tem]],rv);
   const mx=Math.max(...cc,1);
@@ -225,6 +269,7 @@ function render1(){
   const rin=[["Sesuai",rv-tem,"var(--green)"]].concat(cats.map(([n],i)=>[n,cc[i],"var(--accent)"])).sort((x,y)=>y[1]-x[1]),mr2=Math.max(...rin.map(x=>x[1]),1);
   $("#catBars").innerHTML=rin.map(([n,x,c])=>`<div class="hbar"><span>${n}</span><span class="t"><i style="width:${x/mr2*100}%;background:${c}"></i></span><b>${fmt(x)}</b></div>`).join("");
   pie("#pComp",cm.map((x,i)=>[compCol[i],comp[i],x]),tot);
+  renderWil();
   $("#btnList").textContent=`Lihat daftar ${fmt(tem)} temuan SPI →`;
   document.querySelectorAll("#provBody tr").forEach(r=>{r.style.background=r.dataset.n===sel?"#dcebf6":"";r.style.fontWeight=r.dataset.n===sel?"600":""});
 }
@@ -241,17 +286,17 @@ function cascade(){
 }
 function render2(){
   cascade();
-  const k=$("#fKat").value,p=sel,q=$("#fQ").value.trim().toLowerCase();
-  const f=rows.filter(r=>(!k||r.c===k)&&(!p||r.w===p)&&(!fk||r.k===fk)&&(!fc||r.kc===fc)&&(!fd||r.d===fd)&&(!q||r.no.toLowerCase().includes(q)));
+  const k=$("#fKat").value,p=sel,q=$("#fQ").value.trim().toLowerCase(),qw=$("#fWil").value.trim().toLowerCase();
+  const f=rows.filter(r=>(!k||r.c===k)&&(!p||r.w===p)&&(!fk||r.k===fk)&&(!fc||r.kc===fc)&&(!fd||r.d===fd)&&(!q||r.no.toLowerCase().includes(q))&&(!qw||(r.k+" "+r.kc+" "+r.d).toLowerCase().includes(qw)));
   const LIM=300;
   $("#listBody").innerHTML=f.slice(0,LIM).map((r,i)=>`<tr><td>${i+1}</td><td>${r.c}</td><td>${r.no}</td><td>${r.nm}</td><td>${r.w}</td><td>${r.k}</td><td>${r.kc}</td><td>${r.d}</td><td>${badge(r.ss)}</td><td>${badge(r.vs)}</td><td>${badge(r.rd)}</td><td class="v2only">${badge(r.rf)}</td></tr>`).join("")||`<tr><td colspan="12" class="sub">Tidak ada temuan untuk filter ini.</td></tr>`;
   $("#cnt").textContent=fmt(f.length);
   $("#cntTot").textContent="dari "+fmt(sum(p=>p.tem,sel?P.filter(p=>p.n===sel):P))+" temuan total";
   $("#listNote").textContent=f.length>LIM?`Menampilkan ${LIM} baris pertama dari ${fmt(f.length)} baris contoh. `:"";
 }
-function setSel(v){sel=v;fk=fc=fd="";$("#sProv").value=v;$("#fProv").value=v;render1();render2()}
+function setSel(v){sel=v;dp=v?[v]:[];fk=fc=fd="";$("#sProv").value=v;$("#fProv").value=v;render1();render2()}
 $("#sProv").onchange=e=>setSel(e.target.value);$("#fProv").onchange=e=>setSel(e.target.value);
-$("#fKat").onchange=render2;$("#fKota").onchange=e=>{fk=e.target.value;fc=fd="";render2()};$("#fKec").onchange=e=>{fc=e.target.value;fd="";render2()};$("#fDesa").onchange=e=>{fd=e.target.value;render2()};$("#fQ").oninput=render2;
+$("#fKat").onchange=render2;$("#fKota").onchange=e=>{fk=e.target.value;fc=fd="";render2()};$("#fKec").onchange=e=>{fc=e.target.value;fd="";render2()};$("#fDesa").onchange=e=>{fd=e.target.value;render2()};$("#fQ").oninput=render2;$("#fWil").oninput=render2;
 function setVer(v){
   document.body.classList.toggle("v1",v===1);
   $("#p0").classList.toggle("hide",v!==0);$("#app").classList.toggle("hide",v===0);
@@ -268,9 +313,9 @@ async function loadAll(co){ // gabungan Tahap 1–3: jumlah per provinsi + selur
   const m=new Map(); // gabung per nama provinsi (jumlah provinsi bisa berbeda antar tahap)
   ds.slice().sort((a,b)=>b.P.length-a.P.length).forEach(d=>d.P.forEach(q=>{const p=m.get(q.n);
     m.set(q.n,p?{n:p.n,pbp:p.pbp+q.pbp,tem:p.tem+q.tem,rv:p.rv+q.rv,cm:add(p.cm,q.cm),cc:add(p.cc,q.cc),rl:add(p.rl,q.rl)}:{...q})}));
-  return cache[key]={P:[...m.values()],rows:ds.flatMap(d=>d.rows),real:ds.some(d=>d.real)}}
+  return cache[key]={P:[...m.values()],rows:ds.flatMap(d=>d.rows),W:null,real:ds.some(d=>d.real)}}
 async function setStage(){
-  try{const co=+$("#sCo").value,t=$("#sCut").value,d=t==="all"?await loadAll(co):await loadData(co,+t);$("#loadErr").classList.add("hide");P=d.P;rows=d.rows;fk=fc=fd="";$("#dataBadge").textContent=d.real?"PBP data asli · lainnya contoh":"Data contoh";fillProv();buildProv();render1();render2()}
+  try{const co=+$("#sCo").value,t=$("#sCut").value,d=t==="all"?await loadAll(co):await loadData(co,+t);const ds=await Promise.all(STAGES.map((_,i)=>loadData(co,i)));TP=ds.map(x=>x.P);CP=(await loadAll(co)).P;$("#loadErr").classList.add("hide");P=d.P;rows=d.rows;W=d.W;dp=[];$("#wilQ").value="";fk=fc=fd="";$("#dataBadge").textContent=d.real?"PBP data asli · lainnya contoh":"Data contoh";fillProv();buildProv();render1();render2()}
   catch(e){$("#loadErr").textContent="Data contoh gagal dimuat: "+e.message+". Buka halaman ini lewat server web (mis. hosting Vercel atau 'python3 -m http.server'), bukan dengan klik dua kali file HTML.";$("#loadErr").classList.remove("hide")}}
 $("#sCo").onchange=()=>{fillTahap();setStage()};$("#sCut").onchange=setStage;
 $("#sCo").value=0;fillTahap();setStage();

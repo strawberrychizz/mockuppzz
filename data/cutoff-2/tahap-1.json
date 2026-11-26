@@ -5,6 +5,7 @@
  "tanggal": "1 Januari 2027",
  "total_pbp": 350854,
  "sumber_pbp": "STATUS_VERIFIKASI_BANPANG.xlsx (TAHAP I): PBP asli; hasil reviu, temuan, komposisi, dan foto adalah contoh",
+ "wilayah": "wilayah-tahap-1.csv",
  "provinsi": [
   {
    "provinsi": "Aceh",
